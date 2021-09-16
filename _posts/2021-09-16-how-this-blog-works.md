@@ -1,7 +1,7 @@
 ---
 title: 'How this blog works'
 date: 2021-09-16
-permalink: /posts/210916-1.md
+permalink: /posts/2021/09/how-this-blog-works/
 tags:
   - announcement
   - English
