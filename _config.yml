@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Seung uk Jang's Academic webpage"
+title                    : "Seung uk Jang's Academic website"
 title_separator          : "-"
 name                     : &name "Seung uk Jang"
 description              : &description "Graduate Student, Math Dept., University of Chicago"
