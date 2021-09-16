@@ -16,4 +16,4 @@ It is mostly due to the fact that I am bit uncomfortable to use English to repre
 Every post will accompany the 'update log' below, to announce that some sort of revision is made after the first post.
 
 #### Update Log
- * 210916: Created
+ * <font size="8">210916: Created</font>
