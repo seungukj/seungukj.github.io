@@ -28,20 +28,20 @@ Work experience
     + running and maintaining [IMAGINARY](https://www.imaginary.org/) exhibitions in Korea, and
     + exploring and developing new items in mathematics that can appeal to general public.
   
-Skills
+<!-- Skills
 ======
 * Programming Literacy
   * C/C++03
   * Java 7
-  * Python 3
+  * Python 3 -->
 
-<!-- Publications
+Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
