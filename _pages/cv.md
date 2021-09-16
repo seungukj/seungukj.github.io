@@ -9,32 +9,31 @@ redirect_from:
 
 {% include base_path %}
 
+pdf version: [view](/files/Seung_uk_Jang-cv.pdf)
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Mathematical Sciences, KAIST, 2013
+* M.S. in Mathematical Sciences, KAIST, 2014
+* M.S. in Mathematics, The University of Chicago, 2021
+* Ph.D Student in Mathematics, The University of Chicago, (ongoing)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2016.09. - 2019.09.: Researcher
+  * National Institute for Mathematical Sciences (NIMS), Daejeon, South Korea
+  * Division: Center for Applications of Mathematical Principles
+  * Role: Working on public understanding of (industrial) mathematics in Korea, including
+    + public lectures, typically for 7th-12th grades students,
+    + running and maintaining [IMAGINARY](https://www.imaginary.org/) exhibitions in Korea, and
+    + exploring and developing new items in mathematics that can appeal to general public.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming Literacy
+  * C/C++03
+  * Java 7
+  * Python 3
 
 Publications
 ======
