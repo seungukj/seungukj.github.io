@@ -10,7 +10,7 @@ redirect_from:
 
 <!-- [academicpages template](https://github.com/academicpages/academicpages.github.io) -->
 
-I am Seung uk Jang, a graduate student in Mathematics in the University of Chicago.
+I am Seung uk Jang, a graduate student of Mathematics in the University of Chicago.
 
 # Academic Interests
 My primary mathematical interest is about dynamical systems, especially those on the complex spaces.
