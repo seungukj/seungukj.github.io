@@ -1,6 +1,6 @@
 ---
 title: "Kummer Rigidity for Hyperkähler Automorphisms"
-collection: publications
+collection: preprint
 permalink: /publication/KumRig-2021
 excerpt: 'We show that a holomorphic automorphism on a projective hyperkähler manifold that has positive topological entropy and has volume measure as the measure of maximal entropy, is necessarily a Kummer example.'
 date: 2021-09-14
