@@ -30,6 +30,29 @@ So all the methods are decent, but alas, not as good as the Newton's method:
 
 So it seems like Newton's method are single most effective way to deal with this question, modulo accurate computation of sines and cosines. (The method iterates
 
-\\[x_{n+1} = x_n - \cos(x)\cdot\left(\sin(x) - a\cos(x)\right),\\]
+\\[x_{n+1} = x_n - \cos(x_n)\cdot\left(\sin(x_n) - a\cos(x_n)\right),\\]
 
 to find $\arctan(a)$, thus the dependence.)
+
+## How Tangent behaves, with the Newton's Method
+
+If one looks at the graph of the tangent function, [desmos demo](https://www.desmos.com/calculator/grtzepj49c) 
+this graph goes steep as $x$ approaches to $\frac{\pi}2$. 
+
+So it seems like that the Newton's method will be more effective, if $x$ starts at near $\pi/2$. Is it, really?
+
+## Focus on the Iterates
+
+There is an elementary criterion for convergence of Newton's Method:
+
+\\[\left|\frac{f(x)f''(x)}{(f'(x))^2}\right|<1,\\]
+
+on an interval $I$ that contains `the' zero. If we apply $f(x)=\tan x - a$, simplifying, we have
+
+\\[\left|2\sin x(\sin x - a\cos x)\right|<1,\\]
+
+and with some little further manipulation with trigonometric identities, this is equivalent to
+
+\\[ 0 < \cos\left(2x-\arctan(a)\right) < \frac{2}{\sqrt{1+a^2}}. \\] {#eq:elem-newton-bound}
+
+So as far as $x\approx\arctan(a)$ and [@eq:elem-newton-bound]
