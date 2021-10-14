@@ -15,7 +15,7 @@ I am Seung uk Jang, a graduate student of Mathematics in the University of Chica
 # Academic Interests
 My primary mathematical interest is about dynamical systems, especially those on the complex spaces.
 
-I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics (e.g. Modal Logic). Other math subjects are of my interest, too!
+I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics.
 
 # Contact
  * email: ｓｅｕｎｇｕｋｊ[at]ｕｃｈｉｃａｇｏ．ｅｄｕ (full-width letters; copy-pasting will generally not work)
