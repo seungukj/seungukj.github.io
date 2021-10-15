@@ -81,7 +81,7 @@ However, it is well-known (see, e.g. [Brin & Stuck](https://doi.org/10.1017/CBO9
 
 \\[ x_{n+1}=F(x_n) \\]
 
-and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if \\({|F'(p)|}>1\\), and **attracting** (i.e., nearby points converges to $p$) if \\({|F'(p)|}<1\\). 
+and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if \\({\mid F'(p)\mid}>1\\), and **attracting** (i.e., nearby points converges to $p$) if \\({\mid F'(p)\mid}<1\\). 
 
 Ah-ha, time to think of the nature of fixed points, then. Following \eqref{eqn:iteration-formula}, put
 \begin{equation}
@@ -176,10 +176,10 @@ Of course the estimate $\delta_n<1$ is rough and we can tighten this bound furth
 Suppose $a\geq 1$, and put $x_0 = \frac{\pi}2 - \frac1{2a}$. Then for checking \eqref{eqn:o(1)-criterion-1},
 \begin{align}
 \left(1+\frac{1}{2a^2}\right)\delta_0 &= \left(1 + \frac{1}{2a^2}\right)\cdot a \cdot\left(-\frac{1}{2a}+\frac{\pi}{2}-\arctan(a)\right) \\
-&= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot\left(-\frac{1}{2a}+\frac{1}{a}-\sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{a^{2k-1}}\right) \\
-&= \frac12 - \sum_{\substack{\mu=k-1 \\ k\geq 2}}\frac{(-1)^{\mu+1}}{2\mu+1}\frac{1}{a^{2\mu}} \\
-&\qquad + \frac{1}{4a^2} - \sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{2a^{2k}} \\
-&= \frac12 - \frac{1}{12a^2} + \sum_{k\geq 2}(-1)^k\frac{2k-3}{2(2k+1)(2k-1)}\frac{1}{a^{2k}}.
+ &= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot\left(-\frac{1}{2a}+\frac{1}{a}-\sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{a^{2k-1}}\right) \\
+ &= \frac12 - \sum_{\substack{\mu=k-1 \\ k\geq 2}}\frac{(-1)^{\mu+1}}{2\mu+1}\frac{1}{a^{2\mu}} \\
+ &\qquad + \frac{1}{4a^2} - \sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{2a^{2k}} \\
+ &= \frac12 - \frac{1}{12a^2} + \sum_{k\geq 2}(-1)^k\frac{2k-3}{2(2k+1)(2k-1)}\frac{1}{a^{2k}}.
 \end{align}
 Thus the criterion holds if $\displaystyle\frac12 - \frac{1}{12a^2} + \frac{1}{15a^4}<1$, an inequality that holds whenever $a\geq 1$.
 
@@ -190,9 +190,9 @@ as an explicit, working start to apply the Newton's method \eqref{eqn:iteration-
 ## In case of a<1
 
 If $a<1$, the matter is much easier; simply put $x_0=0$ and run the algorithm. The first step will result $x_1=a(>\arctan(a))$, and the test \eqref{eqn:o(1)-criterion-1} applies:
-\begin{align*}
+\begin{align}
 \left(1+\frac{1}{2a^2}\right)\delta_1 &= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot (a - \arctan(a)) \\
-&= \left(1 + \frac{1}{2a^2}\right) \cdot a \cdot \left(\frac{a^3}{3} - \frac{a^5}{5} + \cdots \right) \\
-&< \left(1 + \frac{1}{2a^2}\right) \frac{a^4}{3} = \frac{a^4}{3} + \frac{a^2}{6} < \frac13 + \frac16 = \frac12.
-\end{align*}
+ &= \left(1 + \frac{1}{2a^2}\right) \cdot a \cdot \left(\frac{a^3}{3} - \frac{a^5}{5} + \cdots \right) \\
+ &< \left(1 + \frac{1}{2a^2}\right) \frac{a^4}{3} = \frac{a^4}{3} + \frac{a^2}{6} < \frac13 + \frac16 = \frac12.
+\end{align}
 So we know even better: $\delta_n=O(2^{-2^n})$.
