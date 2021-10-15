@@ -163,7 +163,7 @@ As $\delta_n<1$ for all $n\geq 0$, we conclude,
 \\[\delta_{n+1} < \left(1+\frac{1}{2a^2}\right)\delta_n^2.\\]
 "Solving" this inequality then gives
 \\[\delta_n < \left[\left(1+\frac{1}{2a^2}\right)\delta_0\right]^{2^n}\cdot\left(1+\frac{1}{2a^2}\right)^{-1},\\]
-a guarantee of $\delta_n\to 0$ only if
+a guarantee of $\delta_n\to 0$ if
 \begin{equation}
 \label{eqn:o(1)-criterion-1}
 \delta_0 = a\cdot (x_0 - \arctan(a)) < \left(1+\frac{1}{2a^2}\right)^{-1}.
