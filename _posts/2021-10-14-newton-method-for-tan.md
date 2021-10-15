@@ -136,7 +136,7 @@ if $x\geq 1$.
 ## Attempt 2
 
 Prime reason why \eqref{eqn:polynomial-estimate-1} gives a result \eqref{eqn:error-estimate-1} not implying the convergence to nil, is because the inequality is directed to a wrong direction. Thus making some further expansion of $F$ might be the next hope:
-\\[ F(\arctan(a) + \epsilon) = \arctan(a) + a\epsilon^2 + \frac12\epsilon^3 - \frac{a}{3}\epsilon^4 - \frac1{8}\epsilon^5 + \frac{2a}{45}\epsilon^6 + \cdots\\]
+\\[ F(\arctan(a) + \epsilon) = \arctan(a) + a\epsilon^2 + \frac4{3!}\epsilon^3 - \frac{8a}{4!}\epsilon^4 - \frac{16}{5!}\epsilon^5 + \frac{32a}{6!}\epsilon^6 + \cdots\\]
 and we do get
 \begin{equation}
 \label{eqn:polynomial-estimate-2}
