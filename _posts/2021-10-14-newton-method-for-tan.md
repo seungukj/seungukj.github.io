@@ -118,7 +118,7 @@ a fact that I did **not** desire of.
 
 ### Remnant of the Fire
 
-\erqef{eqn:error-estimate-1} suggests an interesting point, however.
+\eqref{eqn:error-estimate-1} suggests an interesting point, however.
 
 Assume that $\epsilon_n\to 0$ when we start from $x_0\in(\arctan(a),\frac{\pi}2)$. Then by \eqref{eqn:error-estimate-1}, we **cannot** have $a\epsilon_0>1$, so it follows that $x_0-\arctan(a) < 1/a$, whenever $x_0\in(\arctan(a),\frac{\pi}2)$. Sending $x_0\to(\frac{\pi}2)-$,
 \begin{equation}
