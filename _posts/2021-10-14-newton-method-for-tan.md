@@ -37,7 +37,7 @@ x_{n+1} = x_n - \cos(x_n)\cdot\left(\sin(x_n) - a\cos(x_n)\right),
 
 to find $\arctan(a)$, thus the dependence.)
 
- - By the way, I assume $a>0$ throughout, and we typically think that $a>1$ here.
+ - By the way, I assume $a>0$ throughout.
 
 ## How Tangent behaves, with the Newton's Method
 
@@ -145,4 +145,54 @@ F(\arctan(a)+\epsilon) < \arctan(a) + a\epsilon^2 + \frac12\epsion^3,
 an inequality that can be proven to be the case for $\arctan(a)+\epsilon\in(\arctan(a),\frac{\pi}2)$.
 
 Setting $x_0\in(\arctan(a),\frac{\pi}2)$, $x_{n+1}=F(x_n)$, and $\epsilon_n = |x_n-\arctan(a)|$, we have
-\\[a\epsilon_n^2 < \epsilon_{n+1} < a\epsilon_n^2 + \frac12\epsilon_n^3.\\]
+\begin{equation}
+\label{eqn:base-error-inequality}
+a\epsilon_n^2 < \epsilon_{n+1} < a\epsilon_n^2 + \frac12\epsilon_n^3.
+\end{equation}
+
+Some elementary methods tells that \eqref{eqn:taylor-arctan-infinity-ineq} holds for **any** $a>0$. 
+Thus $x_n\in(\arctan(a),\frac{\pi}2)$, or equivalently $x_n-\arctan(a)\in(0,\frac{\pi}2-\arctan(a))$, implies $x_n-\arctan(a)\in(0,1/a)$; 
+thus $a\epsilon_n=a(x_n-\arctan(a))<1$, for any $n=0,1,2,\ldots$.
+
+Set $\delta_n := a\epsilon_n$, a sequence in $(0,1)$. Then \eqref{eqn:base-error-inequality} turns into,
+\begin{equation}
+\label{eqn:base-error-inequality-2}
+\delta_n^2 < \delta_{n+1} < \delta_n^2 + \frac{1}{2a^2}\delta_n^3.
+\end{equation}
+As $\delta_n<1$ for all $n\geq 0$, we conclude,
+\\[\delta_{n+1} < \left(1+\frac{1}{2a^2}\right)\delta_n^2.\\]
+"Solving" this inequality then gives
+\\[\delta_n < \left[\left(1+\frac{1}{2a^2}\right)\delta_0\right]^{2^n}\cdot\left(1+\frac{1}{2a^2}\right)^{-1},\\]
+a guarantee of $\delta_n\to 0$ only if
+\begin{equation}
+\label{eqn:o(1)-criterion-1}
+\delta_0 = a\cdot (x_0 - \arctan(a)) < \left(1+\frac{1}{2a^2}\right)^{-1}.
+\end{equation}
+
+Of course the estimate $\delta_n<1$ is rough and we can tighten this bound further, but interpreting \eqref{eqn:o(1)-criterion-1} is still worthwhile to do so.
+
+## A Safe Initial
+
+Suppose $a\geq 1$, and put $x_0 = \frac{\pi}2 - \frac1{2a}$. Then for checking \eqref{eqn:o(1)-criterion-1},
+\begin{align*}
+\left(1+\frac{1}{2a^2}\right)\delta_0 &= \left(1 + \frac{1}{2a^2}\right)\cdot a \cdot\left(-\frac{1}{2a}+\frac{\pi}{2}-\arctan(a)\right) \\
+&= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot\left(-\frac{1}{2a}+\frac{1}{a}-\sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{a^{2k-1}}\right) \\
+&= \frac12 - \sum_{\substack{\mu=k-1 \\ k\geq 2}}\frac{(-1)^{\mu+1}}{2\mu+1}\frac{1}{a^{2\mu}} \\
+&\qquad + \frac{1}{4a^2} - \sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{2a^{2k}} \\
+&= \frac12 - \frac{1}{12a^2} + \sum_{k\geq 2}(-1)^k\frac{2k-3}{2(2k+1)(2k-1)}\frac{1}{a^{2k}}.
+\end{align*}
+Thus the criterion holds if $\displaystyle\frac12 - \frac{1}{12a^2} + \frac{1}{15a^4}<1$, an inequality that holds whenever $a\geq 1$.
+
+Some extra refined estimate might be in need to guarantee that a $x_0$ closer to $\frac{\pi}2$ should work, but anyways it is good to have
+\\[x_0 = \frac{\pi}2 - \frac{1}{2a}\\]
+as an explicit, working start to apply the Newton's method \eqref{eqn:iteration-formula} for solving $\tan x = a$.
+
+## In case of a<1
+
+If $a<1$, the matter is much easier; simply put $x_0=0$ and run the algorithm. The first step will result $x_1=a(>\arctan(a))$, and the test \eqref{eqn:o(1)-criterion-1} applies:
+\begin{align*}
+\left(1+\frac{1}{2a^2}\right)\delta_1 &= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot (a - \arctan(a)) \\
+&= \left(1 + \frac{1}{2a^2}\right) \cdot a \cdot \left(\frac{a^3}{3} - \frac{a^5}{5} + \cdots \right) \\
+&< \left(1 + \frac{1}{2a^2}\right) \frac{a^4}{3} = \frac{a^4}{3} + \frac{a^2}{6} < \frac13 + \frac16 = \frac12.
+\end{align*}
+So we know even better: $\delta_n=O(2^{-2^n})$.
