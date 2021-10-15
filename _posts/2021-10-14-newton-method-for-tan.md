@@ -54,7 +54,7 @@ Collecting these observation, we would better start at $x=(\pi/2)-\epsilon$. Is 
 There is an elementary criterion for convergence of Newton's Method:
 
 \begin{equation}
-\left|\frac{f(x)f''(x)}{(f'(x))^2}\right|<1,
+\left|\frac{f(x)f^{\prime\prime}(x)}{(f'(x))^2}\right|<1,
 \end{equation}
 
 on an interval $I$ that contains `the' zero. If we apply $f(x)=\tan x - a$, simplifying, we have
@@ -81,7 +81,7 @@ However, it is well-known (see, e.g. [Brin & Stuck](https://doi.org/10.1017/CBO9
 
 \\[ x_{n+1}=F(x_n) \\]
 
-and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if $|F'(p)|>1$, and **attracting** (i.e., nearby points converges to $p$) if $|F'(p)|<1$. 
+and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if \\({|F'(p)|}>1\\), and **attracting** (i.e., nearby points converges to $p$) if \\({|F'(p)|}<1\\). 
 
 Ah-ha, time to think of the nature of fixed points, then. Following \eqref{eqn:iteration-formula}, put
 \begin{equation}
@@ -140,7 +140,7 @@ Prime reason why \eqref{eqn:polynomial-estimate-1} gives a result \eqref{eqn:err
 and we do get
 \begin{equation}
 \label{eqn:polynomial-estimate-2}
-F(\arctan(a)+\epsilon) < \arctan(a) + a\epsilon^2 + \frac12\epsion^3,
+F(\arctan(a)+\epsilon) < \arctan(a) + a\epsilon^2 + \frac12\epsilon^3,
 \end{equation}
 an inequality that can be proven to be the case for $\arctan(a)+\epsilon\in(\arctan(a),\frac{\pi}2)$.
 
@@ -174,13 +174,13 @@ Of course the estimate $\delta_n<1$ is rough and we can tighten this bound furth
 ## A Safe Initial
 
 Suppose $a\geq 1$, and put $x_0 = \frac{\pi}2 - \frac1{2a}$. Then for checking \eqref{eqn:o(1)-criterion-1},
-\begin{align*}
+\begin{align}
 \left(1+\frac{1}{2a^2}\right)\delta_0 &= \left(1 + \frac{1}{2a^2}\right)\cdot a \cdot\left(-\frac{1}{2a}+\frac{\pi}{2}-\arctan(a)\right) \\
 &= \left(1+\frac{1}{2a^2}\right)\cdot a\cdot\left(-\frac{1}{2a}+\frac{1}{a}-\sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{a^{2k-1}}\right) \\
 &= \frac12 - \sum_{\substack{\mu=k-1 \\ k\geq 2}}\frac{(-1)^{\mu+1}}{2\mu+1}\frac{1}{a^{2\mu}} \\
 &\qquad + \frac{1}{4a^2} - \sum_{k\geq 2}\frac{(-1)^k}{2k-1}\frac{1}{2a^{2k}} \\
 &= \frac12 - \frac{1}{12a^2} + \sum_{k\geq 2}(-1)^k\frac{2k-3}{2(2k+1)(2k-1)}\frac{1}{a^{2k}}.
-\end{align*}
+\end{align}
 Thus the criterion holds if $\displaystyle\frac12 - \frac{1}{12a^2} + \frac{1}{15a^4}<1$, an inequality that holds whenever $a\geq 1$.
 
 Some extra refined estimate might be in need to guarantee that a $x_0$ closer to $\frac{\pi}2$ should work, but anyways it is good to have
