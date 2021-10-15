@@ -83,7 +83,7 @@ However, it is well-known (see, e.g. [Brin & Stuck](https://doi.org/10.1017/CBO9
 
 and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if \\({\mid F'(p)\mid}>1\\), and **attracting** (i.e., nearby points converges to $p$) if \\({\mid F'(p)\mid}<1\\). 
 
-Ah-ha, time to think of the nature of fixed points, then. Following \eqref{eqn:iteration-formula}, put
+Thus, time to think of the nature of fixed points. Following \eqref{eqn:iteration-formula}, put
 \begin{equation}
   \label{eqn:iteration-function}
   F(x) := x - \cos x(\sin x - a\cos x).
