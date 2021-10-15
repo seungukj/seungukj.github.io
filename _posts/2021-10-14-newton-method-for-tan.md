@@ -93,8 +93,8 @@ Then
 giving $F'(\arctan(a)) = 0$ and $F'(\frac{\pi}2)=2$. Thus by the forementioned fact, $\arctan(a)$ is attracting (very strongly!), while $\frac{\pi}2$ is repelling.
 
 To see the attracting behavior better, we further compute
-\\[ F''(x) = 2(\sin(2x) - a\cos(2x)), \\]
-and $F''(\arctan(a)) = 2a$ follows, i.e., $F(x)\approx \arctan(a) + a(x-\arctan(a))^2$ near $x\approx\arctan(a)$. Not only that,
+\\[ F^{\prime\prime}(x) = 2(\sin(2x) - a\cos(2x)), \\]
+and $F^{\prime\prime}(\arctan(a)) = 2a$ follows, i.e., $F(x)\approx \arctan(a) + a(x-\arctan(a))^2$ near $x\approx\arctan(a)$. Not only that,
 \begin{equation}
 \label{eqn:polynomial-estimate-1}
 F(x) > \arctan(a) + a(x-\arctan(a))^2 
