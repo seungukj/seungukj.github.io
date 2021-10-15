@@ -20,9 +20,9 @@ implying that we need many trials to reduce so.
 
 Some numerical examples: to evaluate $\arctan(2)$ in degrees, the standard packages result
 
- * $\arctan(2) = 63.43494882292201^\circ$,
- * Simpson's method with 100 partitions gives $=63.43494882218863^\circ$, and
- * evaluating series for $\arctan(1/2)$ up to $x^{29}$ term gives $=63.43494882222495^\circ$.
+ * $\arctan(2) = 63.434948822\underline{92201}^\circ$,
+ * Simpson's method with 100 partitions gives $=63.434948822\underline{18863}^\circ$, and
+ * evaluating series for $\arctan(1/2)$ up to $x^{29}$ term gives $=63.434948822\underline{22495}^\circ$.
 
 So all the methods are decent, but alas, not as good as the Newton's method:
 
@@ -30,23 +30,31 @@ So all the methods are decent, but alas, not as good as the Newton's method:
 
 So it seems like Newton's method are single most effective way to deal with this question, modulo accurate computation of sines and cosines. (The method iterates
 
-\\[x_{n+1} = x_n - \cos(x_n)\cdot\left(\sin(x_n) - a\cos(x_n)\right),\\]
+\begin{equation}
+\label{eqn:iteration-formula}
+x_{n+1} = x_n - \cos(x_n)\cdot\left(\sin(x_n) - a\cos(x_n)\right),
+\end{equation}
 
 to find $\arctan(a)$, thus the dependence.)
+
+ - By the way, I assume $a>0$ throughout, and we typically think that $a>1$ here.
 
 ## How Tangent behaves, with the Newton's Method
 
 If one looks at the graph of the tangent function, [desmos demo](https://www.desmos.com/calculator/grtzepj49c) 
-this graph goes steep as $x$ approaches to $\frac{\pi}2$. 
+this graph goes steep as $x$ approaches to $\frac{\pi}2$.
 
-So it seems like that the Newton's method will be more effective, if $x$ starts at near $\pi/2$. Is it, really?
+On the other hand, if one starts with $x_0=0$, then one is thrown to $x_1=a$ for the next step; 
+it may be away from the ${[}0,\frac{\pi}2)$ window when $a$ is big, thus a `random start' at $[0,\frac{\pi}2)$ does not seem to be an option.
+
+Collecting these observation, we would better start at $x=(\pi/2)-\epsilon$. Is it, really?
 
 ## Focus on the Iterates
 
 There is an elementary criterion for convergence of Newton's Method:
 
 \begin{equation}
-\left|\frac{f(x)f''(x)}{(f'(x))^2}\right|}<1,
+\left|\frac{f(x)f''(x)}{(f'(x))^2}\right|<1,
 \end{equation}
 
 on an interval $I$ that contains `the' zero. If we apply $f(x)=\tan x - a$, simplifying, we have
@@ -62,4 +70,79 @@ and with some little further manipulation with trigonometric identities, this is
 0 < \cos\left(2x-\arctan(a)\right) < \frac{2}{\sqrt{1+a^2}}.
 \end{equation}
 
-So as far as $x\approx\arctan(a)$ and \ref{eqn:elem-newton-bound}
+So as far as $x\approx\arctan(a)$ and \eqref{eqn:elem-newton-bound} is still the case, we have the convergence. 
+Nonetheless, \eqref{eqn:elem-newton-bound} fails as $x\to(\frac{\pi}2)-$. What was up there?
+
+## Extra Fixed Point?
+
+Of course \eqref{eqn:iteration-formula} is fixed if $x=\arctan(a)$. However, as observed [in this demo](https://www.desmos.com/calculator/3giqmuazik), the iteration \eqref{eqn:iteration-formula} has two fixed points, $x=\arctan(a)$ and $x=\frac{\pi}{2}$. Thus tentatively, if one starts from $x_0=\pi/2$, they is stuck.
+
+However, it is well-known (see, e.g. [Brin & Stuck](https://doi.org/10.1017/CBO9780511755316), Exercise **1.5.4**) that the iteration
+
+\\[ x_{n+1}=F(x_n) \\]
+
+and a fixed point $p$ on it is **repelling** (i.e., nearby points gets away from $p$) if $|F'(p)|>1$, and **attracting** (i.e., nearby points converges to $p$) if $|F'(p)|<1$. 
+
+Ah-ha, time to think of the nature of fixed points, then. Following \eqref{eqn:iteration-formula}, put
+\begin{equation}
+  \label{eqn:iteration-function}
+  F(x) := x - \cos x(\sin x - a\cos x).
+\end{equation}
+Then
+\\[ F'(x) = 2\sin x(\sin x - a\cos x),\\]
+giving $F'(\arctan(a)) = 0$ and $F'(\frac{\pi}2)=2$. Thus by the forementioned fact, $\arctan(a)$ is attracting (very strongly!), while $\frac{\pi}2$ is repelling.
+
+To see the attracting behavior better, we further compute
+\\[ F''(x) = 2(\sin(2x) - a\cos(2x)), \\]
+and $F''(\arctan(a)) = 2a$ follows, i.e., $F(x)\approx \arctan(a) + a(x-\arctan(a))^2$ near $x\approx\arctan(a)$. Not only that,
+\begin{equation}
+\label{eqn:polynomial-estimate-1}
+F(x) > \arctan(a) + a(x-\arctan(a))^2 
+\end{equation}
+may be proven for $\arctan(a)<x<\frac{\pi}2$.
+
+## Failure 1
+
+A corollary to \eqref{eqn:polynomial-estimate-1} is that, once we start $x_0\in(\arctan(a),\frac{\pi}2)$, we always stay in $(\arctan(a),\frac{\pi}2)$. (Thus this interval $I$ is "invariant" in the sense that $F(I)\subset I$, but we hope this to collapse to $\arctan(a)$ as we iterate.)
+
+\eqref{eqn:polynomial-estimate-1} with $x=x_n$ plugged in, gives an interesting fact about the error term $\epsilon_n:=|x_n-\arctan(a)|$:
+\\[\epsilon_{n+1}>a\epsilon_n^2.\\]
+Some standard techniques regarding recurrence thus applies. For instance, we take $\log$ on each side
+\\[\log\epsilon_{n+1} > \log a + 2\log\epsilon_n,\\]
+and solve the "recurrence inequality" (or use Gr\"onwall-type inequalities) to find
+\begin{equation}
+\label{eqn:error-estimate-1}
+\epsilon_n > (a\epsilon_0)^{2^n}/a,
+\end{equation}
+a fact that I did **not** desire of.
+
+### Remnant of the Fire
+
+\erqef{eqn:error-estimate-1} suggests an interesting point, however.
+
+Assume that $\epsilon_n\to 0$ when we start from $x_0\in(\arctan(a),\frac{\pi}2)$. Then by \eqref{eqn:error-estimate-1}, we **cannot** have $a\epsilon_0>1$, so it follows that $x_0-\arctan(a) < 1/a$, whenever $x_0\in(\arctan(a),\frac{\pi}2)$. Sending $x_0\to(\frac{\pi}2)-$,
+\begin{equation}
+\label{eqn:taylor-arctan-infinity-ineq}
+  \frac{\pi}2-\arctan(a) < \frac1a.
+\end{equation}
+
+\eqref{eqn:taylor-arctan-infinity-ineq} does match with the Taylor expansion of $\arctan x$ near infinity: [source](https://mathhelpforum.com/threads/taylor-expansion-of-arctan-x-at-infinity.168163/)
+\begin{equation}
+\label{eqn:taylor-arctan-infinity}
+\arctan x = \frac{\pi}2-\frac1x+\frac1{3x^3}-\frac1{5x^5}+\cdots,
+\end{equation}
+if $x\geq 1$.
+
+## Attempt 2
+
+Prime reason why \eqref{eqn:polynomial-estimate-1} gives a result \eqref{eqn:error-estimate-1} not implying the convergence to nil, is because the inequality is directed to a wrong direction. Thus making some further expansion of $F$ might be the next hope:
+\\[ F(\arctan(a) + \epsilon) = \arctan(a) + a\epsilon^2 + \frac1{2!}\epsilon^3 - \frac{a}{3!}\epsilon^4 - \frac1{4!}\epsilon^5 + \frac{a}{5!}\epsilon^6 + \cdots\\]
+and we do get
+\begin{equation}
+\label{eqn:polynomial-estimate-2}
+F(\arctan(a)+\epsilon) < \arctan(a) + a\epsilon^2 + \frac12\epsion^3,
+\end{equation}
+an inequality that can be proven to be the case for $\arctan(a)+\epsilon\in(\arctan(a),\frac{\pi}2)$.
+
+Setting $x_0\in(\arctan(a),\frac{\pi}2)$, $x_{n+1}=F(x_n)$, and $\epsilon_n = |x_n-\arctan(a)|$, we have
+\\[a\epsilon_n^2 < \epsilon_{n+1} < a\epsilon_n^2 + \frac12\epsilon_n^3.\\]
