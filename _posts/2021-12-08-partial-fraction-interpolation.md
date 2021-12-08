@@ -67,9 +67,10 @@ $$x = (-1)\cdot \ell_{-1}(x) + (-2)\cdot \ell_{-2}(x) + (-3)\cdot \ell_{-3}(x).$
 That is,
 
 $$x = -\frac{(x+2)(x+3)}{(-1+2)(-1+3)} - 2\frac{(x+1)(x+3)}{(-2+1)(-2+3)} - 3\frac{(x+1)(x+2)}{(-3+1)(-3+2)},$$
+
 $$\therefore x = -\frac12(x+2)(x+3) + 2(x+1)(x+3) -\frac32(x+1)(x+2).$$
 
-Compare this with \eqref{eqn:PDF-eg}:
+Compare this with \eqref{eqn:PFD-eg}:
 
 $$x=A(x+2)(x+3) + B(x+1)(x+3)+C(x+1)(x+2).$$
 
@@ -100,7 +101,9 @@ $$P(x)=P(-1)\cdot \ell_{-1}(x)+P(i)\cdot \ell_i(x)+P(-i)\cdot \ell_{-i}(x),$$
 for a polynomial with degree $\leq 2$. It is just the complex number intervening in the computations. Since
 
 $$\ell_{-1}(x)=\frac{(x+i)(x-i)}{(-1+i)(-1-i)}=\frac12(x^2+1),$$
+
 $$\ell_i(x)=\frac{(x+1)(x+i)}{(i+1)(i+i)}=-\frac{1+i}{4}(x+1)(x+i),$$
+
 $$\ell_{-i}(x)=\frac{(x+1)(x-i)}{(-i+1)(-i-i)}=-\frac{1-i}{4}(x+1)(x-i),$$
 
 for say $P(x)=x^2-x$, we have
@@ -110,7 +113,9 @@ $$x^2-x=2\cdot\ell_{-1}(x)-(1+i)\cdot\ell_i(x)-(1-i)\ell_{-i}(x),$$
 which cleans up to
 
 $$x^2-x=(x^2+1)+\frac{i}{2}(x+1)(x+i)-\frac{i}{2}(x+1)(x-i)$$
+
 $$=(x^2+1)+(x+1)\left[\frac{i}{2}(x+i)-\frac{i}{2}(x-i)\right]$$
+
 $$=(x^2+1)-(x+1),$$
 
 so dividing out $(x+1)(x^2+1)$, we have
@@ -122,14 +127,19 @@ $$\frac{x^2-x}{(x+1)(x^2+1)}=\frac{1}{x+1}-\frac{1}{x^2+1}.$$
 Algebraically, this one is more tricky. One way is to iterate the partial fraction decompositions:
 
 $$\frac{t+1}{t^2(t-1)}=\frac1t\left[\frac{t+1}{t(t-1)}\right]$$
+
 $$=\frac{1}{t}\left[-\frac{1}{t}+\frac{2}{t-1}\right]$$
+
 $$=-\frac1{t^2}+\frac{2}{t(t-1)}$$
+
 $$=-\frac1{t^2}-\frac{2}{t}+\frac{2}{t-1}.$$
 
 Another is to "split" the roots of the denominator $t^2(t-1)$, to say $\{0,\epsilon,1\}$ (where $\epsilon$ is an infinitesimal). In that case we have the interpolation polynomials
 
 $$\ell_0(t)=\frac{(t-\epsilon)(t-1)}{\epsilon},$$
+
 $$\ell_\epsilon(x)=\frac{t(t-1)}{-\epsilon(1-\epsilon)},$$
+
 $$\ell_1(x)=\frac{t(t-\epsilon)}{1-\epsilon}.$$
 
 Furthermore,
@@ -143,6 +153,7 @@ $$t+1=\frac{1}{\epsilon}(t-\epsilon)(t-1)-\frac{1+\epsilon}{\epsilon(1-\epsilon)
 Clearly the first two terms will be problematic if we let $\epsilon\to 0$. How to remedy this? Probably doing more algebra _for the first two terms_ will help to cancel out $\epsilon$ in the denomninator:
 
 $$(t-1)\left[\frac1\epsilon(t-\epsilon) - \frac{1+\epsilon}{\epsilon(1-\epsilon)}t\right]=(t-1)\left[-1+\frac{t}{\epsilon}\left(1-\frac{1+\epsilon}{1-\epsilon}\right)\right]$$
+
 $$=(t-1)\left[-1-\frac{2t}{1-\epsilon}\right].$$
 
 Hence we now have a `safe' version
