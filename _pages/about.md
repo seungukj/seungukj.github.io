@@ -12,6 +12,8 @@ redirect_from:
 
 I am Seung uk Jang, a graduate student of Mathematics in the University of Chicago.
 
+My advisors are [Alex Eskin](https://www.math.uchicago.edu/~eskin/) and [Simion Filip](https://math.uchicago.edu/~sfilip/).
+
 # Academic Interests
 My primary mathematical interest is about dynamical systems, especially those on the complex spaces.
 
