@@ -15,5 +15,12 @@ This is a warehouse of variety of links that I feel like interesting and worthwh
  * 3B1B series on [Newton fractals](https://www.youtube.com/watch?v=-RdOwhmqP5s&ab_channel=3Blue1Brown) and [Holomorphic dynamics](https://youtu.be/LqbZpur38nw)
    * 뉴턴 프랙탈 관련(More on Newton fractals) [1](https://www.chiark.greenend.org.uk/~sgtatham/newton/) [2](https://blbadger.github.io/polynomial-roots.html)
 
+## noted from [WYM 2022](https://sites.google.com/view/wym2022/)
+ * Krasner formula: counts the number of finite extensions over $$\mathbb{Q}_p$$ (p-adic number field). Relevant [MSE thread](https://math.stackexchange.com/questions/78211), and a work of [Pauli and Roblot](http://page.math.tu-berlin.de/~kant/publications/papers/krasner.pdf), esp. sec. 3 & 6.
+ * Recent result about Manin--Mumford by [L. DeMarco, H. Krieger and H. Ye](https://people.math.harvard.edu/~demarco/UMMB.pdf)
+ * [Nonarchimedean Sendor Conjecture, by Choi and Lee](https://arxiv.org/abs/2106.11155)
+ * A book by [Chari, Pressley](https://www.cambridge.org/us/academic/subjects/mathematics/algebra/guide-quantum-groups?format=PB&isbn=9780521558846), _A guide to Quantum Groups_, Ch. 6 should contain some relevant information on "why QGs are defined like that."
+
 #### Update Log
  * <span style="font-size:12px">211015: Created</span>
+ * <span style="font-size:12px">220105: Appended some notes from WYM 2022</span>
