@@ -20,6 +20,7 @@ This is a warehouse of variety of links that I feel like interesting and worthwh
  * Recent result about Manin--Mumford by [L. DeMarco, H. Krieger and H. Ye](https://people.math.harvard.edu/~demarco/UMMB.pdf)
  * [Nonarchimedean Sendor Conjecture, by Choi and Lee](https://arxiv.org/abs/2106.11155)
  * A book by [Chari, Pressley](https://www.cambridge.org/us/academic/subjects/mathematics/algebra/guide-quantum-groups?format=PB&isbn=9780521558846), _A guide to Quantum Groups_, Ch. 6 should contain some relevant information on "why QGs are defined like that."
+ * A work of [Cineli, Ginzburg, and Gurel](https://arxiv.org/abs/2111.03983) on "barcode entropy"
 
 #### Update Log
  * <span style="font-size:12px">211015: Created</span>
