@@ -1,7 +1,7 @@
 ---
 title: 'Dedekind Completeness and Limits'
 date: 2022-01-12
-permalink: /posts/2021/12/order-completeness-and-limit/
+permalink: /posts/2022/01/order-completeness-and-limit/
 tags:
   - English
   - Calculus
