@@ -95,7 +95,7 @@ If these limsup and liminf coincide, then one can say that the limit $$\lim_{n\t
 
 Some example demos:
 
- - If $a_n=(-1)^n/n$, then $b_k=\sup_{n\geq k}a_n=\begin{cases} \frac{1}{k+1} & \text{ if }k\text{ is odd} \\ \frac{1}{k} & \text{ if }k\text{ is even}\end{cases}$, while $c_k=\inf_{n\geq k}a_n=\begin{cases} -\frac{1}{k} & \text{ if }k\text{ is odd} \\ -\frac{1}{k+1} & \text{ if }k\text{ is even}\end{cases}$. <br>
+ - If $a_n=(-1)^n/n$, then $$b_k=\sup_{n\geq k}a_n=\begin{cases} \frac{1}{k+1} & \text{ if }k\text{ is odd} \\ \frac{1}{k} & \text{ if }k\text{ is even}\end{cases}$$, while $$c_k=\inf_{n\geq k}a_n=\begin{cases} -\frac{1}{k} & \text{ if }k\text{ is odd} \\ -\frac{1}{k+1} & \text{ if }k\text{ is even}\end{cases}$$. <br>
  There one sees that $b_k\colon\frac12,\frac12,\frac14,\frac14,\frac16,\frac16,\cdots$ has infimum 0, while $c_k\colon-1,-\frac13,-\frac13,-\frac15,-\frac15,\cdots$ has supremum 0. This tells $\limsup a_n=\liminf a_n=0$, thus the limit.
  - If $a_n=\frac12(1+(-1)^n)\colon 0,1,0,1,0,1,\cdots$, then $b_k=\sup_{n\geq k}a_n=1$ while $c_k=\inf_{n\geq k}a_n=0$. This evidently tells $\limsup a_n=1\neq 0=\liminf a_n$, thus the limit fails to exist.
 
@@ -132,7 +132,17 @@ Another example is $f(x)=x$ with $x\to a$. For any $\delta>0$, we have
 
 $$\sup\{ x \mid 0<\vert x-a\vert<\delta\}=a+\delta, \\ \inf\{x\mid 0<\vert x-a\vert<\delta\}=a-\delta.$$
 
-Hence $\limsup_{x\to a}x=\inf_{\delta>0}(a+\delta)=a$, and likewise $\liminf_{x\to a}x=a$. _Without any fancy $\epsilon$-$\delta$ type arguments_, we thus have proven that $\lim_{x\to a}x=a$ !
+Hence $\limsup_{x\to a}x=\inf_{\delta>0}(a+\delta)=a$, and likewise $\liminf_{x\to a}x=a$. _Without any fancy $\epsilon$-$\delta$ type arguments_, we thus have proven that $\lim_{x\to a}x=a$ ! This sort of mathematics is similarily applied for cases like $f(x)=x^2$, $x\to 1$, or $f(x)=1/x$, $x\to 2$, etc.
+
+The matter becomes little tricky for $f(x)=x\sin(1/x)$ with $x\to 0$. For any $\delta>0$, it is hard to estimate
+
+$$\sup\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}\text{ and }\inf\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}$$
+
+exactly. However, as $-\vert x\vert\leq x\sin\frac1x \leq \vert x\vert$, we see that the suprema and infima of interest is estimated
+
+$$\sup\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}\leq\delta, \\ \inf\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}\geq-\delta.$$
+
+This entails $0\leq\liminf f(x)\leq\limsup f(x)\leq 0$, thus the limit of interest. There, we see that we were simply lucky enough to find the exact limit value with this method (the squeeze theorem!).
 
 ## Disclaimer
 
