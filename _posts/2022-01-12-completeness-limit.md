@@ -106,7 +106,7 @@ The above limsup and liminf for sequences are somewhat classical topics in analy
 $$\limsup_{x\to a}f(x)=\inf_{\delta>0}\sup\{f(x)\mid 0<\vert x-a\vert <\delta\}, \\
 \liminf_{x\to a}f(x)=\sup_{\delta>0}\inf\{f(x)\mid 0<\vert x-a\vert <\delta\}.$$
 
-Again, by the completeness axiom (if we admit $\pm\infty$) the quantities always exist. Note also that these quantities are independent to any tweak of values off from $a$. That is, even if I change values of $f(x)$ on $\{x\mid\vert x-a\vert >\delta'\}$, I still have the same $\limsup_{x\to a}f(x)$, etc.
+Again, by the completeness axiom (if we admit $\pm\infty$) the quantities always exist. Note also that these quantities are independent to any tweak of values off from $a$. That is, even if I change values of $f(x)$ on $$\{x\mid\vert x-a\vert >\delta'\}$$, I still have the same $\limsup_{x\to a}f(x)$, etc.
 
 Furthermore, they coincide with the value $L$ iff $\lim_{x\to a}f(x)=L$.
 
