@@ -42,12 +42,12 @@ If one allows $\sup S=\infty$ for $S$ unbounded above, and $\inf S=-\infty$ for 
 
 The fact that this completness is given as an __axiom__, pretty much indicates that _there is no systematic way to find the supremum/infimum of a given set_. (Apparently false, if one believes in the "Dedekind cut" construction of the reals. But I am demanding a method independent to the construction details here.)
 
-However, there are few facts regarding how $\sup S$ and $\inf S$ may be understood (other than the definitions, which is still straightforward):
+More aspects of $\sup S$ and $\inf S$:
 
- - These quantities are easily understood in the "calculus-level," where one can sketch the set $S$ on the real line, and 'slide' the upper/lower bounds to reach to the supremum/infimum.
+ - These quantities are easily understood in the "precalculus-level," where one can sketch the set $S$ on the real line, and 'slide' the upper/lower bounds to reach to the supremum/infimum.
  - If $S$ is given by a monotonic sequence, listing the decimal expressions makes the guess for $\sup S$ or $\inf S$ quite well (as long as we list sufficiently many terms).
  - Let $M<\infty$ (rspt. $m>-\infty$). Proving $M=\sup S$ (rspt. $m=\inf S$) is equivalent to, for any $\epsilon>0$ one has $x\in S$ in which $M\geq x>M-\epsilon$ (rspt. $m\leq x<m+\epsilon$). <br>
- Thus suprema/infima _does_ reflect the infinitesimal phenomena.
+ Thus suprema/infima _does_ reflect an infinitesimal phenomena.
 
 Collecting these, I claim that the completeness axiom is thus (1) associated with our visual understanding of the real line, while (2) very tangent to the infinitesimal, or limiting phenomena as well.
 
