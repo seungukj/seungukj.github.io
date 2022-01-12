@@ -49,7 +49,7 @@ More aspects of $\sup S$ and $\inf S$:
  - Let $M<\infty$ (rspt. $m>-\infty$). Proving $M=\sup S$ (rspt. $m=\inf S$) is equivalent to, for any $\epsilon>0$ one has $x\in S$ in which $M\geq x>M-\epsilon$ (rspt. $m\leq x<m+\epsilon$). <br>
  Thus suprema/infima _does_ reflect an infinitesimal phenomena.
 
-Collecting these, it seems like the completeness axiom is (1) associated with our visual understanding of the real line, while (2) very tangent to the infinitesimal, or limiting phenomena as well. Brought from the observations, I claim that the concept of the limit is built based on the completeness axiom!
+Collecting these, it seems like the completeness axiom is (1) associated with our visual understanding of the real line, while (2) very closely related to the infinitesimal, or limiting phenomena as well. Brought from the observations, I claim that the concept of the limit is built based on the completeness axiom.
 
 As a support of the claim, let us see some "formula of limits" written in terms of superma and infima. They are particularily intriguing as they (superficially) excludes the $\epsilon$-$\delta$ or $\epsilon$-$N$ definition of limits.
 
@@ -146,17 +146,24 @@ This entails $0\leq\liminf f(x)\leq\limsup f(x)\leq 0$, thus the limit of intere
 
 ## Disclaimer
 
-This is in no sense meant to suggest a replacement definition for the limits. Although the notion of suprema and infima are quite natural in terms of the visual sketches, the "limsup-liminf definition" of limit,
+In case you view the "limsup-liminf definition" of limit,
 
  > We say $\lim_{x\to a}f(x)=L$ if $\limsup_{x\to a}f(x)=\liminf_{x\to a}f(x)=L$.
 
-is (simply) losing too many things:
+as a nice (replacing) definition, then I would note that this definition is (simply) losing too many things, compared with the standard $\epsilon$-$\delta$ definition:
 
  - exercising local estimates of the error $\vert f(x)-L\vert$
  - gadgets to prove limit theorems (E.g.: proving $\lim(f(x)\cdot g(x))=\lim f(x)\cdot\lim g(x)$ with the "limsup-liminf definition" is a mess.)
  - generalizations of the concept towards metric or topological spaces (probably the most critical pitfall!)
 
-and many more. This note is more intended to think of, whether formalizing the limit definitions in accordance to the completeness axiom, is giving an easier access to the concept of limits.
+and many more. So although I demo'ed that
+
+ 1. suprema and infima are quite natural in accordance to the completeness axiom (and visual sketches),
+ 2. formalizing the limit definitions in accordance to them may give an easier access to the concept of limits, and 
+ 3. the limit phenomena on the real line thus can be understood as a consequence of the completeness axiom,
+
+I still believe in myself that the (modern standard) $\epsilon$-$\delta$ definition of limit should be kept and not to be replaced by the "limsup-liminf definition."
 
 #### Update Log
  * <span style="font-size:12px">220112: Created</span>
+ * <span style="font-size:12px">220112: Feedbacks from [Junekey Jeon](https://jk-jeon.github.io/) applied</span>
