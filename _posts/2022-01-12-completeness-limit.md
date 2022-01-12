@@ -91,9 +91,9 @@ If these limsup and liminf coincide, then one can say that the limit $$\lim_{n\t
  >
  > That is, $L-\epsilon\leq\liminf a_n\leq\limsup a_n\leq L+\epsilon$ holds for all $\epsilon>0$. The only possible state for this to hold is $\liminf a_n=\limsup a_n=L$.
 
-(Notice that we have used the 'archimedean property,' that the only number $x$ in which $\vert x\vert <\epsilon$ for all $\epsilon>0$ is $x=0$, crucially in the converse. The fact that $\liminf a_n\leq\limsup a_n$ is not heavily hard as long as one gets $c_k\leq b_k$ for all $k\geq 1$.)
+(Notice that we have used the 'archimedean property,' that the only number $x$ in which $\vert x\vert <\epsilon$ for all $\epsilon>0$ is $x=0$, crucially in the converse. The fact that $\liminf a_n\leq\limsup a_n$ is not heavily hard as long as one gets $c_\ell\leq b_k$ for all $k,\ell\geq 1$.)
 
-As some example demos:
+Some example demos:
 
  - If $a_n=(-1)^n/n$, then $b_k=\sup_{n\geq k}a_n=\begin{cases} \frac{1}{k+1} & \text{ if }k\text{ is odd} \\ \frac{1}{k} & \text{ if }k\text{ is even}\end{cases}$, while $c_k=\inf_{n\geq k}a_n=\begin{cases} -\frac{1}{k} & \text{ if }k\text{ is odd} \\ -\frac{1}{k+1} & \text{ if }k\text{ is even}\end{cases}$. <br>
  There one sees that $b_k\colon\frac12,\frac12,\frac14,\frac14,\frac16,\frac16,\cdots$ has infimum 0, while $c_k\colon-1,-\frac13,-\frac13,-\frac15,-\frac15,\cdots$ has supremum 0. This tells $\limsup a_n=\liminf a_n=0$, thus the limit.
