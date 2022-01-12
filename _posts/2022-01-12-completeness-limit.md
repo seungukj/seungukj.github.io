@@ -49,9 +49,9 @@ More aspects of $\sup S$ and $\inf S$:
  - Let $M<\infty$ (rspt. $m>-\infty$). Proving $M=\sup S$ (rspt. $m=\inf S$) is equivalent to, for any $\epsilon>0$ one has $x\in S$ in which $M\geq x>M-\epsilon$ (rspt. $m\leq x<m+\epsilon$). <br>
  Thus suprema/infima _does_ reflect an infinitesimal phenomena.
 
-Collecting these, I claim that the completeness axiom is thus (1) associated with our visual understanding of the real line, while (2) very tangent to the infinitesimal, or limiting phenomena as well.
+Collecting these, it seems like the completeness axiom is (1) associated with our visual understanding of the real line, while (2) very tangent to the infinitesimal, or limiting phenomena as well. Brought from the observations, I claim that the concept of the limit is built based on the completeness axiom!
 
-Now let us see some "formula of limits" written in terms of superma and infima. They are particularily intriguing as they (superficially) excludes the $\epsilon$-$\delta$ or $\epsilon$-$N$ definition of limits.
+As a support of the claim, let us see some "formula of limits" written in terms of superma and infima. They are particularily intriguing as they (superficially) excludes the $\epsilon$-$\delta$ or $\epsilon$-$N$ definition of limits.
 
 ## From Completeness to Sequence Limits
 
