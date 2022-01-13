@@ -134,7 +134,7 @@ $$\sup\{ x \mid 0<\vert x-a\vert<\delta\}=a+\delta, \\ \inf\{x\mid 0<\vert x-a\v
 
 Hence $\limsup_{x\to a}x=\inf_{\delta>0}(a+\delta)=a$, and likewise $\liminf_{x\to a}x=a$. _Without any fancy $\epsilon$-$\delta$ type arguments_, we thus have proven that $\lim_{x\to a}x=a$ ! This sort of mathematics is similarily applied for cases like $f(x)=x^2$, $x\to 1$, or $f(x)=1/x$, $x\to 2$, etc.
 
-The matter becomes little tricky for $f(x)=x\sin(1/x)$ with $x\to 0$. For any $\delta>0$, it is hard to estimate
+The matter becomes a little tricky for $f(x)=x\sin(1/x)$ with $x\to 0$. For any $\delta>0$, it is hard to estimate
 
 $$\sup\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}\text{ and }\inf\{x\sin\frac1x\mid 0<\vert x\vert<\delta\}$$
 
