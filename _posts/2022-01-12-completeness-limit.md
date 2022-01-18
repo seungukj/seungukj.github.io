@@ -164,6 +164,23 @@ and many more. So although I demo'ed that
 
 I still believe in myself that the (modern standard) $\epsilon$-$\delta$ definition of limit should be kept and not to be replaced by the "limsup-liminf definition."
 
+## Completely Regular Spaces (2021.01.18. appendix)
+
+A comment from [Junekey Jeon](https://jk-jeon.github.io/) is that the "limsup-liminf definition" may be extended to [completely regular spaces](https://en.wikipedia.org/wiki/Tychonoff_space) (also known Tychonoff spaces, or $T_{3\frac12}$ spaces).
+
+Before talking anything further, first think of a sequence $\left(a_n\right)$ in $Y$, where $Y=\mathbb{R}^I$ for some set $I$. For instance, if $Y=\mathbb{C}$ is the complex plane, then we set $I=\{1,2\}$. In that case, we think $\left(a_n\right)$ as a family of sequences $i\in I\mapsto\left(a^i_n\right)$. There, we say 
+
+> $\left(a_n\right)\to L=\left(L^i\right)_{i\in I}$ if each $\left(a^i_n\right)\to L^i$, i.e., $\limsup a^i_n=\liminf a^i_n=L^i$ for all $i\in I$.
+
+(In fact, this is a way how one characterizes the product topology on $Y=\mathbb{R}^I$. See [Wiki:Convergence space](https://en.wikipedia.org/wiki/Convergence_space).)
+
+Now a _completely regular space_ $X$ means, $X$ can be viewed as a subspace $X\subset\mathbb{R}^I$ for some set $I$ (See [here](https://en.wikipedia.org/wiki/Tychonoff_space#Real-valued_continuous_functions)). Thus theoretically, we can generalize the "limsup-liminf definition" to fairly general topological spaces. (For instance, you may view $X$ as a CW complex or a manifold.)
+
+Even, this "theoretical throw-in" may be said more concretely. Put $I=C(X)$ for the set of all continuous functions $X\to\mathbb{R}$. Then we can view a completely regular space $X$ as $X\subset\mathbb{R}^{C(X)}$ by $x\mapsto\left(f(x)\right)_{f\in C(X)}$. Deciphering this encoding and tayloring this to a limit definition on $X$, we have:
+
+> $\left(a_n\right)\to L$ if for any continuous $f\colon X\to\mathbb{R}$, we have $\left(f(a_n)\right)\to f(L)$.
+
 #### Update Log
  * <span style="font-size:12px">220112: Created</span>
  * <span style="font-size:12px">220112: Feedbacks from [Junekey Jeon](https://jk-jeon.github.io/) applied</span>
+ * <span style="font-size:12px">220118: Added a note on completely regular spaces</span>
