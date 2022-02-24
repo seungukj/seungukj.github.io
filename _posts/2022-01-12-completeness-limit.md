@@ -168,7 +168,7 @@ I still believe in myself that the (modern standard) $\epsilon$-$\delta$ definit
 
 A comment from [Junekey Jeon](https://jk-jeon.github.io/) is that the "limsup-liminf definition" may be extended to [completely regular spaces](https://en.wikipedia.org/wiki/Tychonoff_space) (also known Tychonoff spaces, or $T_{3\frac12}$ spaces).
 
-Before talking anything further, first think of a sequence $\left(a_n\right)$ in $Y$, where $Y=\mathbb{R}^I$ for some set $I$. For instance, if $Y=\mathbb{C}$ is the complex plane, then we set $I=\{1,2\}$. In that case, we think $\left(a_n\right)$ as a family of sequences $i\in I\mapsto\left(a^i_n\right)$. There, we say 
+Before talking anything further, first think of a sequence $\left(a_n\right)$ in $Y$, where $Y=\mathbb{R}^I$ for some set $I$. For instance, if $Y=\mathbb{C}$ is the complex plane, then we set $$I=\{1,2\}$$. In that case, we think $\left(a_n\right)$ as a family of sequences $i\in I\mapsto\left(a^i_n\right)$. There, we say 
 
 > $\left(a_n\right)\to L=\left(L^i\right)_{i\in I}$ if each $\left(a^i_n\right)\to L^i$, i.e., $\limsup a^i_n=\liminf a^i_n=L^i$ for all $i\in I$.
 
