@@ -79,8 +79,9 @@ $$\frac1M \equiv \sum_p\left\{\frac1M\right\}_p\mod 1.$$
 이 때 $p\neq p_1,\cdots,p_k$인 (즉 $m_1,\cdots,m_k$의 **유일한** 소인수들과 다른) 경우 $M$ 자체가 $p$의 배수가 아니기 때문에, $$\{\frac1M\}_p=0$$이다. 따라서 위 합은 다음과 같이 다시 쓰일 수 있다.
 
 \begin{equation}
-\label{eqn:eqn-1} \frac1M \equiv \sum_{j=1}^k\left\{\frac1M\right\}_{p_j}\mod 1 \\ 
-=\sum_{j=1}^k\left\{\frac1{m_jM_j}\right\}_{p_j}.
+\label{eqn:eqn-1}
+\frac1M \equiv \sum_{j=1}^{k} \left\{ \frac1M \right\}_{p_j}\mod 1 \\ 
+=\sum_{j=1}^k\left\{ \frac1{m_jM_j} \right\}_{p_j}.
 \end{equation}
 
 $e_jM_j\equiv 1\mod m_j$이므로, 다음이 따른다.
@@ -90,13 +91,15 @@ $$\frac{1}{m_jM_j}-\frac{e_j}{m_j}=\frac{1-e_jM_j}{m_j}\cdot\frac{1}{M_j}.$$
 두 분수 중 앞선 분수 $\dfrac{1-e_jM_j}{m_j}$는 사실 정수이며, 뒷 분수 $\dfrac{1}{M_j}$의 분모는 $p_j$와 서로 소이다. 따라서 $1/(m_jM_j)\equiv e_j/m_j\mod p_j$인 고로, 다음이 따른다.
 
 \begin{equation}
-\label{eqn:eqn-2}\left\{\frac1{m_jM_j}\right\}_{p_j}=\left\{\frac{e_j}{m_j}\right\}_{p_j}.
+\label{eqn:eqn-2}
+\left\{ \frac1{m_jM_j} \right\}_{p_j}= \left\{ \frac{e_j}{m_j} \right\}_{p_j}.
 \end{equation}
 
 한편으로, 분수 $e_j/m_j$의 분모는 $p_j$ 외의 소인수를 가지지 않기 때문에, 다음이 성립한다.
 
 \begin{equation}
-\label{eqn:eqn-3}\left\{\frac{e_j}{m_j}\right\}_{p_j}=\sum_p\left\{\frac{e_j}{m_j}\right\}_{p}\equiv \frac{e_j}{m_j}\mod 1.
+\label{eqn:eqn-3}
+\left\{ \frac{e_j}{m_j} \right\}_{p_j}= \sum_{p} \left\{ \frac{e_j}{m_j} \right\}_{p} \equiv \frac{e_j}{m_j}\mod 1.
 \end{equation}
 
 따라서 \eqref{eqn:eqn-1}, \eqref{eqn:eqn-2}, \eqref{eqn:eqn-3}을 모두 종합하면,
