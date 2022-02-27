@@ -49,7 +49,7 @@ $$\{x\}_p:=\frac{a_{-k}}{p^k}+\frac{a_{-k+1}}{p^{k-1}}+\cdots+\frac{a_{-1}}{p}$$
 
 \begin{equation}
 \label{eqn:partial-fraction-decomposition-adele}
-r-\sum_p\{r\}_p\in\mathbb{Z}.
+r-\sum_p \{ r \}_p \in \mathbb{Z}.
 \end{equation}
 
 여기서, $r$의 분모를 나누지 않는 소수 $q$에 대해서 $$\{r\}_q=0$$인 고로, 관계 \eqref{eqn:partial-fraction-decomposition-adele}는 사실상 유한합에 대한 결과이다.
