@@ -52,9 +52,9 @@ $$\{x\}_p:=\frac{a_{-k}}{p^k}+\frac{a_{-k+1}}{p^{k-1}}+\cdots+\frac{a_{-1}}{p}$$
 r-\sum_p\{r\}_p\in\mathbb{Z}.
 \end{equation}
 
-여기서, $r$의 분모를 나누지 않는 소수 $q$에 대해서 $\{r\}_q=0$인 고로, 관계 \eqref{eqn:partial-fraction-decomposition-adele}는 사실상 유한합에 대한 결과이다.
+여기서, $r$의 분모를 나누지 않는 소수 $q$에 대해서 $$\{r\}_q=0$$인 고로, 관계 \eqref{eqn:partial-fraction-decomposition-adele}는 사실상 유한합에 대한 결과이다.
 
- > (증명, \eqref{eqn:partial-fraction-decomposition-adele}) 임의의 소수 $q$에 대해, $r-\sum_p\{r\}_p\in\mathbb{Z}_q$가 성립함을 알면 된다. 이 때 $\{r\}_p$의 정의 상, $p\neq q$이면 $\{r\}_p\in\mathbb{Z}_q$가 따른다. 또한 $p=q$이면 $r-\{r\}_q\in\mathbb{Z}_q$이다.
+ > (증명, \eqref{eqn:partial-fraction-decomposition-adele}) 임의의 소수 $q$에 대해, $$r-\sum_p\{r\}_p\in\mathbb{Z}_q$$가 성립함을 알면 된다. 이 때 $\{r\}_p$의 정의 상, $p\neq q$이면 $$\{r\}_p\in\mathbb{Z}_q$$가 따른다. 또한 $p=q$이면 $$r-\{r\}_q\in\mathbb{Z}_q$$이다.
 
 가령 \eqref{eqn:partial-fraction-decomposition-adele}에 $r=\frac1{60}$을 적용하면,
 
@@ -70,13 +70,13 @@ $$\frac1{60} = \frac34 + \frac23 + \frac35 - 2$$
 
 이제 분해 \eqref{eqn:partial-fraction-decomposition-adele}을 활용해서 중국인의 나머지 정리에 대해 논하고자 한다. 이에 앞서, 다음 성질을 먼저 지적한다.
 
- > 유리수 $x,y$에 대해, $x\equiv y$ (mod $p$)면 (즉 $\dfrac{x-y}{p}$가 유리수이되 기약꼴의 분모가 $p$의 배수가 아니면) $\{x\}_p=\{y\}_p$이다.
+ > 유리수 $x,y$에 대해, $x\equiv y$ (mod $p$)면 (즉 $\dfrac{x-y}{p}$가 유리수이되 기약꼴의 분모가 $p$의 배수가 아니면) $$\{x\}_p=\{y\}_p$$이다.
 
 그러면 $\frac1M$에 \eqref{eqn:partial-fraction-decomposition-adele}을 적용하면 다음을 얻는다.
 
 $$\frac1M \equiv \sum_p\left\{\frac1M\right\}_p\mod 1.$$
 
-이 때 $p\neq p_1,\cdots,p_k$인 (즉 $m_1,\cdots,m_k$의 **유일한** 소인수들과 다른) 경우 $M$ 자체가 $p$의 배수가 아니기 때문에, $\{\frac1M\}_p=0$이다. 따라서 위 합은 다음과 같이 다시 쓰일 수 있다.
+이 때 $p\neq p_1,\cdots,p_k$인 (즉 $m_1,\cdots,m_k$의 **유일한** 소인수들과 다른) 경우 $M$ 자체가 $p$의 배수가 아니기 때문에, $$\{\frac1M\}_p=0$$이다. 따라서 위 합은 다음과 같이 다시 쓰일 수 있다.
 
 \begin{equation}
 \label{eqn:eqn-1} \frac1M \equiv \sum_{j=1}^k\left\{\frac1M\right\}_{p_j}\mod 1 \\ 
