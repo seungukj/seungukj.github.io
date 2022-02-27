@@ -12,6 +12,8 @@ tags:
 
 앞선 [포스트](/posts/2021/12/chinese-remainder-theorem/)에서는 부분분수 분해와 중국인의 나머지 정리 사이의 관계를 짚어보았으나, 막상 부분분수 분해를 중국인의 나머지 정리의 결과인 것으로 묘사한 바 있었다. 그러나 계산의 흐름을 보면 둘이 동치라 생각하는 편이 자연스러운데, 이 후속 포스트에서는 그 점을 명확히 하고자 한다.
 
+# 시작
+
 이 포스트에서는 [p진수](https://ko.wikipedia.org/wiki/P%EC%A7%84%EC%88%98)에 대한 기초적인 내용은 이미 알고 있다고 가정한다. 또한, 이 포스트의 앞부분은 [K. Conrad](https://kconrad.math.uconn.edu/blurbs/gradnumthy/characterQ.pdf)의 $\mathbb{Q}$의 character group에 대한 글을 거의 그대로 따르고 있어, (배경설명 등의) 자세한 내용은 그 쪽을 참고하기를 바란다.
 
 다음과 같이 가정한다.
@@ -27,7 +29,7 @@ tags:
 \frac1M \equiv \sum_{j=1}^k\frac{e_j}{m_j}\mod 1.
 \end{equation}
 
-## 부분분수 분해 (정수론)
+# 부분분수 분해 (정수론)
 
 앞선 [포스트](/posts/2021/12/chinese-remainder-theorem/)의
 
@@ -66,7 +68,7 @@ $$\frac1{60} = \frac34 + \frac23 + \frac35 - 2$$
 
 를 얻는다.
 
-## 중국인의 나머지 정리
+# 중국인의 나머지 정리
 
 이제 분해 \eqref{eqn:partial-fraction-decomposition-adele}을 활용해서 중국인의 나머지 정리에 대해 논하고자 한다. 이에 앞서, 다음 성질을 먼저 지적한다.
 
