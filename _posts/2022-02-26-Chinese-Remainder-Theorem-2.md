@@ -21,6 +21,7 @@ tags:
  1. 정수 $$M_i=M/m_i=m_1\cdots m_{i-1}{\widehat{m}}_{i} m_{i+1}\cdots m_k$$라 두고, 또 $e_i$는 $M_i$의 mod $m_i$ inverse라 둔다. (즉, $e_iM_i\equiv 1\mod m_i$.)
 
 얻고자 하는 목표는 다음과 같다.
+
 \begin{equation}
 \label{eqn:goal-equation}
 \frac1M \equiv \sum_{j=1}^k\frac{e_j}{m_j}\mod 1.
@@ -29,28 +30,40 @@ tags:
 ## 부분분수 분해 (정수론)
 
 앞선 [포스트](/posts/2021/12/chinese-remainder-theorem/)의
+
 $$\frac1{60}\equiv 2\cdot\frac13-\frac14+3\cdot\frac15\mod 1$$
+
 와 같은 부분분수 분해는 보다 어려운 맥락에서 해석할 수 있다. ([K. Conrad](https://kconrad.math.uconn.edu/blurbs/gradnumthy/characterQ.pdf)의 수식 (2.1) 참고.)
 
 유리수 $x$ 및 소수 $p$에 대해, $x$의 [p진수](https://ko.wikipedia.org/wiki/P%EC%A7%84%EC%88%98) **분수부**를 취하는 함수 $\{x\}_p$를 생각할 수 있다. 곧, 법 $p$의 [완전잉여계](https://mathworld.wolfram.com/CompleteResidueSystem.html) $0,1,\cdots,p-1$에 대한 $x$의 $p$진 전개에
+
 $$x=\frac{a_{-k}}{p^k}+\frac{a_{-k+1}}{p^{k-1}}+\cdots+\frac{a_{-1}}{p}+a_0+a_1p+a_2p^2+\cdots$$
+
 (단 각 $a_i\in\{0,1,\cdots,p-1\}$) 대해,
+
 $$\{x\}_p:=\frac{a_{-k}}{p^k}+\frac{a_{-k+1}}{p^{k-1}}+\cdots+\frac{a_{-1}}{p}$$
+
 라 정의한다.
 
 그러면 유리수 $r\in\mathbb{Q}$에 대해 다음이 성립한다.
+
 \begin{equation}
 \label{eqn:partial-fraction-decomposition-adele}
 r-\sum_p\{r\}_p\in\mathbb{Z}.
 \end{equation}
+
 여기서, $r$의 분모를 나누지 않는 소수 $q$에 대해서 $\{r\}_q=0$인 고로, 관계 \eqref{eqn:partial-fraction-decomposition-adele}는 사실상 유한합에 대한 결과이다.
 
  > (증명, \eqref{eqn:partial-fraction-decomposition-adele}) 임의의 소수 $q$에 대해, $r-\sum_p\{r\}_p\in\mathbb{Z}_q$가 성립함을 알면 된다. 이 때 $\{r\}_p$의 정의 상, $p\neq q$이면 $\{r\}_p\in\mathbb{Z}_q$가 따른다. 또한 $p=q$이면 $r-\{r\}_q\in\mathbb{Z}_q$이다.
 
 가령 \eqref{eqn:partial-fraction-decomposition-adele}에 $r=\frac1{60}$을 적용하면,
+
 $$\left\{\frac1{60}\right\}_2=\frac34, \\ \left\{\frac1{60}\right\}_3=\frac23, \\ \left\{\frac1{60}\right\}_5=\frac35,$$
+
 을 얻고, 실제로 이들을 더하면
+
 $$\frac1{60} = \frac34 + \frac23 + \frac35 - 2$$
+
 를 얻는다.
 
 ## 중국인의 나머지 정리
@@ -71,7 +84,9 @@ $$\frac1M \equiv \sum_p\left\{\frac1M\right\}_p\mod 1.$$
 \end{equation}
 
 $e_jM_j\equiv 1\mod m_j$이므로, 다음이 따른다.
+
 $$\frac{1}{m_jM_j}-\frac{e_j}{m_j}=\frac{1-e_jM_j}{m_j}\cdot\frac{1}{M_j}.$$
+
 두 분수 중 앞선 분수 $\dfrac{1-e_jM_j}{m_j}$는 사실 정수이며, 뒷 분수 $\dfrac{1}{M_j}$의 분모는 $p_j$와 서로 소이다. 따라서 $1/(m_jM_j)\equiv e_j/m_j\mod p_j$인 고로, 다음이 따른다.
 
 \begin{equation}
