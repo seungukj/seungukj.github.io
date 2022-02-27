@@ -18,7 +18,7 @@ tags:
 
  1. 정수 $m_1,\cdots,m_k$는 양의 정수로, 둘씩 서로 소이다. 여기서는 특별히 $m_i=p_i^{\alpha_i}$ 꼴 숫자라 둔다.
  1. 정수 $M = \prod_{j=1}^km_j=m_1\cdot m_2\cdot\cdots\cdot m_k$라 둔다.
- 1. 정수 $M_i=M/m_i=m_1\cdots m_{i-1}\widehat{m}_i m_{i+1}\cdots m_k$라 두고, 또 $e_i$는 $M_i$의 mod $m_i$ inverse라 둔다. (즉, $e_iM_i\equiv 1\mod m_i$.)
+ 1. 정수 $$M_i=M/m_i=m_1\cdots m_{i-1}{\widehat{m}}_{i} m_{i+1}\cdots m_k$$라 두고, 또 $e_i$는 $M_i$의 mod $m_i$ inverse라 둔다. (즉, $e_iM_i\equiv 1\mod m_i$.)
 
 얻고자 하는 목표는 다음과 같다.
 \begin{equation}
