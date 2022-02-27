@@ -1,0 +1,13 @@
+---
+title: '중국인의 나머지 정리 2'
+date: 2022-02-26
+permalink: /posts/2022/02/chinese-remainder-theorem-2/
+tags:
+  - Korean
+  - Number Theory
+  - Partial Fractions
+  - p-adic Numbers
+  - Adele
+---
+
+앞선 [포스트](/posts/2021/12/chinese-remainder-theorem/)에서는 부분분수 분해와 중국인의 나머지 정리 사이의 관계를 짚어보았으나, 막상 부분분수 분해를 중국인의 나머지 정리의 결과인 것으로 묘사한 바 있었다. 그러나 계산의 흐름을 보면 둘이 동치라 생각하는 편이 자연스러운데, 이 후속 포스트에서는 그 점을 명확히 하고자 한다.
