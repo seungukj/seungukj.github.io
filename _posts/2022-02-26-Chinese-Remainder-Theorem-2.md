@@ -56,7 +56,7 @@ $$
 
 여기서, $r$의 분모를 나누지 않는 소수 $q$에 대해서 $$\{r\}_q=0$$인 고로, 관계 \eqref{eqn:partial-fraction-decomposition-adele}는 사실상 유한합에 대한 결과이다.
 
- > (증명, \eqref{eqn:partial-fraction-decomposition-adele}) 임의의 소수 $q$에 대해, $$r-\sum_p\{r\}_p\in\mathbb{Z}_q$$가 성립함을 알면 된다. 이 때 $\{r\}_p$의 정의 상, $p\neq q$이면 $$\{r\}_p\in\mathbb{Z}_q$$가 따른다. 또한 $p=q$이면 $$r-\{r\}_q\in\mathbb{Z}_q$$이다.
+ > (증명, \eqref{eqn:partial-fraction-decomposition-adele}) 임의의 소수 $q$에 대해, $$r-\sum_p\{r\}_p\in\mathbb{Z}_q$$가 성립함을 알면 된다. 이 때 $$\{r\}_p$$의 정의 상, $p\neq q$이면 $$\{r\}_p\in\mathbb{Z}_q$$가 따른다. 또한 $p=q$이면 $$r-\{r\}_q\in\mathbb{Z}_q$$이다.
 
 가령 \eqref{eqn:partial-fraction-decomposition-adele}에 $r=\frac1{60}$을 적용하면,
 
