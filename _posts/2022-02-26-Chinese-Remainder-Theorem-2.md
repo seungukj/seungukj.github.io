@@ -33,7 +33,7 @@ tags:
 
 $$\frac1{60}\equiv 2\cdot\frac13-\frac14+3\cdot\frac15\mod 1$$
 
-와 같은 부분분수 분해는 보다 어려운 맥락에서 해석할 수 있다. ([K. Conrad](https://kconrad.math.uconn.edu/blurbs/gradnumthy/characterQ.pdf)의 수식 (2.1) 참고.)
+와 같은 부분분수 분해는 보다 어려운 맥락에서 해석할 수 있다.
 
 유리수 $x$ 및 소수 $p$에 대해, $x$의 [p진수](https://ko.wikipedia.org/wiki/P%EC%A7%84%EC%88%98) **분수부**를 취하는 함수 $$\{x\}_p$$를 생각할 수 있다. 곧, 법 $p$의 [완전잉여계](https://mathworld.wolfram.com/CompleteResidueSystem.html) $0,1,\cdots,p-1$에 대한 $x$의 $p$진 전개에
 
@@ -45,7 +45,7 @@ $$\{x\}_p:=\frac{a_{-k}}{p^k}+\frac{a_{-k+1}}{p^{k-1}}+\cdots+\frac{a_{-1}}{p}$$
 
 라 정의한다.
 
-그러면 유리수 $r\in\mathbb{Q}$에 대해 다음이 성립한다.
+그러면 유리수 $r\in\mathbb{Q}$에 대해 다음이 성립한다. ([K. Conrad](https://kconrad.math.uconn.edu/blurbs/gradnumthy/characterQ.pdf)의 수식 (2.1) 참고.)
 
 $$
 \label{eqn:partial-fraction-decomposition-adele}
