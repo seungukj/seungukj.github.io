@@ -214,6 +214,10 @@ Easy drawback of this definition is, that we necessarily introduce harder topics
 
 For instance, one can sketch the limit of sequences by thinking of "sup and inf hammers that approach together."
 
+![sup-inf hammer](/images/sup-inf-hammer.gif)
+
+One can easily add a sense of video game (say, a game character crashing each sequence terms, and hammers crash up/down because the sequence terms holding them is no longer there) for this picture.
+
 **Work-In-Progress**
 
 ## Appendix: Topological compactness
