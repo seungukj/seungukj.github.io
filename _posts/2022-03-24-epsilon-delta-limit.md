@@ -41,7 +41,9 @@ I have labeled this as (?), to avoid giving any meaningful name for this 'defini
 
 So apparently, the order of domain and range controls seems to be inverted between (?) and ($\epsilon$-$\delta$). Understanding this is the main key to the hurdle 3, understanding the order $\forall\epsilon\exists\delta$.
 
-It is not surprising to believe that every instructor in analysis has their rationals to answer why the order makes sense. As one of such rationals, I state my rational as follows.
+It is not surprising to believe that every instructor in analysis has their rationals to answer why the order makes sense. (Say, by some cases where 'weird' quantifying does not make sense; by some good pictures on depicting why the standard choice should be the case, etc.)
+
+As one of such rationals, I state my rational as follows.
 
  > **Claim.** The order $\forall\epsilon\exists\delta$ is coming from the following inputs.
  > * Translating the 'definition' (?) into infinitesimals.
@@ -125,17 +127,17 @@ The precise construction is introduced in the epilogue of the text. In analogy w
 
 There, any discussions on the existence, or variety of such equivalence were skipped. I view this as a reasonable choice, however. Even for those who are interested in such issues, as far as I know, the minimal backgrounds to understand the precise construction of hyperrreal numbers, is the **Stone-Čech compactification**. This is one of the high-end topics in undergraduate point-set topology courses.
 
-## Compactness
+## Compactness, Equivalence
 
 We say a number $x$ is an _infinitesimal_ if we have $-a<x<a$ for all positive real $a>0$. On one hand, this may be viewed as a [hyperreal number](https://en.wikipedia.org/wiki/Hyperreal_number). But logically speaking, we may view this as an object $x$ in which the formulas $-a<x<a$ are always interpreted true, whenever $a$ is a positive real number.<sup><a href="#fn1" id="ref1">1</a></sup>
 
 Applying this logical viewpoint, one can translate the definition (INF) as follows.
 
- > (INF-logic) From the assumptions $\{0<\vert x\vert<a\mid a>0\}$, one can prove that $\vert f(x)\vert<\epsilon$, no matter what $\epsilon>0$ is.
+ > (INF-logic) From the assumptions $$\{0<\vert x\vert<a\mid a>0\}$$, one can prove that $\vert f(x)\vert<\epsilon$, no matter what $\epsilon>0$ is.
 
 Equivalently,
 
- > (INF-logic) For all $\epsilon>0$, the assumptions $\{0<\vert x\vert<a \mid a>0\}$ can prove that $\vert f(x)\vert<\epsilon$.
+ > (INF-logic) For all $\epsilon>0$, the assumptions $$\{0<\vert x\vert<a \mid a>0\}$$ can prove that $\vert f(x)\vert<\epsilon$.
 
 (So this already clears $\forall\epsilon$ start. But we are still left to quantify $\delta$.)
 
@@ -218,19 +220,30 @@ For instance, one can sketch the limit of sequences by thinking of "sup and inf 
 
 One can easily add a sense of video game (say, a game character crashing each sequence terms, and hammers crash up/down because the sequence terms holding them is no longer there) for this picture.
 
-**Work-In-Progress**
+An analogue for the limit $\lim_{x\to c}f(x)=L$ may also be established. To do so, we 'trim' the parts of graph near $x\approx c$, and trace where sup and inf hammers go. (Again, contextualizing this with video games will help this picture more concentratable.)
+
+## Post-remarks
+
+ * Motivation of the talk was the success of introducing $\limsup a_n$ and $\liminf a_n$ of bounded sequences. The notion was very useful to explain why alternating series test works. For an alternating series $\sum(-1)^na_n$ with $a_n\geq 0$ decreasing, the gap between sup and inf hammers is _precisely_ $a_n$. (Thus $a_n\to 0$ iff convergent.)
+ * The sequence analogue of the $\epsilon$-$\delta$ definition (the '$\epsilon$-$K$ definition') does get interesting if one emphasizes the following points.<sup><a href="#fn3" id="ref3">3</a></sup>
+   * The definition is especially interesting, if the sequence $a_n$ has relatively simple form, e.g. $1/n^p$, $e^{-\alpha n}$, $\ln n$, ...
+   * _Using_ the definition is also interesting. For instance, it is not hard to show that $\ln n<n^{0.5}$ for $n>K$, $K=K(1)$ an integer, by combining $\displaystyle\lim_{n\to\infty}\frac{\ln n}{n^{0.5}}=0$ and the $\epsilon$-$K$ definition.
+ * The above points seems to be hard to reproduce, when one plays with limits of functions. Especially when majority of examples are only dependent on Lipschitz bounds.
+ * To prove some limit theorems, introducing ($\epsilon$-$\delta$) definition seems inevitable. Even the fundamentalmost one, $f(\lim g(x))=\lim f(g(x))$ when $f$ is continuous, is not very promising if one starts with, say, (limsup-liminf) definition.
+
+<sup id="fn3">3. It should be noted that the environment of testing these points, was the final course of the calculus sequence in UChicago. That is, students were motivated and skilled enough to trace what happens for each point.<a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup>
 
 ## Appendix: Topological compactness
 
-Another way to implement infinitesimals is to think of Stone--Čech compactification $\beta\mathbb{R}$ of the discrete space $\mathbb{R}$. The space $\beta\mathbb{R}$ consists of ultrafilters in the set $\mathbb{R}$, and _infinitesimals_ are ultrafilters $\in\beta\mathbb{R}$ that contains the sets of the form $\{x : \vert x\vert<a\}$.
+Another way to implement infinitesimals is to think of Stone--Čech compactification $\beta\mathbb{R}$ of the discrete space $\mathbb{R}$. The space $\beta\mathbb{R}$ consists of ultrafilters in the set $\mathbb{R}$, and _infinitesimals_ are ultrafilters $\in\beta\mathbb{R}$ that contains the sets of the form $$\{x : \vert x\vert<a\}$$.
 
-The benefit of $\beta\mathbb{R}$ is that, any set function $\mathbb{R}\to\mathbb{R}$ is extended _continuously_ to a map $\beta\mathbb{R}\to\beta\mathbb{R}$. Thus any set of the form $\{x\in\beta\mathbb{R} : \vert f(x)\vert<\epsilon\}$ are actually open in $\beta\mathbb{R}$.
+The benefit of $\beta\mathbb{R}$ is that, any set function $\mathbb{R}\to\mathbb{R}$ is extended _continuously_ to a map $\beta\mathbb{R}\to\beta\mathbb{R}$. Thus any set of the form $$\{x\in\beta\mathbb{R} : \vert f(x)\vert<\epsilon\}$$ are actually open in $\beta\mathbb{R}$.
 
-Denote the sets $K_m = \{x\in\beta\mathbb{R}:0<\vert x\vert<1/m\}$ and $U_n=\{x\in\beta\mathbb{R}:\vert f(x)\vert<1/n\}$. One can then show that $K_m$ and $U_n$ are clopen subsets of $\beta\mathbb{R}$. Furthermore, the (INF) definition of $\lim_{x\to 0}f(x)=0$ translates to
+Denote the sets $$K_m = \{x\in\beta\mathbb{R}:0<\vert x\vert<1/m\}$$ and $$U_n=\{x\in\beta\mathbb{R}:\vert f(x)\vert<1/n\}$$. One can then show that $K_m$ and $U_n$ are clopen subsets of $\beta\mathbb{R}$. Furthermore, the (INF) definition of $\lim_{x\to 0}f(x)=0$ translates to
 
  > (INF-topo) $\bigcap_{m=1}^\infty K_m\subset\bigcap_{n=1}^\infty U_n$.
 
-This immediately translates to $\bigcap_{m=1}^\infty K_m\subset U_n$, for all $n$. Thus the family $\{U_n\}\cup\{\complement K_m\}_{m=1}^\infty$ of open subsets of $\beta\mathbb{R}$ form an open cover. (Here, $\complement X:=\beta\mathbb{R}\setminus X$.) By compactness of $\beta\mathbb{R}$, we pick up a finite subcover $U_n,\complement K_{m_1},\cdots,\complement K_{m_k}$. But since $\left(K_m\right)_{m=1}^\infty$ is a decreasing sequence, putting $m=\max(m_1,\cdots,m_k)$, we see that $U_n$ and $\complement K_m$ covers $\beta\mathbb{R}$, i.e., $K_m\subset U_n$ holds. In short:
+This immediately translates to $\bigcap_{m=1}^\infty K_m\subset U_n$, for all $n$. Thus the family $$\{U_n\}\cup\{\complement K_m\}_{m=1}^\infty$$ of open subsets of $\beta\mathbb{R}$ form an open cover. (Here, $\complement X:=\beta\mathbb{R}\setminus X$.) By compactness of $\beta\mathbb{R}$, we pick up a finite subcover $U_n,\complement K_{m_1},\cdots,\complement K_{m_k}$. But since $\left(K_m\right)_{m=1}^\infty$ is a decreasing sequence, putting $m=\max(m_1,\cdots,m_k)$, we see that $U_n$ and $\complement K_m$ covers $\beta\mathbb{R}$, i.e., $K_m\subset U_n$ holds. In short:
 
  > (INF-topo) $\Leftrightarrow$ $(\forall n)(\bigcap_{m=1}^\infty K_m\subset U_n)$ $\Leftrightarrow$ $(\forall n)(\exists m)(K_m\subset U_n)$,
 
