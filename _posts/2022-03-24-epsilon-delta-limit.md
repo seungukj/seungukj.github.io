@@ -200,7 +200,7 @@ The squeezing sequence $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$ are hen
 
 ### Limsup an liminf
 
-For (Squeeze), we have a systematic choice of the bounds $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$:
+For (Squeeze), we have a systematic choice of the bounds $$(\epsilon^1_\bullet)$$ and $$(\epsilon^2_\bullet)$$:
 
 $$\epsilon^1_k := \inf_{n\geq k}f(a_n), \\ \epsilon^2_k := \sup_{n\geq k}f(a_n).$$
 
@@ -229,6 +229,12 @@ An analogue for the limit $\lim_{x\to c}f(x)=L$ may also be established. To do s
    * The definition is especially interesting, if the sequence $a_n$ has relatively simple form, e.g. $1/n^p$, $e^{-\alpha n}$, $\ln n$, ...
    * _Using_ the definition is also interesting. For instance, it is not hard to show that $\ln n<n^{0.5}$ for $n>K$, $K=K(1)$ an integer, by combining $\displaystyle\lim_{n\to\infty}\frac{\ln n}{n^{0.5}}=0$ and the $\epsilon$-$K$ definition.
  * The above points seems to be hard to reproduce, when one plays with limits of functions. Especially when majority of examples are only dependent on Lipschitz bounds.
+ * Applying (limsup-liminf) definition does remind us what kind of mistakes are prone for students. For instance, to prove $\lim_{x\to 2}x^2=4$ using the (limsup-liminf) definition, one note that
+
+$$\sup_{0<|x-2|<\delta}x^2=(2+\delta)^2,\\ \inf_{0<|x-2|<\delta}x^2=\begin{cases} (2-\delta)^2 & (0<\delta<2), \\ 0 & (\delta\geq 2).\end{cases}$$
+
+This reminds us that, some attempts to prove $\lim_{x\to 2}x^2=4$ (esp. those not used to make appropriate bounds) is playing with terms that look like aboves. The (limsup-liminf) definition may help us to guide these attempts into a context that makes mathematically a better sense.
+
  * To prove some limit theorems, introducing ($\epsilon$-$\delta$) definition seems inevitable. Even the fundamentalmost one, $f(\lim g(x))=\lim f(g(x))$ when $f$ is continuous, is not very promising if one starts with, say, (limsup-liminf) definition.
 
 <sup id="fn3">3. It should be noted that the environment of testing these points, was the final course of the calculus sequence in UChicago. That is, students were motivated and skilled enough to trace what happens for each point.<a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup>
