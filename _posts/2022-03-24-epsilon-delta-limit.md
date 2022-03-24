@@ -82,7 +82,7 @@ Interestingly, the story keeps on even for 21C. A pedagogical 'experiment' repor
     <tr>
         <td>&nbsp;</td>
         <td colspan="2">Continuity</td>
-        <td colspan="2">Convergence Sequences</td>
+        <td colspan="2">Convergent Sequences</td>
     </tr>
     <tr>
         <td>&nbsp;</td>
