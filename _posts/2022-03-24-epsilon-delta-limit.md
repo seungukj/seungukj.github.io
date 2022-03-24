@@ -145,7 +145,7 @@ Now I state a principle in mathematical logic: the _compactness_.
 
 The proof is surprisingly easy for this one:<sup><a href="#fn2" id="ref2">2</a></sup>
 
- > (Proof) _If we write down a proof of $\phi$, then the lines we use is finite. In particular the lines that introduces assumptions from $\Gamma$ is finite. Putting $\Gamma'$ the set of lines that introduces assumptions, we see that only $\Gamma'$ suffices to get $\phi$._
+ > (Proof) <span>If we write down a proof of $\phi$, then the lines we use is finite. In particular the lines that introduces assumptions from $\Gamma$ is finite. Putting $\Gamma'$ the set of lines that introduces assumptions, we see that only $\Gamma'$ suffices to get $\phi$.</span>
 
 
 
