@@ -24,9 +24,9 @@ There are several layers of hurdles to understand this:
  1. To understand the logical quantifiers and connectives, like "for all" "there exists" or "implies".
  1. To make sense on why we have a particular order $\forall\epsilon\exists\delta$ in the definition.
 
-Practically, the first two lines are already a challenge for a typical freshman calculus students. Especially in the situation where the instruture cannot pay more than two weeks, focusing on the first two (i.e., to understand the words _per se_) would be challenging enough for the students.
+Practically, the first two lines are already a challenge for a typical freshman calculus students. Especially for those instrutors who cannot pay more than two weeks, focusing on the first two (i.e., to understand the words _per se_) would be challenging enough for the students.
 
-The third line is, according to my experience as a student and as an instructor, for a pretty limited number of people. But ironically, this holds all the connection from the infamous "intuitive" definition of limits.
+The third line seems to be an interest for a limited number of people (as my experience as a student and as an instructor tells). But ironically, this holds all the connection from the infamous "intuitive" definition of limits, to the standard definition ($\epsilon$-$\delta$).
 
 ## An Infamous 'Definition'
 
@@ -52,7 +52,7 @@ As one of such rationals, I state my rational as follows.
 
 ## Infinitesimal Definition
 
-For brievity, I assume that $c=L=0$ in its sequels. That is, I only focus on the case $\lim_{x\to 0}f(x)=L$.
+For brievity, I assume that $c=L=0$ in its sequels. That is, I only focus on the case $\lim_{x\to 0}f(x)=0$.
 
 If one admits to use infinitesimals, one can translate the 'definition' (?) as follows.
 
@@ -61,7 +61,7 @@ If one admits to use infinitesimals, one can translate the 'definition' (?) as f
 Probably this is just a sophisticated wording of the 'definition' (?), which seemed to be an implicit understanding of the limits, but later banned in 19C. A summarized story, following [Mormann & Katz 2013](https://arxiv.org/abs/1304.1027), goes as follows.
 
  * People started using infinitesimals, despite its ill-logical nature.
- * In late 19C, Cantor, Dedekind, and Weierstrass 'rigorization project' succeeded to ban the infinitesimals from our calculus textbooks.
+ * In late 19C, Cantor, Dedekind, and Weierstrass' 'rigorization project' succeeded to ban the infinitesimals from our calculus textbooks.
  * In 1961, A. Robinson succeeded in set-theoretical ontology of defining infinitesimals; a calculus text by [Keisler 1971](https://www.math.wisc.edu/~keisler/calc.html) was then published as the first text in 'calculus with infinitesimals.'
 
 ### Infinitesimal Definition taught in classes
@@ -86,9 +86,9 @@ Interestingly, the story keeps on even for 21C. A pedagogical 'experiment' repor
     </tr>
     <tr>
         <td>&nbsp;</td>
-        <td>General</td>
+        <td>All</td>
         <td>Knows def'n</td>
-        <td>General</td>
+        <td>All</td>
         <td>Knows def'n</td>
     </tr>
     <tr>
@@ -225,7 +225,7 @@ An analogue for the limit $\lim_{x\to c}f(x)=L$ may also be established. To do s
 ## Post-remarks
 
  * Motivation of the talk was the success of introducing $\limsup a_n$ and $\liminf a_n$ of bounded sequences. The notion was very useful to explain why alternating series test works. For an alternating series $\sum(-1)^na_n$ with $a_n\geq 0$ decreasing, the gap between sup and inf hammers is _precisely_ $a_n$. (Thus $a_n\to 0$ iff convergent.)
- * The sequence analogue of the $\epsilon$-$\delta$ definition (the '$\epsilon$-$K$ definition') does get interesting if one emphasizes the following points.<sup><a href="#fn3" id="ref3">3</a></sup>
+ * Although $\epsilon$-$\delta$ definition may be understood as a random math challenge in freshman calculus, it can also be some interesting math topic. Specifically, the sequence analogue of the definition (the '$\epsilon$-$K$ definition') does get interesting with the following points.<sup><a href="#fn3" id="ref3">3</a></sup>
    * The definition is especially interesting, if the sequence $a_n$ has relatively simple form, e.g. $1/n^p$, $e^{-\alpha n}$, $\ln n$, ...
    * _Using_ the definition is also interesting. For instance, it is not hard to show that $\ln n<n^{0.5}$ for $n>K$, $K=K(1)$ an integer, by combining $\displaystyle\lim_{n\to\infty}\frac{\ln n}{n^{0.5}}=0$ and the $\epsilon$-$K$ definition.
  * The above points seems to be hard to reproduce, when one plays with limits of functions. Especially when majority of examples are only dependent on Lipschitz bounds.
@@ -235,7 +235,7 @@ $$\sup_{0<|x-2|<\delta}x^2=(2+\delta)^2,\\ \inf_{0<|x-2|<\delta}x^2=\begin{cases
 
 This reminds us that, some attempts to prove $\lim_{x\to 2}x^2=4$ (esp. those not used to make appropriate bounds) is playing with terms that look like aboves. The (limsup-liminf) definition may help us to guide these attempts into a context that makes mathematically a better sense.
 
- * To prove some limit theorems, introducing ($\epsilon$-$\delta$) definition seems inevitable. Even the fundamentalmost one, $f(\lim g(x))=\lim f(g(x))$ when $f$ is continuous, is not very promising if one starts with, say, (limsup-liminf) definition.
+ * To prove some limit theorems, introducing ($\epsilon$-$\delta$) definition seems inevitable. One of the most fundamental fact, $f(\lim g(x))=\lim f(g(x))$ when $f$ is continuous, is not very promising if one starts with, say, (limsup-liminf) definition.
 
 <sup id="fn3">3. It should be noted that the environment of testing these points, was the final course of the calculus sequence in UChicago. That is, students were motivated and skilled enough to trace what happens for each point.<a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup>
 
@@ -259,3 +259,4 @@ and the last equivalence is where compactness is involved. There I suggest a slo
 
 #### Update Log
  * <span style="font-size:12px">220324: Created</span>
+ * <span style="font-size:12px">220324: Typo/elaboration, as suggested from [J. Jeon](https://jk-jeon.github.io/)</span>
