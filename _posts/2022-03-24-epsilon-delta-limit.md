@@ -149,18 +149,17 @@ The proof is surprisingly easy for this one:<sup><a href="#fn2" id="ref2">2</a><
 
 If this proof is applied for (INF-logic), then we see that only some hypotheses $0<\vert x\vert<\delta_1$, ..., $0<\vert x\vert <\delta_k$ are used to prove $\vert f(x)\vert<\epsilon$. This is analogous to the following solution of a $\epsilon$-$\delta$ limit proof exercise:
 
- > (To prove $\lim_{x\to 2}x^2=4$, fix $\epsilon>0$.) Let $0<|x-2|<1$ and $0<|x-2|<\epsilon/7$. Then by [...omitted...], we can infer $|x^2-4|<\epsilon$.
+ > (To prove $\lim_{x\to 2}x^2=4$, fix $\epsilon>0$.) Let $0<\vert x-2\vert<1$ and $0<\vert x-2\vert<\epsilon/7$. Then by [...omitted...], we can infer $\vert x^2-4\vert<\epsilon$.
 
 Anyways, setting $\delta=\min(\delta_1,\cdots,\delta_k)$, we finally translate (INF-logic) into the following.
 
- > For all $\epsilon>0$, there is an assumption $0<|x|<\delta$ that can prove $|f(x)|<\epsilon$.
+ > For all $\epsilon>0$, there is an assumption $0<\vert x\vert<\delta$ that can prove $\vert f(x)\vert<\epsilon$.
 
 By this we can prove that (INF) is equivalent to ($\epsilon$-$\delta$) (independent to how infinitesimals are implemented!). _The cost was some principles in mathematical logic._
 
 This also gives a 'math' proof of why $\forall\epsilon\exists\delta$ order is compulsory. (Personal history: this took me around a decade and a half to figure this out.)
 
-<sup id="fn1">1. The ultraproduct definition of hyperreal numbers is, as far as I know, in fact a mean of implementing this viewpoint.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
-
+<sup id="fn1">1. The ultraproduct definition of hyperreal numbers is, as far as I know, in fact a mean of implementing this viewpoint.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup> \
 <sup id="fn2">2. There are other versions of compactness in mathematical logic, that require some involved proofs.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
 
 ## Detouring Definitions
@@ -171,7 +170,7 @@ We have seen that the 'infinitesimal' definition (INF) is equivalent to the stan
 
 Thus I introduce some paraphrases of (INF), for search of more intuitive, yet precise definition of limits.
 
-#### Remark
+### Remark
 
  * It should be noted that each definition below has their own limits to be a pedagogical replacement of ($\epsilon$-$\delta$) definition.
  * For instance, for the (Sequence) definition below, it is not quite clear on how students perceive the quantification "for all sequences." The definition is more suitable to _disprove_ some limit facts. To prove a limit fact with this definition, it often requires a task equivalent to do some $\epsilon$-$\delta$ proofs. _Such a workload is easily overlooked by the definition alone._
@@ -192,7 +191,7 @@ Another way to say that '$f(x)$ is an infinitesimal,' (given $x$ infintiesimal) 
 
 This itself is not looking that practical. However, this is more like an abstraction on what students do for their first limit proofs:
 
- 1. Play with $f(x)-L$, so that one can obtain a Lipschitz bound $|f(x)-L|\leq M|x-c|$, whenever $0<|x-c|<a$.
+ 1. Play with $f(x)-L$, so that one can obtain a Lipschitz bound $\vert f(x)-L\vert\leq M\vert x-c\vert$, whenever $0<\vert x-c\vert<a$.
  2. (Use that Lipschitz bound to suggest $\delta=\min(a,\epsilon/M)$.)
 
 The squeezing sequence $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$ are hence simulators of Lipschitz estimates, or other kinds of estimates. Use of sequence is, really, just a way to abstract various estimates that contributes limit proofs.
