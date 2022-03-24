@@ -196,7 +196,7 @@ This itself is not looking that practical. However, this is more like an abstrac
  1. Play with $f(x)-L$, so that one can obtain a Lipschitz bound $\vert f(x)-L\vert\leq M\vert x-c\vert$, whenever $0<\vert x-c\vert<a$.
  2. (Use that Lipschitz bound to suggest $\delta=\min(a,\epsilon/M)$.)
 
-The squeezing sequence $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$ are hence simulators of Lipschitz estimates, or other kinds of estimates. Use of sequence is, really, just a way to abstract various estimates that contributes limit proofs.
+The squeezing sequence $$(\epsilon^1_\bullet)$$ and $$(\epsilon^2_\bullet)$$ are hence simulators of Lipschitz estimates, or other kinds of estimates. Use of sequence is, really, just a way to abstract various estimates that contributes limit proofs.
 
 ### Limsup an liminf
 
