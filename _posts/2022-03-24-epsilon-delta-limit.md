@@ -147,9 +147,93 @@ The proof is surprisingly easy for this one:<sup><a href="#fn2" id="ref2">2</a><
 
  > (Proof) <span style="font-style: normal">If we write down a proof of $\phi$, then the lines we use is finite. In particular the lines that introduces assumptions from $\Gamma$ is finite. Putting $\Gamma'$ the set of lines that introduces assumptions, we see that only $\Gamma'$ suffices to get $\phi$.</span>
 
+If this proof is applied for (INF-logic), then we see that only some hypotheses $0<\vert x\vert<\delta_1$, ..., $0<\vert x\vert <\delta_k$ are used to prove $\vert f(x)\vert<\epsilon$. This is analogous to the following solution of a $\epsilon$-$\delta$ limit proof exercise:
 
+ > (To prove $\lim_{x\to 2}x^2=4$, fix $\epsilon>0$.) Let $0<|x-2|<1$ and $0<|x-2|<\epsilon/7$. Then by [...omitted...], we can infer $|x^2-4|<\epsilon$.
 
-Work-In-Progress
+Anyways, setting $\delta=\min(\delta_1,\cdots,\delta_k)$, we finally translate (INF-logic) into the following.
+
+ > For all $\epsilon>0$, there is an assumption $0<|x|<\delta$ that can prove $|f(x)|<\epsilon$.
+
+By this we can prove that (INF) is equivalent to ($\epsilon$-$\delta$) (independent to how infinitesimals are implemented!). _The cost was some principles in mathematical logic._
+
+This also gives a 'math' proof of why $\forall\epsilon\exists\delta$ order is compulsory. (Personal history: this took me around a decade and a half to figure this out.)
+
+<sup id="fn1">1. The ultraproduct definition of hyperreal numbers is, as far as I know, in fact a mean of implementing this viewpoint.<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
+
+<sup id="fn2">2. There are other versions of compactness in mathematical logic, that require some involved proofs.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
+
+## Detouring Definitions
+
+As usual, we let $c=L=0$, i.e., get interested in $\lim_{x\to 0}f(x)=0$.
+
+We have seen that the 'infinitesimal' definition (INF) is equivalent to the standard definition ($\epsilon$-$\delta$) by mathematical logic. However, we have also seen that (INF) is closer to our intuition of limit, in various ways. For instance, the domain-range logical order is well-preserved in (INF).
+
+Thus I introduce some paraphrases of (INF), for search of more intuitive, yet precise definition of limits.
+
+#### Remark
+
+ * It should be noted that each definition below has their own limits to be a pedagogical replacement of ($\epsilon$-$\delta$) definition.
+ * For instance, for the (Sequence) definition below, it is not quite clear on how students perceive the quantification "for all sequences." The definition is more suitable to _disprove_ some limit facts. To prove a limit fact with this definition, it often requires a task equivalent to do some $\epsilon$-$\delta$ proofs. _Such a workload is easily overlooked by the definition alone._
+
+### Sequence Definition
+
+A standard way to simulate infinitesimals is to use sequences. (Also, it is coherent with the ultraproduct construction of hyperreals.) Thus if $(a_n)$ is a sequence of nonzero numbers converging to 0, we can simulate an infinitesimal by this sequence. So if (INF) is valid, then $(f(a_n))$ is another sequence that simulates infinitesimals, i.e., converges to 0.
+
+ > (Sequence) If $(a_n)$ is a sequence, $a_n\neq 0$ for all $n$, that converges to 0, then the sequence $(f(a_n))$ also converges to 0.
+
+Indeed, this is formatted as, "a control on domain determines feature on range." But also this reflects the idea that convergent sequences are more easily understood, for the first readers.
+
+### Squeeze Perspective
+
+Another way to say that '$f(x)$ is an infinitesimal,' (given $x$ infintiesimal) is to say that, there are two infinitesimals $\epsilon_1,\epsilon_2$ in which $\epsilon_1<f(x)<\epsilon_2$. Applying this notion, we get
+
+ > (Squeeze) If $(a_n)\to 0$, $a_n\neq 0$ for all $n$, then there are sequences $(\epsilon^1_n)\nearrow 0$ and $(\epsilon^2_n)\searrow 0$ that $\epsilon^1_n<f(a_n)<\epsilon^2_n$ holds.
+
+This itself is not looking that practical. However, this is more like an abstraction on what students do for their first limit proofs:
+
+ 1. Play with $f(x)-L$, so that one can obtain a Lipschitz bound $|f(x)-L|\leq M|x-c|$, whenever $0<|x-c|<a$.
+ 2. (Use that Lipschitz bound to suggest $\delta=\min(a,\epsilon/M)$.)
+
+The squeezing sequence $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$ are hence simulators of Lipschitz estimates, or other kinds of estimates. Use of sequence is, really, just a way to abstract various estimates that contributes limit proofs.
+
+### Limsup an liminf
+
+For (Squeeze), we have a systematic choice of the bounds $(\epsilon^1_\bullet)$ and $(\epsilon^2_\bullet)$:
+
+$$\epsilon^1_k := \inf_{n\geq k}f(a_n), \\ \epsilon^2_k := \sup_{n\geq k}f(a_n).$$
+
+That is, we simply think of $\limsup f(a_n)$ and $\liminf f(a_n)$. Even, there is no reason to not generalize this for non-sequence versions. Call,
+
+$$\liminf_{x\to c}f(x) = \sup_{\delta>0}\inf_{x\colon 0<|x-c|<\delta}f(x), \\ \limsup_{x\to c}f(x) = \inf_{\delta>0}\sup_{x\colon 0<|x-c|<\delta}f(x).$$
+
+Then we say $\lim_{x\to c}f(x)=L$ if
+
+ > (limsup-liminf) we have $\limsup_{x\to c}f(x)=\liminf_{x\to c}f(x)=L$.
+
+Easy drawback of this definition is, that we necessarily introduce harder topics of superma and infima. A benefit of this definition is, it is much easier for this definition to be pictorialized.
+
+For instance, one can sketch the limit of sequences by thinking of "sup and inf hammers that approach together."
+
+**Work-In-Progress**
+
+## Appendix: Topological compactness
+
+Another way to implement infinitesimals is to think of Stone--Čech compactification $\beta\mathbb{R}$ of the discrete space $\mathbb{R}$. The space $\beta\mathbb{R}$ consists of ultrafilters in the set $\mathbb{R}$, and _infinitesimals_ are ultrafilters $\in\beta\mathbb{R}$ that contains the sets of the form $\{x : \vert x\vert<a\}$.
+
+The benefit of $\beta\mathbb{R}$ is that, any set function $\mathbb{R}\to\mathbb{R}$ is extended _continuously_ to a map $\beta\mathbb{R}\to\beta\mathbb{R}$. Thus any set of the form $\{x\in\beta\mathbb{R} : \vert f(x)\vert<\epsilon\}$ are actually open in $\beta\mathbb{R}$.
+
+Denote the sets $K_m = \{x\in\beta\mathbb{R}:0<\vert x\vert<1/m\}$ and $U_n=\{x\in\beta\mathbb{R}:\vert f(x)\vert<1/n\}$. One can then show that $K_m$ and $U_n$ are clopen subsets of $\beta\mathbb{R}$. Furthermore, the (INF) definition of $\lim_{x\to 0}f(x)=0$ translates to
+
+ > (INF-topo) $\bigcap_{m=1}^\infty K_m\subset\bigcap_{n=1}^\infty U_n$.
+
+This immediately translates to $\bigcap_{m=1}^\infty K_m\subset U_n$, for all $n$. Thus the family $\{U_n\}\cup\{\complement K_m\}_{m=1}^\infty$ of open subsets of $\beta\mathbb{R}$ form an open cover. (Here, $\complement X:=\beta\mathbb{R}\setminus X$.) By compactness of $\beta\mathbb{R}$, we pick up a finite subcover $U_n,\complement K_{m_1},\cdots,\complement K_{m_k}$. But since $\left(K_m\right)_{m=1}^\infty$ is a decreasing sequence, putting $m=\max(m_1,\cdots,m_k)$, we see that $U_n$ and $\complement K_m$ covers $\beta\mathbb{R}$, i.e., $K_m\subset U_n$ holds. In short:
+
+ > (INF-topo) $\Leftrightarrow$ $(\forall n)(\bigcap_{m=1}^\infty K_m\subset U_n)$ $\Leftrightarrow$ $(\forall n)(\exists m)(K_m\subset U_n)$,
+
+and the last equivalence is where compactness is involved. There I suggest a slogan for $\forall\epsilon\exists\delta$ order:
+
+ > The order $\forall\epsilon\exists\delta$ in the ($\epsilon$-$\delta$) definition is a result of compactness.
 
 #### Update Log
  * <span style="font-size:12px">220324: Created</span>
