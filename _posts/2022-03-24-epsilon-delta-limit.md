@@ -115,6 +115,40 @@ Couple of interesting conclusions may be drawn from this:
 
 ### Foudational Details of Infinitesimals
 
+Although the infinitesimal definition is elegant and easy to be understood, things happening under the rug is quite complicated. Even for [Keisler 1971](https://www.math.wisc.edu/~keisler/calc.html), the way how infinitesimals are founded in the main text, is based on the property it enjoys:
+
+ > We say a number $x$ in which $-a<x<a$ holds for all positive real $a>0$, as _infinitesimals_.
+
+The text then develops various calculus notions out of this.
+
+The precise construction is introduced in the epilogue of the text. In analogy with the construction of real numbers (as equivalence classes of Cauchy sequences), the field of _hyperreal numbers_ is defined using the notion of 'ultraproduct equivalence.'
+
+There, any discussions on the existence, or variety of such equivalence were skipped. I view this as a reasonable choice, however. Even for those who are interested in such issues, as far as I know, the minimal backgrounds to understand the precise construction of hyperrreal numbers, is the **Stone-Čech compactification**. This is one of the high-end topics in undergraduate point-set topology courses.
+
+## Compactness
+
+We say a number $x$ is an _infinitesimal_ if we have $-a<x<a$ for all positive real $a>0$. On one hand, this may be viewed as a [hyperreal number](https://en.wikipedia.org/wiki/Hyperreal_number). But logically speaking, we may view this as an object $x$ in which the formulas $-a<x<a$ are always interpreted true, whenever $a$ is a positive real number.<sup><a href="#fn1" id="ref1">1</a></sup>
+
+Applying this logical viewpoint, one can translate the definition (INF) as follows.
+
+ > (INF-logic) From the assumptions $\{0<\vert x\vert<a\mid a>0\}$, one can prove that $\vert f(x)\vert<\epsilon$, no matter what $\epsilon>0$ is.
+
+Equivalently,
+
+ > (INF-logic) For all $\epsilon>0$, the assumptions $\{0<\vert x\vert<a \mid a>0\}$ can prove that $\vert f(x)\vert<\epsilon$.
+
+(So this already clears $\forall\epsilon$ start. But we are still left to quantify $\delta$.)
+
+Now I state a principle in mathematical logic: the _compactness_.
+
+ > **(A version of) Compactness in Math. Logic.** Let $\Gamma$ be a set of assumptions, and let $\Gamma\vdash\phi$ (i.e., $\Gamma$ can prove $\phi$, a statement). Then there is a finite subset $\Gamma'\subset\Gamma$ in which $\Gamma'\vdash\phi$.
+
+The proof is surprisingly easy for this one:<sup><a href="#fn2" id="ref2">2</a></sup>
+
+ > (Proof) _If we write down a proof of $\phi$, then the lines we use is finite. In particular the lines that introduces assumptions from $\Gamma$ is finite. Putting $\Gamma'$ the set of lines that introduces assumptions, we see that only $\Gamma'$ suffices to get $\phi$._
+
+
+
 Work-In-Progress
 
 #### Update Log
