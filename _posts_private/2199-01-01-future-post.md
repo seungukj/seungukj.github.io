@@ -14,6 +14,7 @@ This is a warehouse of variety of links that I feel like interesting and worthwh
  * [아르키메데스의 구 체적 찾기](https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/Apostol496-508.pdf) (How Archimedes found the volume of a sphere)
  * 3B1B series on [Newton fractals](https://www.youtube.com/watch?v=-RdOwhmqP5s&ab_channel=3Blue1Brown) and [Holomorphic dynamics](https://youtu.be/LqbZpur38nw)
    * 뉴턴 프랙탈 관련(More on Newton fractals) [1](https://www.chiark.greenend.org.uk/~sgtatham/newton/) [2](https://blbadger.github.io/polynomial-roots.html)
+ * Ravi Vakil's [picture book of exact sequences](https://math216.files.wordpress.com/2022/03/picturebook-aug-9-2021.pdf)
 
 ## noted from [WYM 2022](https://sites.google.com/view/wym2022/)
  * Krasner formula: counts the number of finite extensions over $$\mathbb{Q}_p$$ (p-adic number field). Relevant [MSE thread](https://math.stackexchange.com/questions/78211), and a work of [Pauli and Roblot](http://page.math.tu-berlin.de/~kant/publications/papers/krasner.pdf), esp. sec. 3 & 6.
