@@ -6,14 +6,14 @@ tags:
   - English
   - Berkovich Analytification
   - Tropical Geometry
-  - Nonarchimedean Field
+  - Non-archimedean Field
 ---
 
-This series of posts is aimed to be a rudiment of the Berkovich line, a locally compact space that "fills up" a nonarchimedean field $K$. The materials here are more or less my summary of the lecture note by [(M. Baker 2007)](https://swc-math.github.io/aws/2007/BakerNotesMarch21.pdf), with some extra matrials that I found meaningful to append.
+This series of posts is aimed to be a rudiment of the Berkovich line, a locally compact space that "fills up" a non-archimedean field $K$. The materials here are more or less my summary of the lecture note by [(M. Baker 2007)](https://swc-math.github.io/aws/2007/BakerNotesMarch21.pdf), with some extra materials that I found meaningful to append.
 
-## Nonarchimedean Fields
+## Non-archimedean Fields
 
-A _nonarchimedean field_ $(K,\vert\cdot\vert)$ is a field $K$ with an absolute value $\vert\cdot\vert$, that satisfies the followings.
+A _non-archimedean field_ $(K,\vert\cdot\vert)$ is a field $K$ with an absolute value $\vert\cdot\vert$, that satisfies the followings.
 
  1. $\vert a\vert=0$ if and only if $a=0$.
  1. $\vert ab\vert=\vert a\vert\cdot\vert b\vert$, 
@@ -22,9 +22,9 @@ A _nonarchimedean field_ $(K,\vert\cdot\vert)$ is a field $K$ with an absolute v
 
 The first one is simply the nondegeneracy of the absolute value, and the second is quite natural among absolute values on fields (unlike algebras, where we demand submultiplicative $\vert ab\vert\leq\vert a\vert\cdot\vert b\vert$).
 
-The third is the oddest line. It resembles the triangle inequality $\vert a+b\vert\leq\vert a\vert+\vert b\vert$, but the right hand side is replaced to the maximum of two norms, instead of their sum.
+The third is the oddest line. It resembles the triangle inequality $\vert a+b\vert\leq\vert a\vert+\vert b\vert$, but the right-hand side is replaced with the maximum of two norms, instead of their sum.
 
-The fourth line is the equality condition: if one quantity is strictly smaller than the other, then we have the equality. Compare this with the equality condition of the triangle inequality: when "two quantities have equal sign/direction."
+The fourth line is the equality condition: if one quantity is strictly smaller than the other, then we have equality. Compare this with the equality condition of the triangle inequality: when "two quantities have equal sign/direction."
 
 An equivalent way of saying this is to declare a _valuation_ of the field $K$. For that, choose a number $q>1$, and set $v(a):=-\log_q\vert a\vert$ (note the _negated_ logarithm). This declares a function $v\colon K\to\mathbb{R}\cup\{\infty\}$ such that
 
@@ -33,17 +33,17 @@ An equivalent way of saying this is to declare a _valuation_ of the field $K$. F
  1. $v(a+b)\geq\min\left(v(a),v(b)\right)$,
  1. ...with equality if $v(a)\neq v(b)$.
 
-I will later be interested in a nonarchimedean field $K$ which is _algebraically closed_ and _Cauchy complete_. But before I continue, let me list some first examples of the notion.
+I will later be interested in a non-archimedean field $K$ which is _algebraically closed_ and _Cauchy complete_. But before I continue, let me list some first examples of the notion.
 
 ### Example 1: formal Laurant series, Puiseux Series
 
-The field $k((t))$ of [formal Laurent series](https://en.wikipedia.org/wiki/Formal_power_series#Formal_Laurent_series) on any (algebraically closed) field $k$ is one of the first example of a nonarchimedean field. It is defined by the valuation (assume $a_{-N}\neq 0$)
+The field $k((t))$ of [formal Laurent series](https://en.wikipedia.org/wiki/Formal_power_series#Formal_Laurent_series) on any (algebraically closed) field $k$ is one of the first examples of a non-archimedean field. It is defined by the valuation (assume $a_{-N}\neq 0$)
 
 $$v(a_{-N}t^{-N}+a_{-N+1}t^{-N+1}+\ldots) = -N,$$
 
 so we have $v(1)=v(t^0)=0$, $v(t^2+t^3+t^5+\ldots)=2$, $v(\exp(t)-1)=1$, etc. Function $v$ measures the order of zero $t=0$, while a pole is interpreted as a negative zero.
 
-The first two axioms of valuations are thus quite natural if we recall how to do multiplcations of (formal) Laurent series. The third axiom is meant to cover the following case: if
+The first two axioms of valuations are thus quite natural if we recall how to do multiplication of (formal) Laurent series. The third axiom is meant to cover the following case: if
 
 $$a=\sum_{i=v}^\infty a_it^i,\quad b=\sum_{i=v}^\infty b_it^i,$$
 
@@ -73,7 +73,7 @@ Note that this field is **not** (Cauchy) complete. To verify so, think of the se
 
 $$\sum_{n=1}^\infty t^{n^{2n}/n!}= t+t^8+t^{121\frac12}+t^{2730\frac23}+\cdots.$$
 
-This series does not fit into $k((t^{1/i}))$ for any $i$, but the partial sums are Cauchy (as the exponents increase to infinity). Because of that, one needs to Cauchy complete the Puiseux field $k\{\{t\}\}$ if one requires a nonarchimedean algebraically-closed Cauchy-complete field.
+This series does not fit into $k((t^{1/i}))$ for any $i$, but the partial sums are Cauchy (as the exponents increase to infinity). Because of that, one needs to Cauchy complete the Puiseux field $k\{\{t\}\}$ if one requires a non-archimedean algebraically-closed Cauchy-complete field.
 
 ### Example 2: p-adic fields
 
@@ -92,17 +92,17 @@ $$\vert a\vert_p:=p^{-v_p(a)}.$$
 
 By this, we Cauchy complete the metric space $(\mathbb{Q},\vert\cdot\vert_p)$ to obtain the _$p$-adic field_ $\mathbb{Q}_p$.
 
-This field is not algebraically closed, and we denote the algebraic closure as $\overline{\mathbb{Q}}_p$. Still the metric $\vert\cdot\vert_p$ extends to there; say by $\vert p^{1/4}\vert_p=p^{-1/4}$, etc. However, one can also find a series in $\overline{\mathbb{Q}}_p$ that is Cauchy but not convergent in $\overline{\mathbb{Q}}_p$ (see [(Koblitz 1996)](https://doi.org/10.1007/978-1-4612-1112-9), Sec. III.4, Theorem 12). Hence one Cauchy-completes the metric spcae $(\overline{\mathbb{Q}}_p,\vert\cdot\vert_p)$, and obtain a nonarchimedean, algebraically-closed, Cauchy-complete field $(\mathbb{C}_p,\vert\cdot\vert_p)$.
+This field is not algebraically closed, and we denote the algebraic closure as $\overline{\mathbb{Q}}_p$. Still the metric $\vert\cdot\vert_p$ extends to there; say by $\vert p^{1/4}\vert_p=p^{-1/4}$, etc. However, one can also find a series in $\overline{\mathbb{Q}}_p$ that is Cauchy but not convergent in $\overline{\mathbb{Q}}_p$ (see [(Koblitz 1996)](https://doi.org/10.1007/978-1-4612-1112-9), Sec. III.4, Theorem 12). Hence one Cauchy-completes the metric spcae $(\overline{\mathbb{Q}}_p,\vert\cdot\vert_p)$, and obtain a non-archimedean, algebraically-closed, Cauchy-complete field $(\mathbb{C}_p,\vert\cdot\vert_p)$.
 
 <sup id="fn1">1. I believe that $\nu_p$ (nu, not vee) is more common notation for this. Nonetheless, I also believe that the 'vee' notation is making more sense, as this is compatible with the word '**V**aluations.'<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
 
 ## Gelfand theory?
 
-An algebraically-closed Cauchy-complete normed field that we know of, is the field of complex numbers $\mathbb{C}$. This field is perfect to build a theory of Banach algebras (algebra with a complete, submultiplicative norm) over $\mathbb{C}$. (See [Gelfand duality](https://en.wikipedia.org/wiki/Gelfand_representation) and [Gelfand--Mazur Theorem](https://en.wikipedia.org/wiki/Gelfand%E2%80%93Mazur_theorem).)
+An algebraically-closed Cauchy-complete normed field that we first see, is the field of complex numbers $\mathbb{C}$. This field is perfect to build a theory of Banach algebras (algebra with a complete, submultiplicative norm) over $\mathbb{C}$. (See [Gelfand duality](https://en.wikipedia.org/wiki/Gelfand_representation) and [Gelfand--Mazur Theorem](https://en.wikipedia.org/wiki/Gelfand%E2%80%93Mazur_theorem).)
 
-Now as another algebraically-closed Cauchy-complete field $K$, but nonarchimedean, we would expect something similar. That is, for a commutative Banach algebra $A$ over $K$, we expect the space of $K$-algebra maps $A\to K$ forms the 'spectrum' of $A$, and continuous maps on the 'spectrum' of $A$ recovers $A$.
+Now as another algebraically-closed Cauchy-complete field $K$, but non-archimedean, we would expect something similar. That is, for a commutative Banach algebra $A$ over $K$, we expect that the space of $K$-algebra maps $A\to K$ forms the 'spectrum' of $A$ and continuous maps on the 'spectrum' of $A$ recovers $A$.
 
-No, not the case for nonarchimedean $K$. This is because there is a field extension $L/K$ (yes, must be transcendental) and an extension norm $\vert\cdot\vert_L$ of $(K,\vert\cdot\vert)$. This makes $L$ a normed $K$-algebra, but the 'spectrum' of $L$ is empty (there is no $K$-algebra map $L\to K$), so the "usual" Gelfand duality is not the case here.
+No, not the case for non-archimedean $K$. This is because there is a field extension $L/K$ (yes, must be transcendental) and an extension norm $\vert\cdot\vert_L$ of $(K,\vert\cdot\vert)$. This makes $L$ a normed $K$-algebra, but the 'spectrum' of $L$ is empty (there is no $K$-algebra map $L\to K$), so the "usual" Gelfand duality is not the case here.
 
  > **Example.** Let $L$ be the field of rational functions $K(T)$ in 1 variable. Since any $f\in K(T)$ may be written
  >
@@ -116,11 +116,11 @@ No, not the case for nonarchimedean $K$. This is because there is a field extens
 
 (One cannot make such a field extension $L/\mathbb{C}$, that extends the modulus on $\mathbb{C}$. This is what Gelfand--Mazur theorem asserts.)
 
-Thus instead, we demand a novel concept for the 'spectrum' of a normed $K$-algebra. Following [Berkovich](https://www.wisdom.weizmann.ac.il/~vova/First-steps_2007.pdf), one defines the notion of _Berkovich spectrum_ as below. (See [(Baker--Rumely 2010)](https://bookstore.ams.org/surv-159) or [(Berkovich 1990)](https://doi.org/10.1090/surv/033).)
+Thus instead, we demand a novel concept for the 'spectrum' of a normed $K$-algebra. Following [Berkovich](https://www.wisdom.weizmann.ac.il/~vova/First-steps_2007.pdf), one defines the notion of the _Berkovich spectrum_ as below. (See [(Baker--Rumely 2010)](https://bookstore.ams.org/surv-159) or [(Berkovich 1990)](https://doi.org/10.1090/surv/033).)
 
 ## Berkovich Spectrum
 
-From now on, we will deal with a variety of norms on an algebra. Thus I will denote $(K,\vert\cdot\vert_K)$ ($K$ emphasized in the subscript) for my nonarchimedean field of interest.
+From now on, we will deal with a variety of norms defined on an algebra. Thus I will denote $(K,\vert\cdot\vert_K)$ ($K$ emphasized in the subscript) for my non-archimedean field of interest.
 
 Let $A$ be a normed $K$-algebra. A _multiplicative seminorm_ on $A$ is a map $\vert\cdot\vert\colon A\to[0,\infty)$ that has the following properties.
 
@@ -143,7 +143,7 @@ $$U(f,(\alpha,\beta)) := \{\vert\cdot\vert_x\in\widehat{A} : \alpha<\vert f\vert
  >
  > we can (topologically) embed $\widehat{A}$ into a product of $(-\infty,\infty]=\mathbb{R}\cup\{\infty\}$'s. This is how the subbasic open sets described above are designed.
 
-<sup id="fn2">2. In fact, one can show that $\vert f+g\vert\leq\max(\vert f\vert,\vert g\vert)$ if the base field $K$ is nonarchimedean.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
+<sup id="fn2">2. In fact, one can show that $\vert f+g\vert\leq\max(\vert f\vert,\vert g\vert)$ if the base field $K$ is non-archimedean.<a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
 
 ## Examples
 
@@ -173,15 +173,15 @@ So for any multiplicative seminorm $\vert\cdot\vert$, there is a prime ideal $I$
 
 ### Examples over $\mathbb{C}$
 
-The notion of multiplicative seminorms pretty much applies for any normed field. So one *can* think of multiplicative seminorms on an arbitrary normed $\mathbb{C}$-algebras.
+The notion of multiplicative seminorms pretty much applies to any normed field. So one *can* think of multiplicative seminorms on an arbitrary normed $\mathbb{C}$-algebras.
 
 Given a normed $\mathbb{C}$-algebra $A$, if $\vert\cdot\vert_x$ is a multiplicative seminorm, then its residue field $\mathcal{H}(x)$ can only be $\mathbb{C}$ (by Gelfand--Mazur), and thus the induced norm on $\mathcal{H}(x)$ is the complex modulus. 
 
-Because of that, each multiplicative seminorm uniquely corresponds to a ring map $A\to\mathcal{H}(x)=\mathbb{C}$. This is precisely what Gelfand spectrum collects. That is,
+Because of that, each multiplicative seminorm uniquely corresponds to a ring map $A\to\mathcal{H}(x)=\mathbb{C}$. This is precisely what the Gelfand spectrum collects. That is,
 
- > Over $\mathbb{C}$, Gelfand spectrum and Berkovich spectrum coincides.
+ > Over $\mathbb{C}$, Gelfand spectrum and Berkovich spectrum coincide.
 
-To elaborate, the below is how the correspondence works.
+To elaborate, below is how the correspondence works.
 
  * (Gelfand to Berkovich) For a ring map $x\colon A\to\mathbb{C}$, we define a multiplicative seminorm $\vert f\vert_x=|x(f)|_\mathbb{C}$.
  * (Berkovich to Gelfand) For a multiplicative seminorm $\vert\cdot\vert_x$ on $A$, as $A/\mathrm{ker}(\vert\cdot\vert_x)$ is an integral domain, it is _naturally_ isomorphic to $\mathbb{C}$.<sup><a href="#fn3" id="ref3">3</a></sup> Thus the natural ring map $x\colon A\to A/\mathrm{ker}(\vert\cdot\vert_x)\cong\mathbb{C}$ is induced.
@@ -190,18 +190,18 @@ To elaborate, the below is how the correspondence works.
 
 ### 0-dimensional case
 
-Next, we work on a case when we can explicitly compute the spectrum.
+Next, we work on a case where we can explicitly compute the spectrum.
 
 Say put $A=K\times K$. For any $x\in\widehat{A}$, there are two choices for the $\mathrm{ker}(\vert\cdot\vert_x)$:
 
  * $\mathrm{ker}(\vert\cdot\vert_x)=0\times K$: this corresponds to $\vert (f_1,f_2)\vert_1=\vert f_1\vert_K$.
  * $\mathrm{ker}(\vert\cdot\vert_x)=K\times 0$: this corresponds to $\vert(f_1,f_2)\vert_2=\vert f_2\vert_K$.
 
-Thus $\widehat{A}$ consists of two points. Likewise, for $A=K^m$ ($m$-fold ring product), its spectrum $\widehat{A}$ consists of $m$ points. Thus this classifies all 0-dimensional (finintely generated) Berkovich spectrum.
+Thus $\widehat{A}$ consists of two points. Likewise, for $A=K^m$ ($m$-fold ring product), its spectrum $\widehat{A}$ consists of $m$ points. Thus this classifies all 0-dimensional (finitely generated) Berkovich spectrum.
 
 ### 1-dimensional case
 
-The next complicated example will rise with $A=K[T]$. The Berkovich spectrum of $A$ gains a special attention; it is called the _Berkovich line_ and denoted $\mathbb{A}^1_{\mathrm{Berk}}$ or $(\mathbb{A}^1)^{an}$.
+The next complicated example will rise with $A=K[T]$. The Berkovich spectrum of $A$ gains special attention; it is called the _Berkovich line_ and denoted $\mathbb{A}^1_{\mathrm{Berk}}$ or $(\mathbb{A}^1)^{an}$.
 
 Recall that $K$ is algebraically closed. A well-known fact from algebraic geometry classifies all prime ideals of $K[T]$ as follows.
 
@@ -212,7 +212,7 @@ For the former, the corresponding norm is then described as
 
 $$K[T]\to K\to [0,\infty), \\ f(T) \mapsto f(a) \mapsto |f(a)|_K,$$
 
-in which I will call as __evaluation norms__. Such norms uniquely corresponds to each $a\in K$, thus we see that the Berkovich line $\mathbb{A}^1_{\mathrm{Berk}}$ has a (natural) copy of $K$ inside it. (One can even show that the inclusion $K\hookrightarrow\mathbb{A}^1_{\mathrm{Berk}}$ is a topological embedding.)
+in which I will call as __evaluation norms__. Such norms uniquely correspond to each $a\in K$, thus we see that the Berkovich line $\mathbb{A}^1_{\mathrm{Berk}}$ has a (natural) copy of $K$ inside it. (One can even show that the inclusion $K\hookrightarrow\mathbb{A}^1_{\mathrm{Berk}}$ is a topological embedding.)
 
 For the latter, the residue field is then $\mathcal{H}(x)=K(T)$ (field of rational functions in $T$), and we ask what are multiplicative norms on there. It turns out that there are a lot of norms in this class, which will be introduced in later posts.
 
