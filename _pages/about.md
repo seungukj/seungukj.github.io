@@ -19,5 +19,7 @@ My primary mathematical interest is about dynamical systems, especially those on
 
 I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics.
 
+For my other miscellaneous math interests, check out [my blog](https://seungukj.github.io/year-archive/).
+
 # Contact
  * email: ｓｅｕｎｇｕｋｊ[at]ｕｃｈｉｃａｇｏ．ｅｄｕ (full-width letters; copy-pasting will generally not work)
