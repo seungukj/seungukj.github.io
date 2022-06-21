@@ -13,7 +13,7 @@ The idea of this post is to (1) introduce a formula to measure a distance on the
 
 ## Preliminaries
 
-I list some basic facts about the [upper half plane](https://en.wikipedia.org/wiki/Poincar%C3%A9_half-plane_model) $\mathbb{H}=\{z\in\mathbb{C} : \Im z>0\}$ model of the hyperbolic 2-plane.
+I list some basic facts about the [upper half plane](https://en.wikipedia.org/wiki/Poincar%C3%A9_half-plane_model) $$\mathbb{H}=\{z\in\mathbb{C} : \Im z>0\}$$ model of the hyperbolic 2-plane.
 
  * To have the curvature $-1$, the standard choice of metric is
 
@@ -61,7 +61,7 @@ To elaborate, define the quantity
 D(z_1,z_2) = \frac{|z_1-\overline{z}_2|+|z_1-z_2|}{|z_1-\overline{z}_2|-|z_1-z_2|}.
 \end{equation}
 
-It is not hard to show that the quantity $D(z_1,z_2)$ always stays in $[1,\infty)$, with $D(z_1,z_2)=1$ iff $|z_1-z_2|=0$ iff $z_1=z_2$.
+It is not hard to show that the quantity $D(z_1,z_2)$ always stays in $[1,\infty)$, with $D(z_1,z_2)=1$ iff $\vert z_1-z_2\vert =0$ iff $z_1=z_2$.
 
 Fix $D_0>0$. If the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ forms a hyperbolic circle, then we infer that its (hyperbolic) radius $\rho=\mathsf{dist}_\mathbb{H}(z,z_2)$ should be determined by $D_0$. Then we study the relation $\rho=\rho(D_0)$ by, say, plugging in special points like $z=z_0+it$ ($t$ a real number, $t\in(0,\infty)$).
 
@@ -75,9 +75,9 @@ Then this $\phi$ is an isometry that sends $z_2\mapsto 0$. Furthermore, the quan
 
 $$D(z,z_2)=\frac{1+|\phi(z)|}{1-|\phi(z)|}.$$
 
-Thus the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ is thus sent to, via $\phi$, the set of points $w\in\mathbb{D}$ with $|w|=\frac{D_0-1}{D_0+1}$. That is, the locus is mapped to a circle (Euclidean and hyperbolic) in $\mathbb{D}$, centered at $0$. As $\phi$ is an isometry, this implies that the points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ form a hyperbolic circle (in $\mathbb{H}$).
+Thus the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ is thus sent to, via $\phi$, the set of points $w\in\mathbb{D}$ with $\vert w\vert=\frac{D_0-1}{D_0+1}$. That is, the locus is mapped to a circle (Euclidean and hyperbolic) in $\mathbb{D}$, centered at $0$. As $\phi$ is an isometry, this implies that the points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ form a hyperbolic circle (in $\mathbb{H}$).
 
-This means that the quantity $\mathsf{dist}_\mathbb{H}(z,z_2)$ is constant if $D(z,z_2)$ is constant, i.e., $\mathsf{dist}_\mathbb{H}(z,z_2)$ is a function of $D(z,z_2)$. We declare a function $\rho\colon[1,\infty)\to[0,\infty)$ and write $\rho(D(z,z_2))=\mathsf{dist}_\mathbb{H}(z,z_2)$ for that status.
+This means that the quantity $$\mathsf{dist}_\mathbb{H}(z,z_2)$$ is constant if $D(z,z_2)$ is constant, i.e., $\mathsf{dist}_\mathbb{H}(z,z_2)$ is a function of $D(z,z_2)$. We declare a function $\rho\colon[1,\infty)\to[0,\infty)$ and write $$\rho(D(z,z_2))=\mathsf{dist}_\mathbb{H}(z,z_2)$$ for that status.
 
 ### Relation
 
@@ -89,7 +89,7 @@ and
 
 $$\mathsf{dist}_\mathbb{H}(z,z_2)=\int_0^t\frac{|\gamma'(s)|\, ds}{\Im\gamma(s)} = \int_0^t\frac{ds}{\Im z_2 + s} \\ = \log\left(\frac{\Im z_2 + t}{\Im z_2}\right) = \log\left(1+\frac{t}{\Im z_2}\right).$$
 
-So given any input $D_0\in[1,\infty)$, we can write this as $D_0=1+t/\Im z_2$, so we have
+So given any input $D_0\in[1,\infty)$, we can write this as $D_0=1+t/\Im z_2$, and we have
 
 $$\rho(D_0)=\rho(D(z,z_2))=\mathsf{dist}_\mathbb{H}(z,z_2) \\ =\log(1+t/\Im z_2)=\log D_0.$$
 
