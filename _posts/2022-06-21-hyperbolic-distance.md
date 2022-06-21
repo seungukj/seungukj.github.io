@@ -65,6 +65,24 @@ It is not hard to show that the quantity $D(z_1,z_2)$ always stays in $[1,\infty
 
 Fix $D_0>0$. If the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ forms a hyperbolic circle, then we infer that its (hyperbolic) radius $\rho=\mathsf{dist}_\mathbb{H}(z,z_2)$ should be determined by $D_0$. Then we study the relation $\rho=\rho(D_0)$ by, say, plugging in special points like $z=z_0+it$ ($t$ a real number, $t\in(0,\infty)$).
 
+### Computer Sketches
+
+Before diving into the proof, we introduce some computer sketches that supports the idea. Setting $z_2=i$, we sketch the loci of $D(z,i)=2,3,4,5,6$ as follows. [desmos demo](https://www.desmos.com/calculator/qwkhrpfrh6)
+
+![hyperbolic-circles-uhp](/images/220621-fig2.png)
+
+These set of circles are known to be concentric circles, with center $z_2=i$, in the hyperbolic plane. Indeed, if one transforms this to the Poincare disk, via the map $z\mapsto(z-i)/(z+i)$, then we get the following picture.
+
+![hyperbolic-circles-pdm](/images/220621-fig3.png)
+
+As noted above (as a 'preliminary'), these circles are indeed hyperbolic circles (in the Poincare disk model).
+
+How do we measure the diameters of these circles? Because the transform $z\mapsto(z-i)/(z+i)$ is an _isometry_, it does not matter whether we measure the distance in $\mathbb{D}$ or $\mathbb{H}$. But for $\mathbb{H}$, we know that (with $z_2=i$) the point $z=Di$ lies on the circle (i.e., $D(Di,i)=D$), and it is quite handy to measure the distance from $z_2=i$ to $z=Di$: simply recall that the curve $\gamma(t)=it$, $1\leq t\leq D$, is the geodesic from $z_2$ to $z$, and evaluate the length
+
+$$\mathsf{len}(\gamma)=\int_1^D\frac{|\gamma'(t)|\, dt}{t} \\ = \int_1^D\frac{dt}{t}=\log D.$$
+
+Now this aready proves the formula \eqref{eqn:hyperbolic-distance} for a special case of $z_2=i$. Arguments below are just meant to be a generalization of this.
+
 ### Hyperbolic circles
 
 Declare the map $\phi\colon\mathbb{H}\to\mathbb{D}$ by
