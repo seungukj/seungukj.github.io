@@ -42,11 +42,11 @@ So we introduce a 'formula-wise' way to find the distance, which reads as follow
 \mathsf{dist}_{\mathbb{H}}(z_1,z_2)=\log\left(\frac{|z_1-\overline{z}_2|+|z_1-z_2|}{|z_1-\overline{z}_2|-|z_1-z_2|}\right).
 \end{equation}
 
-Here is a geometric interpretation of the formula.
+To see how the formula works, here is a picture:
 
 ![geometric-interpretation](/images/220621-fig1.png)
 
-Although the distance formula does not look symmetric in $z_1$ and $z_2$, the symmetry evidently follows from the geometric interpretation. (An algebraic verification is not too hard, though.)
+Although the distance formula does not look symmetric in $z_1$ and $z_2$, the symmetry evidently follows from the figure above. (An algebraic verification is not too hard, though.)
 
 We aim to prove \eqref{eqn:hyperbolic-distance} in this post.
 
@@ -75,7 +75,7 @@ Then this $\phi$ is an isometry that sends $z_2\mapsto 0$. Furthermore, the quan
 
 $$D(z,z_2)=\frac{1+|\phi(z)|}{1-|\phi(z)|}.$$
 
-Thus the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ is thus sent to, via $\phi$, the set of points $w\in\mathbb{D}$ with $\vert w\vert=\frac{D_0-1}{D_0+1}$. That is, the locus is mapped to a circle (Euclidean and hyperbolic) in $\mathbb{D}$, centered at $0$. As $\phi$ is an isometry, this implies that the points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ form a hyperbolic circle (in $\mathbb{H}$).
+Thus the set of points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ is thus sent to, via $\phi$, the set of points $w\in\mathbb{D}$ with $\vert w\vert=\frac{D_0-1}{D_0+1}$. That is, the locus is mapped to a (hyperbolic) circle in $\mathbb{D}$, centered at $0$. As $\phi$ is an isometry, this implies that the points $z\in\mathbb{H}$ with $D(z,z_2)=D_0$ form a hyperbolic circle (in $\mathbb{H}$).
 
 This means that the quantity $$\mathsf{dist}_\mathbb{H}(z,z_2)$$ is constant if $D(z,z_2)$ is constant, i.e., $\mathsf{dist}_\mathbb{H}(z,z_2)$ is a function of $D(z,z_2)$. We declare a function $\rho\colon[1,\infty)\to[0,\infty)$ and write $$\rho(D(z,z_2))=\mathsf{dist}_\mathbb{H}(z,z_2)$$ for that status.
 
