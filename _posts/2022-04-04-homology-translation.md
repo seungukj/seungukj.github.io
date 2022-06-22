@@ -2,6 +2,7 @@
 title: '「호몰로지」 용어에 대한 일고(一考)'
 date: 2022-04-04
 permalink: /posts/2022/04/translation-of-homology
+author_profile: false
 tags:
   - Korean
   - Translation

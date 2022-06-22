@@ -2,6 +2,7 @@
 title: 'Newton Method for Tangents'
 date: 2021-10-14
 permalink: /posts/2021/10/newton-method-for-tan/
+author_profile: false
 tags:
   - Calculus
   - Newton's method

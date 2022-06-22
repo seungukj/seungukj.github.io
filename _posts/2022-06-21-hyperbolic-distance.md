@@ -2,6 +2,7 @@
 title: 'A Formula of Hyperbolic Distance'
 date: 2022-06-21
 permalink: /posts/2022/06/hyperbolic-distance
+author_profile: false
 tags:
   - English
   - Hyperbolic geometry

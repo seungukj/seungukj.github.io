@@ -2,6 +2,7 @@
 title: 'Miscellaneous Interests'
 date: 2199-01-01
 permalink: /posts/2199/01/misc-interests/
+author_profile: false
 tags:
   - warehouse
 ---

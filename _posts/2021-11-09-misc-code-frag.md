@@ -2,6 +2,7 @@
 title: 'Some Code Fragments'
 date: 2021-11-09
 permalink: /posts/2021/11/tikz-code-frag/
+author_profile: false
 tags:
   - English
   - Python

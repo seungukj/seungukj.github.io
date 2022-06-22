@@ -2,6 +2,7 @@
 title: '중국인의 나머지 정리 2'
 date: 2022-02-26
 permalink: /posts/2022/02/chinese-remainder-theorem-2/
+author_profile: false
 tags:
   - Korean
   - Number Theory

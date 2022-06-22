@@ -2,6 +2,7 @@
 title: 'Discovering a nontriviality of the ε-δ definition, in a math way'
 date: 2022-03-24
 permalink: /posts/2022/03/epsilon-delta-limit/
+author_profile: false
 tags:
   - English
   - Calculus

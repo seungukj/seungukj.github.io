@@ -2,6 +2,7 @@
 title: 'How this blog works'
 date: 2021-09-16
 permalink: /posts/2021/09/how-this-blog-works/
+author_profile: false
 tags:
   - announcement
   - English
