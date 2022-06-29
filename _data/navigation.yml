@@ -13,9 +13,9 @@ main:
 #    url: /portfolio/
     
   - title: "CV"
-    url: /cv/
+    url: /files/Seung_uk_Jang-cv.pdf
     
-  - title: "Blog Posts"
+  - title: "Blog"
     url: /blog/
     
 #  - title: "Guide"
