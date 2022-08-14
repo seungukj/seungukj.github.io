@@ -1,0 +1,442 @@
+---
+title: 'Berkovich Line, part 3'
+date: 2022-08-13
+permalink: /posts/2022/08/berkovich-line-3/
+author_profile: false
+tags:
+  - English
+  - Berkovich Analytification
+  - Tropical Geometry
+  - Non-archimedean Field
+---
+
+This series of posts is aimed to be a rudiment of the Berkovich line, a locally compact space that "fills up" a non-archimedean field $K$. This post is the last of the series and continues from [part 2](/posts/2022/07/berkovich-line-2/).
+
+# Setups
+
+We still use $(K,\vert\cdot\vert_K)$ for the fixed nonarchimedean, algebraically closed, and Cauchy complete field. We furthermore assume $K$ is non-discrete in the sense that there exists $x\in K$ with $\vert x\vert_K\neq 0,1$. Let $q>1$ be the number so that $\vert x\vert_K=q^{-v(x)}$ holds for all $x\in K$.
+
+The following introduction to tropicalization comes from a text by [G. Mikhalkin and J. Rau](https://www.math.uni-tuebingen.de/user/jora/downloads/main.pdf).
+
+ * Backlinks: [tropical polynomial](#ref-setup-1); [Payne tropicalization](#ref-setup-2)
+
+# First Tropicalization: Amoeba
+
+Consider the function
+$$\begin{array}{rcl}
+\mathrm{Log}_t\colon(\mathbb{C}^\times)^n & \to &\mathbb{R}^n, \\
+(z_1,\ldots,z_n) & \mapsto &(\log_t\vert z_1\vert,\ldots,\log_t\vert z_n\vert).
+\end{array}$$
+
+Suppose $p(z_1,\ldots,z_n)$ be a polynomial in $n$ variables. Then its (base $t$) [amoeba](https://en.wikipedia.org/wiki/Amoeba_(mathematics)) $A_t(p)$ is defined as the $\mathrm{Log}_t$-image of the zero set of $p$. That is,
+
+$$\begin{array}{rcl}A_t(p) &=& \mathrm{Log}_t(\{p=0\}\cap(\mathbb{C}^\times)^n) \\
+&=& \{\mathrm{Log}_t(z) : z\in(\mathbb{C}^\times)^n,\ p(z)=0\}.\end{array}$$
+
+ > **Example.** Let $p(z_1,z_2)=z_1+z_2-1$. Then we sketch $A_t(p)$ as follows ($t>1$).
+ >
+ > <p align="center"><img title="first-amoeba" src="/images/fig220812-1.png" /></p>
+
+ To see why we have this shape, for a point $$(z_1,z_2)\in\{p=0\}$$, put $u=\log_t\vert z_1\vert$ and $v=\log_t\vert z_2\vert$. Then from $1-z_1=z_2$, we have $\vert 1-t^ue^{\mathrm{i}\theta}\vert=\vert t^0-t^ue^{\mathrm{i}\theta}\vert=t^v$ for some $\theta\in\mathbb{R}$. So we see that $v$ is determined by a multivalued function
+
+ $$v = u\oplus_t0 = [\log_t|t^0-t^u|,\log_t(t^0+t^u)]\subset [-\infty,\infty).$$
+
+ The sketch of the amoeba above is simply sketching this multivalued function. Furthermore, a more interesting shape occurs as $t\to\infty$.
+
+ > If we continue with other $t$'s, and sending $t\to\infty$, we see that the amoebas $A_t(p)$ 'converge' to a shape. See (1) below.
+ >
+ > <p align="center"><img title="converging-amoeba" id="amoeba" src="/images/fig220812-2.png" /></p>
+ >
+ > This suggests to us that we have a 'limit skeleton' of the amoebas. See (2) above.
+
+In general, as we send $t\to\infty$ (or $t\to 0+$), we can think of the 'limiting amoeba' $A_\infty(p)$ that vaguely sketches the shape of the amoeba $A_t(p)$ with $t>1$ big (or $t<1$ small).
+
+## Some algebra behind the scene
+
+### The 'Amoeba' Sum
+
+Just like we introduced a multivalued function $u\oplus_t0$ above, we define
+
+$$x\oplus_ty := \mathrm{Log}_t(\mathrm{Log}_t^{-1}x+\mathrm{Log}_t^{-1}y),$$
+
+where $$\mathrm{Log}_t^{-1}x+\mathrm{Log}_t^{-1}y=\{z+w : \log_t\vert z\vert=x,\ \log_t\vert w\vert=y\}$$. If we want to avoid this symbol, we may also define
+
+$$x\oplus_ty = [\log_t\vert t^x-t^y\vert, \log_t(t^x+t^y)]\subset[-\infty,\infty).$$
+
+Interestingly enough, if we take the limit $t\to\infty$, the interval above squeezes to a point (modulo some exceptions). Indeed,
+
+$$\lim_{t\to\infty}x\oplus_ty = \begin{cases}\max(x,y) & (x\neq y), \\ [-\infty,x] & (x=y).\end{cases}$$
+
+Motivated by this, we define $x\oplus y:=\max(x,y)$, including the case $x=y$.
+
+Similarly, one can define
+
+$$x\otimes_ty = \mathrm{Log}_t(\mathrm{Log}_t^{-1}x\cdot\mathrm{Log}_t^{-1}y),$$
+
+but this is easily evaluated to $x\otimes_ty = x+y$, regardless of $0<t<\infty$.
+
+### Tropical Semiring
+
+The limit operations $x\oplus y = \max(x,y)$ and $x\otimes y = x+y$ forms an algebraic structure on $$\mathbb{R}\cup\{-\infty\}=[-\infty,\infty)$$ called a **tropical semiring**. Indeed, the algebraic structure $$(\mathbb{R}\cup\{-\infty\},\oplus,\otimes)$$ satisfies the followings.
+
+ * $$(\mathbb{R}\cup\{-\infty\},\oplus,-\infty)$$ forms an abelian monoid<sup><a href="#fn1" id="ref1" title="group-ish, without inverses">1</a></sup>
+ * $$(\mathbb{R}\cup\{-\infty\},\otimes,0)$$ forms an (abelian) monoid
+ * $-\infty\otimes x=-\infty$ for any $x<\infty$, and $x\otimes(y\oplus z)=(x\otimes y)\oplus(x\otimes z)$
+
+This list is precisely the axioms of a (commutative) semiring.
+
+### Back to Amoeba
+
+Now we make use of the algebra of $\oplus_t,\otimes_t$ to understand amoebas $A_t(p_t)$. For simplicity, we focus on the polynomials
+
+$$p_t(z_1,z_2) = z_2 - \sum_{j=0}^da_j(t)z_1^j,$$
+
+where $a_j(t)$ are functions in $t$ that has the asymptotic growth
+
+$$a_j(t) = \alpha_j t^{c_j} + o(t^{c_j}),$$
+
+as $t\to\infty$. Note that this implies $\mathrm{Log}_ta_j(t) = c_j + o(1)$.
+
+Call $(u,v)=\mathrm{Log}_t(z_1,z_2)$. Because $\mathrm{Log}_t(a_j(t)z_1^j) = (c_j +o(1))\otimes_t ju$, whenever $p(z_1,z_2)=0$ we have
+
+$$v \in \mathrm{Log}_t\left(\sum_{j=0}^d\mathrm{Log}_t^{-1}((c_j+o(1))\otimes_t ju)\right) \\ ={\bigoplus}_t((c_j+o(1))\otimes_t ju).$$
+
+That is,
+
+$$A_t(p_t) \subset \{v={{\bigoplus}_t}((c_j+o(1))\otimes_t ju)\}.$$
+
+If we take the limit $t\to\infty$ here, we fall into the following cases, depending on $u$.
+
+1. If there is unique $j$ in which $(c_j\otimes ju)>(c_i\otimes iu)$ for all $i\neq j$, then $v=\mathrm{Log}_tz_2$ has the unique value according to $u=\mathrm{Log}_tz_1$.
+1. If more than two $j$'s have the same $c_j\otimes ju$ values, then $v$ can be multivalued.
+
+By this observation, by taking the limit $t\to\infty$ we get
+
+\begin{equation}
+\label{eqn:limit-amoeba}
+A_\infty(p) \subset \{v=\bigoplus_{j=0}^d(c_j\otimes ju) : u\notin S\}\cup\{v\leq\bigoplus_{j=0}^d(c_j\otimes ju) : u\in S\},
+\end{equation}
+
+for a finite set $S$. In that sense, we claim that the limit amoeba $A_\infty(p)$ is a graph of a function (to be called the *tropicalization of $p_t(z)$*) plus some vertical downward lines.
+
+### Remarks for $t\to 0+$
+
+Another interesting algebra one can do is to consider the 'amoeba' sum when $t$ is small. Most of the notes above are still valid, with some fixes:
+
+ * $x\otimes_ty=[\log_t(t^x+t^y),\log_t\vert t^x-t^y\vert]\subset(-\infty,\infty]$,
+ * $\lim_{t\to 0+}x\otimes_ty$ is $=\min(x,y)$ when $x\neq y$, and $[x,\infty]$ when $x=y$.
+ * Setting $x\oplus y=\min(x,y)$ and $x\otimes y=x+y$, we have $(\mathbb{R}\cup\{\infty\},\oplus,\otimes)$ a (tropical) semiring.
+ * The numbers $c_j=\lim_{t\to 0+}\mathrm{Log}_ta_j(t)$ uses $t\to 0+$ instead.
+ * The limit amoeba $$A_0(p)\subset\{v=\bigoplus_{j=0}^d(c_j\otimes ju) : u\notin S\}\cup\{v\geq\bigoplus_{j=0}^d(c_j\otimes ju) : u\in S\}$$ sits on a graph plus some vertical lines upwards.
+
+We see that, except for the max vs. min and $-\infty$ vs. $+\infty$, we observe that these two conventions are giving not much difference here. 
+
+However, for our purpose, we use the asymptotic $t\to 0+$ in the sequels. This is because this asymptotic has a better connection with the study of nonarchimedean fields. For instance, if we recall the *Puiseux series,* if we pick $$a_j(t)\in\mathbb{C}\{\{t\}\}$$, then the growth degree $c_j=\lim_{t\to 0+}\mathrm{Log}_ta_j(t)$ can be evaluated algebraically as $c_j=v(a_j(t))$ (the least exponent that $a_j(t)$ has).
+
+<sup id="fn1">1. A set with an associative and commutative binary operator and an identity. So almost like a group but without inverses. <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
+
+# Tropical Polynomial
+
+The above work introduces us the *tropicalization* of $f_t(z_1)=\sum_{j=0}^da_j(t)z_1^j$, as
+
+$$\mathrm{trop}(f_t)(w_1) := \bigoplus_{j=0}^d(c_j\otimes jw_1),$$
+
+where $c_j=\lim_{t\to 0+}\mathrm{Log}_ta_j(t)$<sup><a href="#fn2" id="ref2" title="We now use minimum convention.">2</a></sup> is the growth degree. This definition naturally extends to multivariable polynomials, $p_t(z)=\sum_{j\in A}a_j(t)z_1^{j_1}\cdots z_n^{j_n}$,
+
+$$\mathrm{trop}(p_t)(w_1,\ldots,w_n) := \bigoplus_{j\in A}(c_j\otimes j_1w_1\otimes \cdots\otimes j_nw_n).$$
+
+So just like polynomials are sums of monomials, tropical polynomials are tropical sums of tropical monomials. Because each tropical monomial has the form $c_j+j\cdot w$, we see that each tropical polynomial is a piecewise linear *concave*<sup><a href="#fn3" id="ref3" title="for min. convention">3</a></sup> function.
+
+## Tropical Variety
+
+Recall that \eqref{eqn:limit-amoeba} (or its $t\to 0+$ counterpart) tells that the polynomial $p_t=z_2-f_t(z_1)$ has the limit amoeba $A_0(p_t)$ mostly given as the graph of the tropicalization $\mathrm{trop}(f_t)(w_1)$, with some exceptions when two monomials in $\mathrm{trop}(f_t)(w_1)$ become the same.
+
+But compare the 'graph equation' $w_2=\mathrm{trop}(f_t)(w_1)$ and the tropicalization of $p_t$, $\mathrm{trop}(p_t)(w_1,w_2)=w_2\oplus\mathrm{trop}(f_t)(w_1)$. The two look unrelated on the surface, at least in algebraic ways. Alas, there is still a way.
+
+ > **Proposition.** (1) For a given $w_1\in\mathbb{R}$, suppose there is unique $j$ such that $\mathrm{trop}(f_t)(w_1)=c_j+jw_1$. Then $w_2=\mathrm{trop}(f_t)(w_1)$ iff $w_2$ conicides with that minimal monomial $c_j+jw_1$.
+ >
+ > (2) For a given $w_1\in\mathbb{R}$, suppose there are two $i\neq j$ such that $\mathrm{trop}(f_t)(w_1)=c_j+jw_1=c_i+iw_1$. Then $w_2\geq\mathrm{trop}(f_t)(w_1)$ iff $w_2\leq c_j+jw_1=c_i+iw_1$.
+
+The proposition itself is trivial, but if we understand $w_2=\mathrm{trop}(f_t)(w_1)$, etc. as $(w_1,w_2)\in A_0(p_t)$, this proposition boils down to the following
+
+ > **Corollary.** We have $(w_1,w_2)\in A_0(p_t)$ iff two tropical monomials in $\mathrm{trop}(p_t)(w_1,w_2)=w_2\oplus\mathrm{trop}(f_t)(w_1)$ have the same value. Equivalently, the tropical polynomial $\mathrm{trop}(p_t)$ is not differentiable at $(w_1,w_2)$.
+
+Motivated by this observation, we define the *tropical variety* of a tropical polynomial as follows.
+
+ > **Definition.** A *tropical variety* of a tropical polynomial $\mathrm{trop}(p_t)(w)$ is the set of points $w\in\mathbb{R}^n$ where the tropical polynomial is not differentiable. Equivalently, it is the set of points $w$ where two or more tropical monomials of $\mathrm{trop}(p_t)$ coincide.
+
+This notion answers the initial question: how do we find the limit amoeba $A_0(p_t)$? The answer is, find the tropical variety of $\mathrm{trop}(p_t)$!
+
+## Nonarchimedean tropicalization; the Fundamental Theorem
+
+As remarked earlier, the growth degree of a Puiseux series is precisely the valuation of that Puiseux series: any $$a(t)\in\mathbb{C}\{\{t\}\}$$ has $\lim_{t\to 0+}\mathrm{Log}_ta(t) = v(a(t))$. (The zero function also applies!) Thus it is natural to generalize the tropicalized polynomial for nonarchimedean contexts.
+
+Suppose $K$ is as in the <a href="#setups" id="ref-setup-1">setup</a>.
+
+ > **Definition.** Let $f(x)\in K[x_1,\ldots,x_n]$, written as $f(x)=\sum_{j\in A}a_jx^j$. Define its *tropicalization* $\mathrm{trop}(f)(w)$ as
+ >
+ > $$\mathrm{trop}(f)(w) = \min_{j\in A}(v(a_j) + j\cdot w).$$
+
+Just as before, this defines a piecewise-linear concave function $\mathbb{R}^n\to\mathbb{R}$. The tropical variety thus generalizes also; but for this time, we generalize this for embedded affine varieties.
+
+ > **Definition.** A *tropical variety* $V(\mathrm{trop}(f))$ of a tropical polynomial $\mathrm{trop}(f)(w)$ is the set of points $w\in\mathbb{R}^n$ where the tropical polynomial is not differentiable.
+ >
+ > Given an (embedded) affine variety $X\subset\mathbb{A}^n$ that intersects $$T^n:=\{T\in\mathbb{A}^n : T_1T_2\cdots T_n\neq 0\}$$, given by the equations $X=V(f_1,\ldots,f_k)$, we define its *tropical variety* $\mathrm{trop}(X)$ by
+ >
+ > $$\mathrm{trop}(X) := \bigcap_{f\in I(X)}V(\mathrm{trop}(f)),$$
+ >
+ > where $I(X)\subset K[x_1,\ldots,x_n]$ is the ideal of polynomials vanishing at $X$. (By Nullstellensatz, this means $I(X)=\sqrt{(f_1,\ldots,f_k)}$.)
+
+Not only that, but the notion of 'limit amoeba' also generalizes, again for (embedded) affine varieties of $K$.
+
+ > **Notation.** Suppose $X\subset\mathbb{A}^n$ is an (embedded) affine variety over $K$ that intersects the torus $$T^n:=\{T\in\mathbb{A}^n : T_1T_2\cdots T_n\neq 0\}$$. Define $\mathrm{Trop}(X)$ by the closed set
+ >
+ > $$\mathrm{Trop}(X):= \overline{\{v(x)\in\mathbb{R}^n : x\in X(K),\ (\forall i)(x_i\neq 0)\}}.$$
+ >
+ > Here $x=(x_1,\ldots,x_n)$, and $v(x)=(v(x_1),\ldots,v(x_n))$.
+
+Here is the nonarchimedean version of the 'limit amoeba' problem.
+
+ > <b id="fundamental-theorem">Fundamental Theorem of Tropical Algebraic Geometry</b> ([Diane and Sturmfels 2015](https://doi.org/10.1090/gsm/161), Thm 3.2.3)**.** We have $\mathrm{trop}(X)=\mathrm{Trop}(X)$.
+
+That is, the analytic problem, $\mathrm{Trop}(X)$, of finding the set of possible valuations on a variety can be switched to a purely algebraic problem, $\mathrm{trop}(X)$, of finding 'cracks' of tropicalized polynomials. When dimensions are low (say $n\leq 3$) and $X=V(f)$ is smooth of codimension 1, then sketching $V(\mathrm{trop}(f))$ is more or less a visual exercise.
+
+ > **Example.** Let $f(x)=x_1+x_2+x_3-1$. Then $V(\mathrm{trop}(f))$ is plotted as follows. (Plotted with matplotlib.pyplot; [source code](/files/220812-tropicalization-demo.py))
+ >
+ > <p align="center"><img title="converging-amoeba" id="amoeba" src="/images/fig220812-3.png" /></p>
+ >
+ > This divides the space into 4 cells, where each has $x_1,x_2,x_3$ or $(-1)$ with the least valuations.
+
+Another significance of the theorem is this. If we think back on the motivation of the algebraic tropical variety $\mathrm{trop}(X)$, we have used that two monomials $x,y$ sum to zero if $v(x)=v(y)$. (For complex case: $t^u+t^v=0$ only if $\vert t^u\vert=\vert t^v\vert$.) So it is evident that each $p\in X(K)$ has $v(p)\in\mathrm{trop}(X)$, i.e., $\mathrm{Trop}(X)\subset\mathrm{trop}(X)$.
+
+But the other inclusion is not very obvious. Even if $w\in\mathrm{trop}(X)$ means we *can* have a point $p\in X(K)$ with $v(p)=w$, finding actual $p$ is another task (in fact, approximations can be the best when $w\notin(K^\times)^n$)! The theorem helps us fill in such a gap, thus.
+
+## Newton Polygon; the Ball Norm
+
+For $n=1$, the tropicalization is connected to more classical math on nonarchimedean fields, the [Newton polygon](https://en.wikipedia.org/wiki/Newton_polygon). This concept *does* relate to Newton, for this is closely related to Newton's method of finding solutions of polynomials with Puiseux coefficients (cf. a [Mathoverflow answer](https://mathoverflow.net/questions/15703)). Once we know the growth degree (a.k.a. valuation) $c$ of a solution, then one can initiate the method with $x_0=\alpha t^c$!
+
+ > **Note.** The use of Newton polygons is not particularly restricted to 1D. It *is* a useful tool for sketching $\mathrm{trop}(X)$ in higher dimensions.
+
+Recall that a tropical polynomial $\mathrm{trop}(f)(w_1)$ is a concave, piecewise-linear function. There one can think of the [Legendre transform](https://en.wikipedia.org/wiki/Legendre_transformation) of the convex function $-\mathrm{trop}(f)(-w_1)$.<sup><a href="#fn4" id="ref4">4</a></sup> That is one of the equivalent definitions of the Newton polygon.
+
+ > **Definition** (Newton Polygon)**.** Given a polynomial $f(x)=\sum_{j=0}^da_jx^j\in K[x]$ in one variable, we define its *Newton polygon* $NP_f(\lambda)$ by one of the following equivalent definitions.
+ >
+ > 1. The Legendre transform $NP_f(\lambda):=\sup_{w_1\in\mathbb{R}}\left(\lambda w_1 -(- \mathrm{trop}(f)(-w_1))\right)$ of the negated tropicalized polynomial
+ > 1. The greatest convex function $NP_f$ such that $NP_f(j)\leq v(a_j)$ for all $j=0,\ldots,d$
+
+The more standard definition of the Newton polygon is given as the convex hull of the rays $\{j\}\times[v(a_j),\infty)\subset\mathbb{R}^2$. However, this results in the epigraph $$\{y\geq NP_f(x)\}$$ of a convex function $NP_f(x)$, so I identify this epigraph and the convex function and call both the *Newton polygon.*
+
+The main use of this polygon is as follows.
+
+ > **Main Theorem of Newton Polygons** (see [B. Casselman's note](https://personal.math.ubc.ca/~cass/research/pdf/Newton.pdf))**.** The Newton polygon is a piecewise linear convex function defined on a subinterval of $[0,d]$.<sup id="refx"><a href="fnx">a</a></sup> List $\mu_1<\ldots<\mu_k$ for the list of slopes that $NP_f$ can have, and let $\lambda_1,\ldots,\lambda_k$ be the length of intervals where we have slopes $\mu_1,\ldots,\mu_k$ (respectively).
+ >
+ > Then the original polynomial $f$ has $\lambda_i$ roots of valuations $-\mu_i$, for $i=1,\ldots,k$.
+
+<sup id="fnx">a. I am worried of the case when $a_0=0$ or $a_d=0$.<a href="#refx" title="Jump back to footnote a in the theorem.">↩</a></sup>
+
+ > **Corollary.** For $f(x),g(x)\in K[x]$, we have $\mathrm{trop}(fg)=\mathrm{trop}(f)+\mathrm{trop}(g)$.
+
+(Proof) It suffices to show that, for $f(x)=a\prod_{i=1}^d(x-\xi_i)$ with $\xi_i\neq 0$ for all $i$, we have $\mathrm{trop}(f)(w_1)=v(a) + \sum_{i=1}^d\min(w_1,v(\xi_i))$. Because $\mathrm{trop}(f)(\infty)=v(f(0))=v(a)+\sum_{i=1}^d\min(\infty,v(\xi_i))$, the problem reduces to comparing the derivatives. That is,
+
+\begin{equation}
+\label{eqn:multiplicity-of-ball-norm}
+[\mathrm{trop}(f)]'(w_1) = \sum_{i=1}^d H(v(\xi_i)-w_1),
+\end{equation}
+
+where $H(x)$ is the [Heaviside function](https://en.wikipedia.org/wiki/Heaviside_step_function).
+
+Align the roots $v(\xi_1)\geq\cdots\geq v(\xi_d)$ in decreasing valuations. Define $\varphi(w_1):=-\mathrm{trop}(f)(-w_1)$, and consider the Legendre dual $\varphi^\ast=NP_f$. Its derivative $NP_f'(\lambda)$ has values $-v(\xi_1)\leq\cdots\leq -v(\xi_d)$, at intervals $[0,1],[1,2],\ldots,[d-1,d]$ respectively. If we 'invert' this, we get a step function $\psi(w_1)$ with $\psi(-\infty)=0$ and raises step 1 at $-v(\xi_i)$. In terms of the Heaviside function, this means
+
+$$\psi(w_1) = \sum_{i=1}^d H(v(\xi_i)+w_1).$$
+
+By the construction, we have $\psi(w_1)=\varphi'(w_1)=[\mathrm{trop}(f)]'(-w_1)$. We have established \eqref{eqn:multiplicity-of-ball-norm}.
+
+<p style="text-align: right;">$\square$</p>
+
+ > <b id="lem1-revisit">Corollary.</b> The ball norm $\vert\cdot\vert_{B(a,r)}$ on $K[T]$ is multiplicative.
+
+(Proof) Write $f(T)=\sum_{j=0}^da_jT^j$. In the [previous post](/posts/2022/07/berkovich-line-2/#lem2) we have shown that $\vert f(T)\vert_{B(a,r)}=\max(\vert a_j\vert_K r^j : 0\leq j\leq d)$. Taking $-\log_q$ on both sides,
+
+$$-\log_q\vert f(T)\vert_{B(a,r)} = \min_{0\leq j\leq d}(v(a_j) + j(-\log_q r)) \\ = \mathrm{trop}(f)(-\log_qr).$$
+
+All else follows from $\mathrm{trop}(fg)=\mathrm{trop}(f)+\mathrm{trop}(g)$, established above.
+
+<p style="text-align: right;">$\square$</p>
+
+This is the 'proof that captures the complete sense that the theorem encodes,' as remarked after the [previous proof](/posts/2022/07/berkovich-line-2/#lem1-pf). The beauty lies in not just viewing $f(T)$ as an additive lump but turning it into a multiplicative lump to draw the multiplicativity as a natural result. Intermediate math was the Newton polygon, and I have devoted the first half of this post to introduce it.
+
+<sup id="fn2">2. To have an easier connection with nonarchimedean fields, from now on we use the 'minimum' convention. Hence $x\oplus y=\min(x,y)$ here. <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup><br>
+<sup id="fn3">3. This is because our tropical sum is taking minima. For versions taking maxima, tropical polynomials are convex. <a href="#ref3" title="Jump back to footnote 3 in the text.">↩</a></sup><br>
+<sup id="fn4">4. Bit ugly, but this treatment was made to be more coherent with standard references. <a href="#ref4" title="Jump back to footnote 4 in the text.">↩</a></sup>
+
+# Berkovich Line is the Limit of Tropicalizations
+
+The following theorem is the core reason why we have talked about tropicalizations.
+
+ > **Payne Tropicalization Theorem** ([Payne 2009](https://doi.org/10.4310/MRL.2009.v16.n3.a13), for Berkovich lines)**.** Let $K$ be as in the <a href="#setups" id="ref-setup-2">setup</a>. For each finite $I\subset K$, define the map $\pi_I\colon(\mathbb{A}^1_K)^{an}\to(-\infty,\infty]^I$ by
+ >
+ > $$\pi_I(x):=\left(-\log_q\vert T-a_i\vert\right)_{a_i\in I},$$
+ >
+ > and define the set $$\mathbf{Trop}(\mathbb{A}^1,I)=\overline{\{\left(v(x-a_i)\right)_{a_i\in I} : x\in\mathbb{A}^1(K)\}}\subset (-\infty,\infty]^I$$. Then writing $\varprojlim\pi_I$ for the inverse limit of the maps $\pi_I\colon (\mathbb{A}^1_K)^{an}\to\mathbf{Trop}(\mathbb{A}^1,I)$, we have a homeomorphism
+ >
+ > $$\varprojlim \pi_I\colon (\mathbb{A}^1_K)^{an}\xrightarrow{\sim}\varprojlim_{\substack{I\subset K \\ I\text{ finite}}}\mathbf{Trop}(\mathbb{A}^1,I).$$
+
+**Remark.** The statement above is a simplified version of the original. The original statement takes [inverse limits](https://en.wikipedia.org/wiki/Inverse_limit) over all embeddings $\iota\colon\mathbb{A}^1\hookrightarrow\mathbb{A}^{m(\iota)}$, and considers the tropical set $\mathbf{Trop}(\mathbb{A}^1,\iota):=\mathrm{Trop}(\iota(\mathbb{A}^1))$ based on the embedded variety, and relations between them (by toral equivariant morphisms). By this, the original statement covers all affine varieties over $K$, not just $\mathbb{A}^1$.
+
+Here my simplification lies in restricting the embeddings to linear ones $\iota_I\colon\mathbb{A}^1\hookrightarrow\mathbb{A}^{I}$, $T\mapsto\left(T-a_i\right)_{a_i\in I}$, so that I can avoid discussing toral equivalence and rather stick to the inclusions of the indices $I$ when I think of $\varprojlim$. Such a decision does not lose the generality, as this subfamily is a [cofinal](https://en.wikipedia.org/wiki/Cofinal_(mathematics)) family of Payne's original. See [appendix](#appendix-inverse-limit) for the details.
+
+## Preparations
+
+Recall that $A=K[T]$ is a [unique factorization domain](https://en.wikipedia.org/wiki/Unique_factorization_domain) (UFD). If $K$ is algebraically closed, we can list its irreducibles as $(T-a)$, $a\in K$. Therefore, we determine a point $x\in(\mathbb{A}^1_K)^{an}$ by looking at the values $\left(\vert T-a\vert_x\right)_{a\in K}$, or their logarithms $(-\log_q\vert T-a\vert_x)_{a\in K}$.
+
+This data also allows us to embed the line $(\mathbb{A}^1_K)^{an}$ into a smaller product space.
+
+$$ev\colon(\mathbb{A}^1_K)^{an}\hookrightarrow\prod_{a\in K}[0,\infty)\cong\prod_{a\in K}(-\infty,\infty], \\ x\mapsto\left(\vert T-a\vert_x\right)_{a\in K}\cong\left(-\log_q\vert T-a\vert_x\right)_{a\in K}.$$
+
+Compare this with the embedding $(\mathbb{A}^1_K)^{an}\hookrightarrow\prod_{f\in K[T]}[0,\infty)\cong\prod_{f\in K[T]}(-\infty,\infty]$ seen in the [previous post](/posts/2022/07/berkovich-line-2/). The product was held over all polynomials back then, and now we reduced it to linear monic polynomials only!
+
+Nonetheless, we still have an infinite product space, so we need to work a bit to convince you that this embedding is worth taking a look at.
+
+## Finite Approximation Scheme
+
+A general scheme one can apply to study an infinite product space, or subspaces of it, is to think of finite sub-products. But instead of explaining this general scheme, we sketch how that affects understanding the Berkovich line $(\mathbb{A}^1_K)^{an}$.
+
+For each finite subset $I\subset K$, denote the natural projection $\pi_I\colon\prod_{a\in K}(-\infty,\infty]\twoheadrightarrow(-\infty,\infty]^I$. Write $\pi_I\left((\mathbb{A}^1_K)^{an}\right)$ for the image of $\pi_I\circ ev\colon(\mathbb{A}^1_K)^{an}\hookrightarrow\prod_{a\in K}(-\infty,\infty]\twoheadrightarrow(-\infty,\infty]^I$. Then we have a natural map
+
+\begin{equation}
+\label{eqn:finite-approximation}
+\varprojlim\pi_I\colon (\mathbb{A}^1_K)^{an}\to\varprojlim_{\substack{I\subset K \\ I\text{ finite}}}\pi_I\left((\mathbb{A}^1_K)^{an}\right).
+\end{equation}
+
+If the map $\varprojlim\pi_I$ is a surjection, then it is a homeomorphism. That is, we have $(\mathbb{A}^1_K)^{an}$ formed by 'stacking up' finite approximations $\pi_I\left((\mathbb{A}^1_K)^{an}\right)$. The notation $\varprojlim$ is for the [*inverse limit*](https://en.wikipedia.org/wiki/Inverse_limit); see the [appendix](#appendix-inverse-limit).
+
+## Understanding Finite Approximates
+
+Understanding $(\mathbb{A}^1_K)^{an}$ via \eqref{eqn:finite-approximation} means we pass the problem to understanding $\pi_I\left((\mathbb{A}^1_K)^{an}\right)$, with $I\subset K$ arbitrary. This will be done in two steps. (Here, $\mathbb{A}^1(K)\subset(\mathbb{A}^1_K)^{an}$ is the set of evaluation norms in the line.)
+
+ 1. Understand what the *closure* $\overline{\pi_I(\mathbb{A}^1(K))}$ is, i.e., what is the closure of the set $$\{\left(v(x-a_i)\right)_{a_i\in I} : x\in K\}\subset(-\infty,\infty]^I$$.
+ 2. See if $\pi_I\left((\mathbb{A}^1_K)^{an}\right)=\overline{\pi_I(\mathbb{A}^1(K))}(=\mathbf{Trop}(\mathbb{A}^1,I))$.
+ 3. Show that $\varprojlim\pi_I\colon (\mathbb{A}^1_K)^{an}\to\varprojlim_{I\subset K}\pi_I((\mathbb{A}^1_K)^{an})$ is a surjection.
+
+### Step 1
+
+This is a step where the [fundamental theorem](#fundamental-theorem) plays its role. Declare the embedding $\iota_I\colon\mathbb{A}^1\hookrightarrow\mathbb{A}^I$ by $T\mapsto(T-a_i)_{a_i\in I}$, and let $X_I=\iota_I(\mathbb{A}^1)$. Then the definition of $\mathbf{Trop}(\mathbb{A}^1,I)$ above is just $\mathrm{Trop}(X_I)$. Because $\overline{\pi_I(\mathbb{A}^1(K))}=\mathbf{Trop}(\mathbb{A}^1,I)$, we thus need to study $\mathrm{Trop}(X_I)$ essentially.
+
+ > **Example 1.** Suppose $$I=\{a,0\}$$. Then $X_I\subset\mathbb{A}^2$ is given by an equation $T_2=T_1+a$. Hence $\mathrm{Trop}(X_I)=\mathrm{trop}(X_I)$ is given by the locus where $f(w_1,w_2)=\min(w_1,w_2,v(a))$ is not differentiable. This is sketched as the following figure.
+ >
+ > ![2d-tropical-line](/images/fig220812-4.png)
+ >
+ > Observe that the map $v\mapsto q^{-v}$ helps us to sketch $\mathrm{trop}(X_I)$ by a tree that has a single root node of valence 3 and three leaves, one placed at infinity. If we assign $0,a$ for non-infinite leaves, one observes that we reach the root node if we go by $\vert a\vert_K$ from $0$ or $a$. This tree is the picture when one plots ball norms 
+ >
+ > $$\{B(0,t),B(a,t) : {0<t<\vert a\vert_K}\}\cup\{B(0,t) : t\geq\vert a\vert_K\}\subset(\mathbb{A}^1_K)^{an}.$$
+ >
+ > In particular, the picture is the convex hull of $0,a\in K\subset(\mathbb{A}^1_K)^{an}$ and arbitrarily big balls $B(0,t)$, $t\gg\vert a\vert_K$.
+
+One can sketch a similar picture with $$I=\{a,b\}$$, with $\vert a-b\vert_K$ being the distance to the root.
+
+ > **Example 2.** Suppose $$I=\{0,a,b\}$$, where $\vert b\vert_K>\vert a\vert_K$. Because $X_I\subset\mathbb{A}^3$ is given by equations $T_3=T_1+b$ and $T_2=T_1+a$, we find $\mathrm{trop}(X_I)$ by intersecting tropical varieties $V(\min(w_3,w_1,v(b)))$ and $V(\min(w_2,w_1,v(a)))$. The tropical planes and their intersecting line are plotted below. [source code](/files/220812-3d-line-embedding-demo.py)
+ >
+ > ![3d-tropical-line](/images/fig220812-5.png)
+ >
+ > We observe that, (1) if the line is projected to $w_1w_2$-plane, then we get back to the picture with $$I=\{0,a\}$$, but (2) we also have that $X_I$ (3d picture) is built from $$X_{\{0,a\}}$$ by adding a branch to $b$ from $B(0,\vert b\vert_K)$.
+
+These observations suggest us the followings.
+
+ * Let $J\subset I$ and $\vert I\setminus J\vert=1$. The space $\mathrm{Trop}(X_I)$ is obtained by adding a branch for $a\in I\setminus J$ to a smaller picture $\mathrm{Trop}(X_J)$. If $\min_{a_j\in J}\vert a-a_j\vert_K=\vert a-a_{j_0}\vert_K$, then the branch is made at the ball norm $B(a_{j_0},\vert a-a_{j_0}\vert_K)$.
+ * Furthermore, the natural projection $\mathrm{Trop}(X_I)\to\mathrm{Trop}(X_J)$ is obtained by collapsing that branch.
+
+We thus conclude that, we can sketch $\mathrm{Trop}(X_I)$'s by hand, and even understand the natural projections $\mathrm{Trop}(X_I)\to\mathrm{Trop}(X_J)$ (for $I\supset J$)!
+
+**Remark.** Other than `collapse the branch' projections, these branching constructions remind us of the visualization of the Berkovich line in [part 2](/posts/2022/07/berkovich-line-2/). However, although this branching construction is suitable to cover all evaluation and ball norms, it is not very suitable to (1) introduce void intersection norms, and (2) claim density of evaluation norms.
+
+Rather, the picture understanding suggests us that the [direct limit](https://en.wikipedia.org/wiki/Direct_limit) along the inclusions $\mathrm{Trop}(X_J)\to\mathrm{Trop}(X_I)$ (for $J\subset I$) gives a different topological space than the inverse limit as in Payne's tropicalization $(\mathbb{A}^1_K)^{an}\xrightarrow{\sim}\varprojlim\mathrm{Trop}(X_I)$.
+
+
+
+### Step 2
+
+Because $\mathbb{A}^1(K)\subset(\mathbb{A}^1_K)^{an}$ is dense, if we do not think it carefully it seems like $\pi_I\left((\mathbb{A}^1_K)^{an}\right)=\overline{\pi_I(\mathbb{A}^1(K))}$ follows for free. But if we set $f=\pi_I\circ ev$ and $A=\mathbb{A}^1(K)$, we are actually claiming $f(\overline{A})=\overline{f(A)}$ here, which is stronger than $f(\overline{A})\subset\overline{f(A)}$, a 'definition' of continuity.<sup><a href="#fn5" id="ref5" title="countereg: arctan(x)">5</a></sup>
+
+
+Thanks to the following topology fact,
+
+ > **Proposition.** If $f\colon X\to Y$ is continuous and proper,<sup><a href="#fna" id="refa" title="preimage of compact is compact">a</a></sup> and $Y$ is locally compact and Hausdorff, then for any $A\subset X$, we have $f(\overline{A})=\overline{f(A)}$.
+ >
+ > (Proof) If $y\in\overline{f(A)}$, then there is a compact neighborhood $L$ of $y$ and a [net](https://en.wikipedia.org/wiki/Net_(mathematics)) $(f(a_\alpha))_{\alpha\in D}\to y$, with $a_\alpha\in A$ and $f(a_\alpha)\in L$. Because $f^{-1}(L)$ is compact, passing to a subnet, we may assume that the net $(a_\alpha)_{\alpha\in D}$ converges to $x\in \overline{A}$. Then $f(x)=\lim_{\alpha\in D}f(a_\alpha)=y$. $\square$
+
+<sup id="fna">a. The inverse image of any compact set is compact. Equivalently, any net $(x_\alpha)$ in $X$ going to infinity (i.e., escapes any compact set eventually) also has $(f(x_\alpha))$ in $Y$ going to infinity. <a href="#refa" title="Jump back to footnote a in the proposition.">↩</a></sup>
+
+we see that $\pi_I\left((\mathbb{A}^1_K)^{an}\right)=\overline{\pi_I(\mathbb{A}^1(K))}$ is a consequence of the following
+
+ > **Claim.** The map $\pi_I\circ ev$ is proper.
+
+(Proof) Denote $x\vee y:=\max(x,y)$, $x\wedge y:=\min(x,y)$, and $\bigwedge_{i\in I}x_i:=\inf_{i\in I}x_i$.
+
+As $ev\colon(\mathbb{A}^1_K)^{an}\hookrightarrow\prod_{a\in K}(-\infty,\infty]$ is a topological embedding, it suffices to see that the set $ev\left[(\pi_I\circ ev)^{-1}(K)\right]$ is compact for any compact $K\Subset(-\infty,\infty]^I$.
+
+Observe that
+
+$$\begin{array}{rl}\vert T-a_i\vert_x\leq q^{-M}&\quad\Longrightarrow\quad\vert T-a\vert_x\leq q^{-M}\vee\vert a-a_i\vert_K \\[1em]
+&\quad\Longrightarrow\quad -\log_q\vert T-a\vert_x\leq M\wedge v(a-a_i),
+\end{array}$$
+
+for any $a\in K$, $a_i\in I$, and $M\in\mathbb{R}$. Encoding this set theoretically, we then have the following inclusion:
+
+$$ev\left[(\pi_I\circ ev)^{-1}([M,\infty]^I)\right] \subset \prod_{a\in K}[M\wedge\bigwedge_{a_i\in I}v(a-a_i),\infty].$$
+
+Hence $ev[(\pi_I\circ ev)^{-1}(K)]$ is compact (by Tychonoff!) whenever $K\subset[M,\infty]^I$ is compact.
+
+<p style="text-align: right;">$\square$</p>
+
+### Step 3
+
+In general, the inverse limit of finite approximations $\pi_I((\mathbb{A}^1_K)^{an})$ is bigger than the original space $(\mathbb{A}^1_K)^{an}$. Thus to have homoeomorphic, we at least need to know whether the map $\varprojlim\pi_I$ in \eqref{eqn:finite-approximation} is surjective.
+
+The proof below is almost an excerpt of ([Payne 2009](https://doi.org/10.4310/MRL.2009.v16.n3.a13), Proof of Thm. 1.1).
+
+Suppose $(y_I)_{I\subset K}$ is a point in $\varprojlim\pi_I((\mathbb{A}^1_K)^{an})$. Let $g\colon K[T]\to[0,\infty)$ be a multiplicative function such that $g(a)=\vert a\vert_K$ and $g(T-a)=q^{-y_{\{a\}}}$, for all $a\in K$. It remains to see if $g$ is a seminorm, i.e., satisfies the triangle inequality $g(f_1(T)+f_2(T))\leq g(f_1(T))+g(f_2(T))$.
+
+The inequality is trivial if $f_1=0$, $f_2=0$, or $f_1+f_2=0$. So I suppose none of them are the case. Let $I$ be the collection of zeroes of $f_1$, $f_2$, and $f_1+f_2$. Because $y_I=(y_{\{a\}})_{a\in I}\in\pi_I((\mathbb{A}^1_K)^{an})$ is in the image of the multiplicative seminorms, we have a point $\vert\cdot\vert_x\in(\mathbb{A}^1_K)^{an}$ such that $\vert T-a\vert_x=q^{-y_{\{a\}}}=g(T-a)$ holds for all $a\in I$. Because both $\vert\cdot\vert_x$ and $g$ are multiplicative, it follows that $\vert f_1\vert_x=g(f_1)$, $\vert f_2\vert_x=g(f_2)$, and $\vert f_1+f_2\vert_x=g(f_1+f_2)$. The rest follows from the triangle inequality of $\vert\cdot\vert_x$.
+
+This verifies that $g$ is a seminorm on $K[T]$, i.e., $g\in(\mathbb{A}^1_K)^{an}$. This $g$ has $\varprojlim\pi_I(g)=(y_I)_{I\subset K}$, as required.
+
+<sup id="fn5">5. A quick example of this distinction is $f(x)=\arctan x$, $f\colon\mathbb{R}\to\mathbb{R}$. Indeed, $f(\overline{\mathbb{Q}})=(-\frac{\pi}{2},\frac{\pi}{2})\neq\overline{f(\mathbb{Q})}=[-\frac{\pi}{2},\frac{\pi}{2}]$. <a href="#ref5" title="Jump back to footnote 5 in the text.">↩</a></sup>
+
+# Appendix: Inverse Limit
+
+Suppose a family $(X_\alpha)_{\alpha\in D}$ of topological spaces are given, indexed by a [directed set](https://en.wikipedia.org/wiki/Directed_set) $D$ (a set with a preorder that admits an upper bound of any two elements). Suppose further that, whenever $\alpha\leq\beta$ in $D$, we have a map $\varphi_{\alpha\leftarrow\beta}\colon X_\beta\to X_\alpha$. In that case, we define the **inverse limit** $\varprojlim_{\alpha\in D}X_\alpha$ by the topological space $X$ with the following properties.
+
+ * (Natural projections) For each $\alpha\in D$, there is a map $\varphi_\alpha\colon X\to X_\alpha$, such that $\varphi_{\alpha\leftarrow\beta}\circ\varphi_\beta=\varphi_\alpha$ for all $\alpha\leq\beta$ in $D$.
+ * (Universality) For any space $Y$ with a family of maps $\psi_\alpha\colon Y\to X_\alpha$ and $\varphi_{\alpha\leftarrow\beta}\circ\psi_\beta=\psi_\alpha$, we have a *unique* map $f\colon Y\to X$ so that $\psi_\alpha = \varphi_\alpha\circ f$ for all $\alpha\in D$.
+
+The first property indicates that $X$ "stays above all $X_\alpha$'s," and the second property tells $X$ is the 'smallest' among such. The above properties do guarantee uniqueness (up to a homoeomorphism) but do not immediately give the existence of such an object. The existence is established first by constructing the space, e.g.,
+
+$$\varprojlim_{\alpha\in D}X_\alpha := \{(x_\alpha)\in\prod_{\alpha\in D}X_\alpha : (\forall\alpha\leq\beta)(\varphi_{\alpha\leftarrow\beta}(x_\beta)=x_\alpha)\}.$$
+
+A subset $D'\subset D$ is called [**cofinal**](https://en.wikipedia.org/wiki/Cofinal_(mathematics)) if every $\alpha\in D$ has $\beta\in D'$ such that $\alpha\leq\beta$. Then one can show that $\varprojlim_{\beta\in D'}X_\beta\cong\varprojlim_{\alpha\in D}X_\alpha$, applying the universality.
+
+ > **Note for Payne's Theorem.** The directed set in the Payne's theorem collects all embeddings $i\colon X\to\mathbb{A}^{m(i)}$ of an affine variety $X$ over $K$. We say $i\leq j$ if there is an equivariant morphism $\varphi\colon\mathbb{A}^{m(j)}\to\mathbb{A}^{m(i)}$<sup><a href="fnb" id="refb">a</a></sup> such that $\varphi\circ j=i$.
+ >
+ > For $X=\mathbb{A}^1$, an embedding is determined by polynomials $f_1,\ldots,f_m$ by the map $i\colon X\to\mathbb{A}^m$, $T\mapsto (f_1(T),\ldots,f_m(T))$. List all prime factors of $f_i$'s as $(T-a_j)_{j=1}^N$, and let $\alpha^i_j$ be the multiplicity of $(T-a_j)$ in $f_i(T)$, and let $c_i$ be the highest coefficient of $f_i(T)$. Then one can write $f_i(T)=c_i\prod_{j=1}^N(T-a_j)^{\alpha^i_j}$.
+ >
+ > Define the map $j\colon X\to\mathbb{A}^N$, $T\mapsto(T-a_j)_{j=1}^N$. The map $\varphi\colon\mathbb{A}^N\to\mathbb{A}^m$, $\varphi(S)=(c_1S^{\alpha^1},\ldots,c_mS^{\alpha^m})$ is an equivariant map such that $\varphi\circ j=i$. By this, we conclude that $j\geq i$. In other words, *the subcollection of linear embeddings of $\mathbb{A}^1$ forms a cofinal family.*
+ >
+ > Notice that, for linear embeddings $\iota_I\colon\mathbb{A}^1\to\mathbb{A}^I$ and $\iota_J\colon\mathbb{A}^1\to\mathbb{A}^J$, the only way to have $\iota_I\leq\iota_J$ is to have $I\subset J$. Thus we can reduce equivariant preorder to the subset relation.
+
+<sup id="fnb">a. That is, there is a algebraic group map $f\colon T^{m(j)}\to T^{m(i)}$ such that $\varphi(a.T)=f(a).\varphi(T)$.<a href="#refb" title="Jump back to footnote a in the note.">↩</a></sup>
+
+Now suppose a topological space $X$ embeds into a product space $\prod_{\alpha\in\Lambda}X_\alpha$ ($\Lambda$ is just a set). Set $D$ for all finite subsets of $\Lambda$; this forms a directed set by the subset relation. Write $Y_I$ for the image of $\varphi_I\colon X\hookrightarrow\prod_{\alpha\in\Lambda}X_\alpha\twoheadrightarrow\prod_{\alpha\in I}X_\alpha$, and let $Y=\varprojlim_{I\in D}Y_I$ be the inverse limit constructed set-theoretically above.
+
+Denoting the natural projection $\pi_{JI}\colon\prod_{\alpha\in I} X_\alpha\twoheadrightarrow\prod_{\alpha\in J} X_\alpha$, we see that whenever $J\subset I$, we have $\varphi_J=\pi_{JI}\varphi_I$. This induces
+
+ * a natural map $\varphi\colon X\to Y$.
+
+This map is injective, but in general not surjective. But once the map is known to be surjective, this is a homeomorphism. This is because $X$ has the coarsest topology in which all $\varphi_I$'s are continuous, and $Y$ also has the topology in which all projections $Y\to Y_I$'s are continuous. Once $\varphi$ is bijective, we see that two topologies are identified.
+
+
+
+<!--sup><a href="#fn1" id="ref1">1</a></sup-->
+<!--sup id="fn1">1.  <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup-->
+
+#### Update Log
+ * <span style="font-size:12px">220813: Created</span>
