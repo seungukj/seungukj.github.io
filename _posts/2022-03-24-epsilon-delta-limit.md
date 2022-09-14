@@ -225,7 +225,7 @@ An analogue for the limit $\lim_{x\to c}f(x)=L$ may also be established. To do s
 
 ## Post-remarks
 
- * The motivation of the post was my success in introducing $\limsup a_n$ and $\liminf a_n$ of bounded sequences. Not only it was good for standard limit exercises, but the notion was very useful to explain why the alternating series test works. For an alternating series $\sum(-1)^na_n$ with $a_n\geq 0$ decreasing, the gap between sup and inf hammers is _precisely_ $a_n$. (Thus $a_n\to 0$ iff convergent.)
+ * The motivation of the post was my success in introducing $\limsup a_n$ and $\liminf a_n$ of bounded sequences in a calculus course. Not only it was good for standard limit exercises, but the notion was very useful to explain why the alternating series test works. For an alternating series $\sum(-1)^na_n$ with $a_n\geq 0$ decreasing, the gap between sup and inf hammers is _precisely_ $a_n$. (Thus $a_n\to 0$ iff convergent.)
  * Although students may find the $\epsilon$-$\delta$ definition not very motivating in general, it can also be some interesting math topic in some contexts.  Specifically, the sequence analogue of the definition (the '$\epsilon$-$K$ definition') does get interesting with the following points.<sup><a href="#fn3" id="ref3">3</a></sup>
    * The definition is especially interesting if the sequence $a_n$ has a relatively simple form, e.g. $1/n^p$, $e^{-\alpha n}$, $\ln n$, ...
    * _Using_ the definition is also interesting. For instance, it is not hard to show that $\ln n<n^{0.5}$ for $n>K$, $K=K(1)$ an integer, by combining $\displaystyle\lim_{n\to\infty}\frac{\ln n}{n^{0.5}}=0$ and the $\epsilon$-$K$ definition.
