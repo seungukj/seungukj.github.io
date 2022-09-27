@@ -11,7 +11,7 @@ tags:
   - Asian mathematics
 ---
 
-전통적인 산술로 2차방정식의 수치해를 구하는 방법에 대한 소개 및 몇 가지 '현대적인' 응용에 대한 글.
+전통적인 산술로 2차방정식의 수치해를 구하는 방법에 대한 소개 및 여기서 도출되는 몇 가지 '숫자 놀이'에 대한 글.
 
 # 머릿말
 
@@ -70,7 +70,7 @@ $$f_2(t') = 100\cdot f_1(4+\frac1{10}t') \\
  >
  > $$f_{k+1}(t') = 100\cdot\underbrace{\frac{f_k(q+\frac1{10}t') - f_k(q)}{\frac1{10}t'}}_{(\ast)}\cdot \frac1{10}t' + f_k(q)$$
  >
- > <font style="font-style:normal">에서 몫 부분 $(\ast)$을 조립제법으로 계산하는 식으로도 이해할 수 있다. (이 관점은 [홍주희 2008](https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=DIKO0011393211&dbt=DIKO)의 II.E절에서 따른 것이다.)</font>
+ > <font style="font-style:normal">에서 몫 부분 $(\ast)$을 조립제법으로 계산하는 식으로도 이해할 수 있다. (이 관점은 <a href="https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=DIKO0011393211&dbt=DIKO">홍주희 2008</a>의 II.E절에서 따른 것이다.)</font>
 
 말마따나 복잡하지만, 이 알고리즘을 반복하다 보면 다음 데이터를 얻는다.
 
@@ -96,12 +96,12 @@ $$f_2(t') = 100\cdot f_1(4+\frac1{10}t') \\
 
 이 산법을 체계적인 세로셈으로 만든 방법이 **개평법**이다. ([영문 위키](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Digit-by-digit_calculation), [일어 위키](https://ja.wikipedia.org/wiki/%E9%96%8B%E5%B9%B3%E6%B3%95), [국문 자료 1](https://blog.daum.net/sheun019/3617), [국문 자료 2](https://namu.wiki/w/%EC%84%B8%EB%A1%9C%EC%85%88%EB%B2%95#s-2.2.1)) 그림으로 그려내면 이런 식.
 
-<p align="center"><img src="/images/220927-fig1.png"></img></p>
+<p align="center"><img src="/images/220927-fig1.png"></p>
 
 위의 계산을 응용하면 다음과 같은 계산도 가능하다.
 
  * 방정식 $x^3-2=0$의 수치해를 위와 같이 구해서, $\sqrt[3]{2} = 1.2599210\ldots$를 손계산으로 구할 수 있다. 다만 이 경우 추적해야 하는 계수가 상수항, 1차항, 2차항으로 3개나 될 뿐더러, 1차항의 update 규칙이 워낙 복잡하다는 흠이 있다. <br> 이 수치 알고리즘은 고차다항식으로 갈 수록 점차 더 쓰기 어려워지는 방법이기는 하다.
- * Nonarchimedean field가 이러한 수치 기법과 매우 친한 편이다. 가령 위의 개평법을 약간 응용해서, 7진수체 $\mathbb{Q}_7$에서 $\sqrt{2}$를 계산하는 등의 시도를 할 수 있다. 다만 다음 이유로 이러한 시도가 '숫자 장난'의 선을 넘기는 힘든 것 같다.
+ * Nonarchimedean field가 이러한 수치 기법과 매우 친한 편이다. 가령 위의 개평법을 약간 응용해서, 7진수체 $\mathbb{Q}_7$에서 $\sqrt{2}$를 계산하는 등의 시도를 할 수 있다. 다만 다음 이유로 이러한 시도가 '숫자 놀이'의 선을 넘기는 힘든 것 같다.
    - 자리수를 합하고 곱하는 과정을 7진법으로 해야 해서, 중간과정의 점검이 매우 혼란하다.
    - 번듯이 [Hensel's Lemma](https://en.wikipedia.org/wiki/Hensel%27s_lemma)라는 대안이 있는 상황이기도 하다.
 
