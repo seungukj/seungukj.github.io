@@ -15,7 +15,12 @@ I am Seung uk Jang, a graduate student of Mathematics in the University of Chica
 My advisors are [Alex Eskin](https://www.math.uchicago.edu/~eskin/) and [Simion Filip](https://math.uchicago.edu/~sfilip/).
 
 # Academic Interests
-My primary mathematical interest is about dynamical systems, especially those on the complex spaces.
+My primary mathematical interest is about dynamical systems, especially those on the complex manifolds and their holomorphic automorphisms.
+
+To put it in more detail, I am interested in playing with compact Kähler manifolds $X$ that admits Ricci-flat metrics (by Yau, this is equivalent to: $c_1(X)=0$). The Ricci-flat metric and the natural Green current lets us to do some interesting analysis on these complex manifolds. My research interest stands on
+
+ * dynamical consequences of such analysis on complex manifolds, and
+ * study, by which extent, the study of complex manifolds generalize.
 
 I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics.
 
