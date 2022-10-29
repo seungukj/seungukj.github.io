@@ -1,5 +1,5 @@
 ---
-title: 'Quantitative Baker's Theorem and Rational Approximation of logarithms'
+title: 'Quantitative Baker Theorem and Rational Approximation of logarithms'
 date: 2022-10-29
 permalink: /posts/2022/10/rational-approx-of-log/
 author_profile: false
