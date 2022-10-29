@@ -91,7 +91,7 @@ Typical examples of badly approximated numbers are quadratic irrational numbers,
 
 Badly approximated numbers form a measure zero subset of real numbers. One way to see this is to establish some ergodic theory of continued fractions.
 
- > **Definition.** <font style="font-style:normal">Define $T\colon(0,1)\setminus\mathbb{Q}\to(0,1)\setminus\mathbb{Q}$, $T(x)=\frac1x-\lfloor\frac1x\rfloor$ (the *Gauss map*). Define a measure $\mu$ on $[0,1]$ as $\mu(dx)=\frac1{\log 2}\frac1{1+x}\, dx$ (the *Gauss–Kuzmin measure*).</font>
+ > **Definition.** <font style="font-style:normal">Define $T\colon(0,1)\setminus\mathbb{Q}\to(0,1)\setminus\mathbb{Q}$, $T(x)=\frac1x-\lfloor\frac1x\rfloor$ (the Gauss map). Define a measure $\mu$ on $[0,1]$ as $\mu(dx)=\frac1{\log 2}\frac1{1+x}\, dx$ (the Gauss–Kuzmin measure).</font>
 
 Let $x$ be an irrational number between 0 and 1. Set $a_n(x):=\lfloor 1/T^{n-1}(x)\rfloor$, for $n\geq 1$. Then we have the continued fraction expansion $x=[0;a_1(x),a_2(x),a_3(x),\ldots]$. In fact, we have $T^n(x)=[0;a_{n+1}(x),a_{n+2}(x),\ldots]$.
 
@@ -109,7 +109,7 @@ By Birkhoff ergodicity, we have a null set $\mathcal{N}\subset(0,1)$ such that e
 
 $$\lim_{N\to\infty}\frac1N\sum_{n=0}^{N-1}\mathbb{1}_{[0,1/M]}(T^n(x))=\int_0^{1/M}\frac1{\log 2}\frac{dx}{1+x}\\=\log_2\left(1+\frac1M\right).$$
 
-In particular, the set $$\mathcal{B}_M=\{x\in(0,1)\setminus\mathbb{Q} : (\forall n\in\mathbb{N})(a_n(x)\leq M)\}$$ is disjoint from $(0,1)\setminus\mathcal{N}$, thus $\mathcal{B}_M\subset\mathcal{N}$. So each $\mathcal{B}_M$ has zero volume. Now the set $\bigcup_{M\in\mathbb{N}}\mathcal{B}_M$ of all badly approximated numbers also has zero volume, and the claim follows. $//$
+In particular, the set $$\mathcal{B}_M=\{x\in(0,1)\setminus\mathbb{Q} : (\forall n\in\mathbb{N})(a_n(x)\leq M)\}$$ is disjoint from $(0,1)\setminus\mathcal{N}$, thus $$\mathcal{B}_M\subset\mathcal{N}$$. So each $$\mathcal{B}_M$$ has zero volume. Now the set $$\bigcup_{M\in\mathbb{N}}\mathcal{B}_M$$ of all badly approximated numbers also has zero volume, and the claim follows. $//$
 
 ## Amortized growth rate of the 'remainder'
 
@@ -140,11 +140,11 @@ $$\log x_i > \log(1+[0;a_{i+1},a_{i+2}])>\frac{\log 2}{[0;a_{i+1},a_{i+2}]}\geq\
 Therefore we estimate
 
 $$\frac1n\sum_{i=1}^n\log x_i > \frac1n\sum_{i\in I_n}\log 2 + \frac1n\sum_{i\notin I_n}\frac{\log 2}{1+a_{i+1}} \\
-= \log 2\cdot\frac{|I_n|}{n} + \frac{\log 2}{n}\sum_{i\notin I_n}\frac1{1+a_{i+1}}.$$
+= \log 2\cdot\frac{\vert I_n\vert}{n} + \frac{\log 2}{n}\sum_{i\notin I_n}\frac1{1+a_{i+1}}.$$
 
-To estimate the latter sum, we observe that the number of $i\notin I_n$ such that $i+1\notin I_n$ is at least $n-2|I_n|$. Thus at least $n-2|I_n|$ summands in $\sum_{i\notin I_n}1/(1+a_{i+1})$ are $\geq 1/2$, giving us that
+To estimate the latter sum, we observe that the number of $i\notin I_n$ such that $i+1\notin I_n$ is at least $n-2\vert I_n\vert$. Thus at least $n-2\vert I_n\vert$ summands in $\sum_{i\notin I_n}1/(1+a_{i+1})$ are $\geq 1/2$, giving us that
 
-$$\frac1n\sum_{i=1}^n\log x_i > \log 2\cdot\frac{|I_n|}{n} + \frac{\log 2}{n}\cdot\frac12\cdot(n-2|I_n|) \\=\frac12\log 2.\quad //$$
+$$\frac1n\sum_{i=1}^n\log x_i > \log 2\cdot\frac{\vert I_n\vert}{n} + \frac{\log 2}{n}\cdot\frac12\cdot(n-2\vert I_n\vert) \\=\frac12\log 2.\quad //$$
 
 I am personally curious about whether the bound $\frac12\log 2$ in \eqref{eqn:remainder-asymptotic} is optimal.
 
@@ -158,7 +158,7 @@ If one is worried about the branches of logarithms, one may set $$\mathbb{L}=\{z
 
 In Baker's original work, one has the quantitative version of the theorem.
 
- > **Theorem** ([Baker](https://doi.org/10.1112/S0025579300003843), quantitative). Let $\alpha_1,\ldots,\alpha_n\in\overline{\mathbb{Q}}\setminus\{0,1\}$ be algebraic numbers of degrees $\leq d$ and heights $\leq A$. Suppose we fix a branch of $\log$ so that $\log\alpha_1,\ldots\log\alpha_n$ are $\mathbb{Q}$-linearly independent.
+ > **Theorem** ([Baker](https://doi.org/10.1112/S0025579300003843), quantitative). Let $$\alpha_1,\ldots,\alpha_n\in\overline{\mathbb{Q}}\setminus\{0,1\}$$ be algebraic numbers of degrees $\leq d$ and heights $\leq A$. Suppose we fix a branch of $\log$ so that $\log\alpha_1,\ldots\log\alpha_n$ are $\mathbb{Q}$-linearly independent.
  >
  > Let $\beta_0,\ldots,\beta_n\in\overline{\mathbb{Q}}$, not all zeros, be algebraic numbers with degrees $\leq d$ and heights $\leq B$. Then the number
  >
