@@ -202,7 +202,7 @@ $$\left\vert\beta\log_{10}2-\alpha\right\vert > \frac1{\log 10}\exp(-32^8(\log 1
 
 (Here, $6\times 10^{12} - 1>32^8(\log 10)^2=5\;829\;498\;621\;754.60\ldots$ and $0.4<1/\log 10=0.43429\ldots$)
 
-## Inverse of a Lie algebra adjoint
+## Inverse of a commutator map
 
 Suppose $P_n^2$ is the vector space of a pair of degree $n$ polynomials in 2 variables (over complex numbers). That is, we have $(x_1^2,x_2^2)\in P^2_2$, $(x_1^2x_2-x_1x_2^2,x_1^3)\in P^2_3$, etc.
 
