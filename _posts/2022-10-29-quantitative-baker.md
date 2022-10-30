@@ -131,11 +131,11 @@ for Lebesgue-a.e. $x$, we see that $(x_1x_2\cdots x_n)^{1/n}$ will have a simila
 
 For $i\notin I_n$, one estimate
 
-$$x_i > [a_i;a_{i+1},a_{i+2}] = 1 + [0;a_{i+1},a_{i+2}],$$
+$$x_i > [a_i;a_{i+1},a_{i+2}] = 1 + \frac1{a_{i+1}+\dfrac1{a_{i+2}}},$$
 
 which results, with the concavity of the logarithm,
 
-$$\log x_i > \log(1+[0;a_{i+1},a_{i+2}])>\frac{\log 2}{[0;a_{i+1},a_{i+2}]}\geq\frac{\log 2}{1+a_{i+1}}.$$
+$$\log x_i > \log(1+\frac1{a_{i+1}+\dfrac1{a_{i+2}}})>\log 2\cdot \frac1{a_{i+1}+\dfrac1{a_{i+2}}}\geq\frac{\log 2}{1+a_{i+1}}.$$
 
 Therefore we estimate
 
