@@ -1,6 +1,7 @@
 ---
 title: "Kummer Rigidity for Irreducible Holomorphic Symplectic Manifolds"
 collection: talks
+type: "Talk"
 permalink: /talks/2022-11-08-IHS-rigidity
 venue: "Online Seminar on Algebraic and Complex Dynamics, Beijing-Taipei"
 date: 2022-11-08
