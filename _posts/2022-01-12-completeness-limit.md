@@ -165,7 +165,7 @@ and many more. So although I demo'ed that
 
 I still believe in myself that the (modern standard) $\epsilon$-$\delta$ definition of limit should be kept and not to be replaced by the "limsup-liminf definition."
 
-## Completely Regular Spaces (2021.01.18. appendix)
+## Completely Regular Spaces (2022.01.18. appendix)
 
 A comment from [Junekey Jeon](https://jk-jeon.github.io/) is that the "limsup-liminf definition" may be extended to [completely regular spaces](https://en.wikipedia.org/wiki/Tychonoff_space) (also known Tychonoff spaces, or $T_{3\frac12}$ spaces).
 
