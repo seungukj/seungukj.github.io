@@ -22,6 +22,8 @@ To put it in more detail, I am interested in playing with compact Kähler manifo
  * dynamical consequences of such analysis on complex manifolds, and
  * study, by which extent, the study of complex manifolds generalize.
 
+[My research statement](/files/Jang_research-statement.pdf)
+
 I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics.
 
 For my other miscellaneous math interests, check out [my blog](https://seungukj.github.io/blog/).
