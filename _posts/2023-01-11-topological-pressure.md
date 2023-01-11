@@ -177,7 +177,7 @@ Indeed, the sequence $$(e^\beta+1)^{-n}\mathcal{L}_\beta^n\omega$$, where $\omeg
 
 This verifies that $$\mathcal{L}_\beta$$ has the Perron-Frobenius eigenvalue $(e^\beta+1)$, the eigenfunction 1, and the eigenmeasure (which is a Gibbs measure; consider the homeomorphism fixing a digit $C(.0)\to C(.1)$) $$\mu_\beta$$ which is the Bernoulli measure above. The eigenmeausre is also the equilibrium measure for the potential $$A=\beta\mathbf{1}_{C(.0)}$$, and thus the pressure is
 
-$$P(\beta\mathbf{1}_{C(.0)})=p\beta+p\log\frac1p+(1-p)\log\frac1{1-p}=\log(e^\beta+1),$$
+$$P(\beta\mathbf{1}_{C(.0)})=p\beta+p\log\frac1p+(1-p)\log\frac1{1-p}=\log(e^\beta+1), \label{eqn:pressure-logZ}$$
 
 where $p=(1+e^{-\beta})^{-1}$.
 
@@ -267,7 +267,7 @@ Furthermore, running the remaining steps of the engine we see that the total amo
 
  So $\langle W\rangle=\beta^{-1}\log(1+e^{\beta\epsilon})$ and $S=\log(1+e^{\beta\epsilon})$ follows.
 
-If we understand that this $\epsilon$ is taking the role of potential $$\beta\epsilon\mathbf{1}_{C(.0)}$$ in the transfer operator over a symbolic system, the entropy computed above is precisely the topological pressure $$P(\beta\epsilon\mathbf{1}_{C(.0)})=\log(1+e^{\beta\epsilon})$$ that [we have found above](#bernoulli-potential).
+If we understand that this $\epsilon$ is taking the role of potential $$\beta\epsilon\mathbf{1}_{C(.0)}$$ in the transfer operator over a symbolic system, the entropy computed above is precisely the topological pressure $$P(\beta\epsilon\mathbf{1}_{C(.0)})=\log(1+e^{\beta\epsilon})$$ that we have found in \eqref{eqn:pressure-logZ}.
 
 <!-- In case a potential $A\colon X\to\mathbb{R}$ is fixed, one may get interested in pressure $P(\beta A)$ with inverse temperature $\beta=(kT)^{-1}$. In that case, $\beta\mapsto P(\beta A)$ is a convex function. -->
 
