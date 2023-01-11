@@ -32,7 +32,7 @@ $$(\mathcal{L}\omega)(x)=\sum_{y\in f^{-1}(x)}e^{A(y)}\omega(y),$$
 
 for $\omega$ in a suitable function space on $X$. This operator $\mathcal{L}$ is called the **transfer operator** or the *Ruelle(-Perron-Frobenius) operator*.
 
-If the domain of $\mathcal{L}$ contains continuous functions, then we think of its adjoint operator $\mathcal{L}^\ast$ acting on measures as well. If $f$ is differentiable, then we can set $A=-\log |J_f|$, where $J_f$ is the Jacobian of $f$, to get $\mathcal{L}^\ast=f_\ast$.
+If the domain of $\mathcal{L}$ contains continuous functions, then we think of its adjoint operator $\mathcal{L}^\ast$ acting on measures as well. If $f$ is differentiable, then we can set $A=-\log\vert J_f\vert$, where $J_f$ is the Jacobian of $f$, to get $\mathcal{L}^\ast=f_\ast$.
 
 ## Expansive, Specifications
 
@@ -132,7 +132,7 @@ The importance of the result cannot be overemphasized, so I will point out only 
 
 # Transfer Operators on Shift Spaces
 
-To study the definitions above further, we study what happens to the definitions for the space $$X=\{0,1\}^\mathbb{N}$$ of full shifts (here, our natural number set $\mathbb{N}=\mathbb{Z}_{>0}$ consists of positive integers). We denote an element $\left(x_i\right)_{i=1}^\infty\in X$ as digits after a point, $.x_1x_2x_3\cdots$.
+To study the definitions above further, we study what happens to the definitions for the space $$X=\{0,1\}^\mathbb{N}$$ of full shifts (here, our natural number set $$\mathbb{N}=\mathbb{Z}_{>0}$$ consists of positive integers). We denote an element $$\left(x_i\right)_{i=1}^\infty\in X$$ as digits after a point, $$.x_1x_2x_3\cdots$$.
 
 Perhaps we can append some alphabets in front of $x\in X$. Such elements will be denoted $.0x$, $.1011x$, etc.
 
@@ -152,30 +152,30 @@ By this metric, the shift system $(X,\sigma)$ is expansive (with constant $\thet
 
 ## Zero potential
 
-Denote $\mathcal{L}_0$ for the transfer operator with the zero potential $A\equiv 0$. That is, $\mathcal{L}_0\omega(x)=\sum_{y\colon\sigma(y)=x}\omega(y)=\omega(.0x)+\omega(.1x)$. A picture for this action may be sketched as follows.
+Denote $$\mathcal{L}_0$$ for the transfer operator with the zero potential $A\equiv 0$. That is, $$\mathcal{L}_0\omega(x)=\sum_{y\colon\sigma(y)=x}\omega(y)=\omega(.0x)+\omega(.1x)$$. A picture for this action may be sketched as follows.
 
-![visual-transfer-operator](./images/230111-fig1.png)
+![visual-transfer-operator](/images/230111-fig1.png)
 
-That is, we think of restrictions $\omega|C(.0)$ and $\omega|C(.1)$, "stretch the domains" (by the shift map $\sigma$) for each, and add them up to find $\mathcal{L}_0\omega$.
+That is, we think of restrictions $\omega\vert C(.0)$ and $\omega\vert C(.1)$, "stretch the domains" (by the shift map $\sigma$) for each, and add them up to find $$\mathcal{L}_0\omega$$.
 
  > <font style="font-style:normal">A handy way to discover this is to try evaluating $\mathcal{L}_0\omega$ for some 'sample continuous functions' $\omega=\mathbf{1}_{C(.0)},\mathbf{1}_{C(.01)}-\mathbf{1}_{C(.00)}$, etc. Such combinations of indicator functions are easy to sketch and easy to trace their contributions, thus the pictorial interpretation above.</font>
 
-If we think $\omega$ as a mass distribution over $X$, then $\mathcal{L}_0\omega$ is the new mass distribution obtained by acting the shift $\sigma$ to the space $X$. 
-As we do not normalize the mass after the procedure, it is easy to guess that overall mass doubles after each step, and there seems no additional 'concentration of mass' that exhibits an increase of mass of more than two times. Thus we guess that the Perron-Frobenius eigenvalue is 2. Indeed this matches with $h_{\mathrm{top}}(X,\sigma)=\log 2$.
+If we think $\omega$ as a mass distribution over $X$, then $$\mathcal{L}_0\omega$$ is the new mass distribution obtained by acting the shift $\sigma$ to the space $X$. 
+As we do not normalize the mass after the procedure, it is easy to guess that overall mass doubles after each step, and there seems no additional 'concentration of mass' that exhibits an increase of mass of more than two times. Thus we guess that the Perron-Frobenius eigenvalue is 2. Indeed this matches with $$h_{\mathrm{top}}(X,\sigma)=\log 2$$.
 
 ## Bernoulli Potential
 
-Next, we think of the potential $A=\beta\mathbf{1}_{C(.0)}$, where $\beta\in\mathbb{R}$ is a real parameter. That is, we have $A(x)=\beta$ if $x\in C(.0)$, and $A(x)=0$ otherwise. Call $\mathcal{L}_\beta$ for the corresponding transfer operator.
+Next, we think of the potential $$A=\beta\mathbf{1}_{C(.0)}$$, where $\beta\in\mathbb{R}$ is a real parameter. That is, we have $A(x)=\beta$ if $x\in C(.0)$, and $A(x)=0$ otherwise. Call $$\mathcal{L}_\beta$$ for the corresponding transfer operator.
 
-In that case $\mathcal{L}_\beta\omega(x)=e^\beta\omega(.0x)+\omega(.1x)$, so it does a similar job as the zero potential cases, except that it emphasizes (or dismisses, if $\beta<0$) mass located at the cylinder $C(.0)$. The process multiplies the mass by $(e^\beta+1)$, so just as the $\mathcal{L}_0$ case, we guess the Perron-Frobenius eigenvalue of $\mathcal{L}_\beta$ as that multiple.
+In that case $$\mathcal{L}_\beta\omega(x)=e^\beta\omega(.0x)+\omega(.1x)$$, so it does a similar job as the zero potential cases, except that it emphasizes (or dismisses, if $\beta<0$) mass located at the cylinder $C(.0)$. The process multiplies the mass by $(e^\beta+1)$, so just as the $$\mathcal{L}_0$$ case, we guess the Perron-Frobenius eigenvalue of $$\mathcal{L}_\beta$$ as that multiple.
 
-Indeed, the sequence $(e^\beta+1)^{-n}\mathcal{L}_\beta^n\omega$, where $\omega$ is the indicator function of a cylinder set of $X$, converges to the constant function $\int_X\omega\, d\mu_\beta$, where $\mu_\beta$ is the Bernoulli measure defined as follows.
+Indeed, the sequence $$(e^\beta+1)^{-n}\mathcal{L}_\beta^n\omega$$, where $\omega$ is the indicator function of a cylinder set of $X$, converges to the constant function $$\int_X\omega\, d\mu_\beta$$, where $\mu_\beta$ is the Bernoulli measure defined as follows.
 
  > For any cylinder $C(.s)$, let $\vert s\vert_0,\vert s\vert_1$ be the number of 0's and 1's appearing in $s$, respectively. Let $p=(1+e^{-\beta})^{-1}$. Then we define
  > 
  > $$\mu_\beta(C(.s))=\binom{\vert s\vert_0+\vert s\vert_1}{\vert s\vert_0}p^{\vert s\vert_0}\left(1-p\right)^{\vert s\vert_1}.$$
 
-This verifies that $\mathcal{L}_\beta$ has the Perron-Frobenius eigenvalue $(e^\beta+1)$, the eigenfunction 1, and the eigenmeasure (which is a Gibbs measure; consider the homeomorphism fixing a digit $C(.0)\to C(.1)$) $\mu_\beta$ which is the Bernoulli measure above. The eigenmeausre is also the equilibrium measure for the potential $A=\beta\mathbf{1}_{C(.0)}$, and thus the pressure is
+This verifies that $$\mathcal{L}_\beta$$ has the Perron-Frobenius eigenvalue $(e^\beta+1)$, the eigenfunction 1, and the eigenmeasure (which is a Gibbs measure; consider the homeomorphism fixing a digit $C(.0)\to C(.1)$) $$\mu_\beta$$ which is the Bernoulli measure above. The eigenmeausre is also the equilibrium measure for the potential $$A=\beta\mathbf{1}_{C(.0)}$$, and thus the pressure is
 
 $$P(\beta\mathbf{1}_{C(.0)})=p\beta+p\log\frac1p+(1-p)\log\frac1{1-p}=\log(e^\beta+1),$$
 
@@ -203,7 +203,7 @@ Now we assign a 'log weight' $\tau\colon S\to\mathbb{R}$ on the set S of string 
 
 Here is an attempt to relate the topological pressure with Szilard's engine. (Figure from [Leff & Rex 2002](https://www.amazon.com/dp/0750307595))
 
-![Fig1.9-of-Leff-Rex](./images/230111-fig2.png)
+![Fig1.9-of-Leff-Rex](/images/230111-fig2.png)
 
 *Szilard's engine* is an ideal model of an information engine, that consists of a chamber that has one particle of an ideal gas (fig. (a)); thus the state equation $\beta VP=1$, where $\beta=1/(k_BT)$ is the inverse temperature. The cyclic operation of the engine is described as follows.
 
@@ -241,7 +241,7 @@ is recovering the binary Shannon entropy.
 
 Suppose we are building our chamber with a flexible material, so that the chamber may expand one of its partitions to reach the equilibrium. (We initially partition the chamber evenly in volume.)
 
-![Szilard-with-external-E](./images/230111-fig3.png)
+![Szilard-with-external-E](/images/230111-fig3.png)
 
 To elaborate, we run the engine as follows. Regardless of where the particle is, add some energy $\epsilon$ to the particle. Using that energy, let the particle isothermally expand.
 
@@ -267,7 +267,7 @@ Furthermore, running the remaining steps of the engine we see that the total amo
 
  So $\langle W\rangle=\beta^{-1}\log(1+e^{\beta\epsilon})$ and $S=\log(1+e^{\beta\epsilon})$ follows.
 
-If we understand that this $\epsilon$ is taking the role of potential $\beta\epsilon\mathbf{1}_{C(.0)}$ in the transfer operator over a symbolic system, the entropy computed above is precisely the topological pressure $P(\beta\epsilon\mathbf{1}_{C(.0)})=\log(1+e^{\beta\epsilon})$ that [we have found above](#bernoulli-potential).
+If we understand that this $\epsilon$ is taking the role of potential $$\beta\epsilon\mathbf{1}_{C(.0)}$$ in the transfer operator over a symbolic system, the entropy computed above is precisely the topological pressure $$P(\beta\epsilon\mathbf{1}_{C(.0)})=\log(1+e^{\beta\epsilon})$$ that [we have found above](#bernoulli-potential).
 
 <!-- In case a potential $A\colon X\to\mathbb{R}$ is fixed, one may get interested in pressure $P(\beta A)$ with inverse temperature $\beta=(kT)^{-1}$. In that case, $\beta\mapsto P(\beta A)$ is a convex function. -->
 
