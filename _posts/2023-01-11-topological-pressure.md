@@ -243,7 +243,7 @@ Suppose we are building our chamber with a flexible material, so that the chambe
 
 ![Szilard-with-external-E](/images/230111-fig3.png)
 
-To elaborate, we run the engine as follows. Regardless of where the particle is, add some energy $\epsilon$ to the particle. Using that energy, let the particle isothermally expand.
+To elaborate, we run the engine as follows. If the particle exists at the left side, add some energy $\epsilon$ to the particle. Using that energy, let the particle isothermally expand. (If the particle exists at the right side, do not add energy, but expand the left chamber $$V_f=e^{\beta\epsilon}V_i$$ anyways.)
 
 To estimate the final volume after the expansion $V_i\to V_f$, we think that the energy $\epsilon$ received is completely turned into the work, thus
 
@@ -257,11 +257,11 @@ By this, we reduce to the uneven volume case, with the volume ratio $e^{\beta\ep
 
 Furthermore, running the remaining steps of the engine we see that the total amount of work done is estimated as follows.
 
- * If the particle fall in the left partition, then
+ * If the particle exists at the left partition, then
 
  $$W_{\mathrm{tot}}(L)=\epsilon+\frac1\beta\log\frac{1+e^{\beta\epsilon}}{e^{\beta\epsilon}}=\frac1\beta\log(1+e^{\beta\epsilon}).$$
 
- * If the particle fall in the right partition, then
+ * If the particle exists at the right partition, then
 
  $$W_{\mathrm{tot}}(R)=\frac1\beta\log\frac{1+e^{\beta\epsilon}}1=\frac1\beta\log(1+e^{\beta\epsilon}).$$
 
@@ -273,3 +273,4 @@ If we understand that this $\epsilon$ is taking the role of potential $$\beta\ep
 
 #### Update Log
  * <span style="font-size:12px">230111: Created</span>
+ * <span style="font-size:12px">230116: Fixed a misleading description on Variant 2/Szilard's engine</span>
