@@ -274,3 +274,4 @@ If we understand that this $\epsilon$ is taking the role of potential $$\beta\ep
 #### Update Log
  * <span style="font-size:12px">230111: Created</span>
  * <span style="font-size:12px">230116: Fixed a misleading description on Variant 2/Szilard's engine</span>
+ * <span style="font-size:12px">230128: Title changed: there's no Landauer Principle discussed!</span>
