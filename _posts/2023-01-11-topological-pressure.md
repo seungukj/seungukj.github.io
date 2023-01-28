@@ -1,5 +1,5 @@
 ---
-title: 'Topological Pressure, Szilard's Engine'
+title: 'Topological Pressure, Szilard Engine'
 date: 2023-01-11
 permalink: /posts/2023/01/topological-pressure/
 author_profile: false
