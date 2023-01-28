@@ -1,5 +1,5 @@
 ---
-title: 'Landauer Principle, Topological Pressure'
+title: 'Topological Pressure, Szilard's Engine'
 date: 2023-01-11
 permalink: /posts/2023/01/topological-pressure/
 author_profile: false
