@@ -54,7 +54,7 @@ $$\det P = (\det U)(\det\Sigma)=\pm\prod_{i=1}^n\vert\mathbf{v}_i\vert \label{eq
 
 is an integer, as P is an integral matrix. $\square$
 
-Of course, one already has the result, by observing that \eqref{eqn:1} gives $\det(P^\dagger P)=(\det P)^2=\prod_i\vert\mathbf{v}_i\vert^2$, which gives \eqref{eqn:2}. The proof stated above is designed to show how SVD is crucial in the proof. Having said so, I wonder if <a href="#prop1">Proposition</a> above has purely number-theoretical proof.
+Of course, there is a shorter proof, by observing that \eqref{eqn:1} gives $\det(P^\dagger P)=(\det P)^2=\prod_i\vert\mathbf{v}_i\vert^2$, which gives \eqref{eqn:2}. The proof stated above is intended to show how SVD is involved. Having said so, I wonder if <a href="#prop1">Proposition</a> above has purely number-theoretical proof.
 
 # Eigenvalues of $3\times 3$ matrices
 
