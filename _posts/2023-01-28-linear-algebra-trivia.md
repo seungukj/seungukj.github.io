@@ -76,7 +76,7 @@ One can assemble this to develop systems like \eqref{eqn:3} above. For instance,
 
 $$\lambda_1+\lambda_2+\lambda_3=\mathrm{trace}(A), \\
 \lambda_1\lambda_2+\lambda_2\lambda_3+\lambda_3\lambda_1=\frac12(\mathrm{trace}(A)^2-\mathrm{trace}(A^2)), \\
-\lambda_1\lambda_2\lambda_3=\frac16\left(3\mathrm{trace}(A^3)-\mathrm{trace}(A)\cdot(3\mathrm{trace}(A^2)-\mathrm{trace}(A)^2)\right),$$
+\lambda_1\lambda_2\lambda_3=\frac16\left(2\,\mathrm{trace}(A^3)-\mathrm{trace}(A)\cdot(3\,\mathrm{trace}(A^2)-\mathrm{trace}(A)^2)\right),$$
 
 where the last line is a complicated way of saying $\lambda_1\lambda_2\lambda_3=\det A$. (See [Wikipedia](https://en.wikipedia.org/wiki/Characteristic_polynomial#Properties) for a more general formula.)
 
