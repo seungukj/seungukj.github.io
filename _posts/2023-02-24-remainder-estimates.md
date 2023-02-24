@@ -94,7 +94,7 @@ If $x,y$ are $\mathbb{Q}$-linearly independent, we claim the following.
 
  > <b id="thm:superficial">Theorem.</b> If $x,y>0$ have $y/x\notin\mathbb{Q}$, then $f^k(x,y)\to(0,0)$ as $k\to\infty$.
 
- ## Strategy for convergence
+## Strategy for convergence
 
 To show [this](#thm:superficial), we consider an alternative coordinates of the 1st quadrant, which is essentially the polar coordinates. But instead of the Euclidean norm and the angle, we consider the [taxicab norm](https://en.wikipedia.org/wiki/Taxicab_geometry) (i.e., $\ell^1$-norm) and the slope for respective alternatives.
 
