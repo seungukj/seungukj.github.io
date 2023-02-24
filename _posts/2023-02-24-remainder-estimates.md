@@ -166,7 +166,7 @@ $$
     = \log 2\cdot\frac{|I_n|}{n} + \frac{\log 2}{n}\sum_{i\notin I_n}\frac{1}{1+a_{i+1}}.
 $$
 
-Now the number of $i\notin I_n$'s that has $i+1\notin I_n$ is at least $n-2\vert I_n\vert$; if we think the complement of such $i$'s in $$[n]=\{1,\ldots,n\}$$, it is $I_n\cup(I_n-1)$ which has at most $2\vert I_n\vert$ elements. Thus at least $n-2|I_n|$ summands in $\sum_{i\notin I_n}1/(1+a_{i+1})$ are $1/2$, which gives us the estimate
+Now the number of $i\notin I_n$'s that has $i+1\notin I_n$ is at least $n-2\vert I_n\vert$; if we think the complement of such $i$'s in $$[n]=\{1,\ldots,n\}$$, it is $I_n\cup(I_n-1)$ which has at most $2\vert I_n\vert$ elements. Thus at least $n-2\vert I_n\vert$ summands in $\sum_{i\notin I_n}1/(1+a_{i+1})$ are $1/2$, which gives us the estimate
 
 $$\frac1n\sum_{i=1}^n\log\alpha_i > \log 2\cdot\frac{|I_n|}{n} + \frac{\log 2}{n}\cdot\frac12\cdot(n-2|I_n|) = \frac{\log 2}{2}.\quad\square$$
 
