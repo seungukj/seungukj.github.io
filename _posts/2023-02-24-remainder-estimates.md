@@ -60,7 +60,7 @@ In particular, one has
 
 $$\begin{bmatrix} p_n & p_{n-1} \\ q_n & q_{n-1} \end{bmatrix}=\begin{bmatrix} a_0 & 1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} a_1 & 1 \\ 1 & 0 \end{bmatrix}\cdots\begin{bmatrix} a_n & 1 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}, \label{eqn:recurrence-1}$$
 
-and because the matrix on the right is an integer matrix, we see that $p_n,q_n$ are integers also. Transposing \eqref{eqn:recurrence-2} gives the recurrence \eqref{eqn:recurrence}.
+and because the matrix on the right is an integer matrix, we see that $p_n,q_n$ are integers also. Transposing \eqref{eqn:recurrence-1} gives the recurrence \eqref{eqn:recurrence}.
 
 This idea of using Möbius transforms can be applied to find convergents of more general fractions
 
