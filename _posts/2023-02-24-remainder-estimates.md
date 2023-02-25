@@ -9,9 +9,7 @@ tags:
   - Analysis
 ---
 
-<b id="thm:main">Theorem.</b> For any irrational $\alpha>1$ whose continued fraction is $\alpha=[a_0;a_1,a_2,\ldots]$, the *remainders* $\alpha_i=[a_i;a_{i+1},a_{i+2},\ldots]$ have an amortized estimate
-
-$$(\alpha_1\cdots\alpha_n)^{1/n} > \sqrt{2}.$$
+<b id="thm:main">Theorem.</b> For any irrational $\alpha>1$ whose continued fraction is $\alpha=[a_0;a_1,a_2,\ldots]$, the *remainders* $\alpha_i=[a_i;a_{i+1},a_{i+2},\ldots]$ have an amortized estimate $(\alpha_1\cdots\alpha_n)^{1/n} > \sqrt{2}$.
 
 # Continued Fractions
 
