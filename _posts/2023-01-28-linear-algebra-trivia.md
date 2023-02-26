@@ -94,11 +94,11 @@ $$\mathrm{trace}(A)^2-\mathrm{trace}(A^2) =  (a_{11}+a_{22}+a_{33})^2 \\
 
 gives
 
-$$\lambda_1\lambda_2+\lambda_2\lambda_3+\lambda_3+\lambda_1= \\ = a_{11}a_{22}+a_{22}a_{33}+a_{33}a_{11}-a_{12}a_{21}-a_{13}a_{31}-a_{23}a_{32}.$$
+$$\lambda_1\lambda_2+\lambda_2\lambda_3+\lambda_3\lambda_1= \\ = a_{11}a_{22}+a_{22}a_{33}+a_{33}a_{11}-a_{12}a_{21}-a_{13}a_{31}-a_{23}a_{32}.$$
 
 ![2-block-det-tr](/images/230128-fig.png)
 
-I will temporarily call this the *2-block determinant-trace*.
+I will temporarily call this the *2-block determinant-trace*. (This is also known to be the trace of the [adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix).)
 
  > **Example.** Consider the $3\times 3$ matrix
  >
@@ -114,7 +114,12 @@ It is not hard to generalize the computation above, and show that
 
 $$\sum_{i<j}\lambda_i\lambda_j = \sum_{i<j}(a_{ii}a_{jj}-a_{ij}a_{ji}),$$
 
-for $n\times n$ matrices.
+for $n\times n$ matrices. On the other hand, the trace of the [adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix) is
+
+$$\mathrm{trace}(\mathrm{Adj}(A)) = (\det A)\cdot\sum_i\frac1{\lambda_i},$$
+
+so two only matches when $n=3$.
 
 #### Update Log
  * <span style="font-size:12px">230128: Created</span>
+ * <span style="font-size:12px">230226: Added some sentences regarding adjugate matrices</span>
