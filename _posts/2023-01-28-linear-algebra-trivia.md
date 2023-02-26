@@ -118,7 +118,7 @@ for $n\times n$ matrices. On the other hand, the trace of the [adjugate matrix](
 
 $$\mathrm{trace}(\mathrm{Adj}(A)) = (\det A)\cdot\sum_i\frac1{\lambda_i},$$
 
-so two only matches when $n=3$.
+so two matches only when $n=3$.
 
 #### Update Log
  * <span style="font-size:12px">230128: Created</span>
