@@ -52,7 +52,7 @@ $$\begin{bmatrix} p_n \\ q_n \end{bmatrix} = c_n\cdot\begin{bmatrix} a_0 & 1 \\ 
 
 for some number $c_n\neq 0$. We may set this $c_n=1$, if we allow $p_n,q_n$ to be rational numbers. (They will be shown to be integers later.) A similar construction $T_0T_1\cdots T_{n-1}T_n(0)$ gives the $(n-1)$-th convergent, because $T_n(0)=\infty$. Hence
 
-$$\begin{bmatrix} p_{n-1} \\ q_{n-1} \end{bmatrix} = \begin{bmatrix} a_0 & 1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} a_1 & 1 \\ 1 & 0 \end{bmatrix}\cdots\begin{bmatrix} a_n & 1 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 1 \\ 0 \end{bmatrix}.$$
+$$\begin{bmatrix} p_{n-1} \\ q_{n-1} \end{bmatrix} = \begin{bmatrix} a_0 & 1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} a_1 & 1 \\ 1 & 0 \end{bmatrix}\cdots\begin{bmatrix} a_n & 1 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix}.$$
 
 In particular, one has
 
@@ -94,7 +94,7 @@ If $x,y$ are $\mathbb{Q}$-linearly independent, we claim the following.
 
 ## Strategy for convergence
 
-To show [this](#thm:superficial), we consider an alternative coordinates of the 1st quadrant, which is essentially the polar coordinates. But instead of the Euclidean norm and the angle, we consider the [taxicab norm](https://en.wikipedia.org/wiki/Taxicab_geometry) (i.e., $\ell^1$-norm) and the slope for respective alternatives.
+To show [this theorem](#thm:superficial), we consider an alternative coordinates of the 1st quadrant, which is essentially the polar coordinates. But instead of the Euclidean norm and the angle, we consider the [taxicab norm](https://en.wikipedia.org/wiki/Taxicab_geometry) (i.e., $\ell^1$-norm) and the slope for respective alternatives.
 
 For a point $(x,y)\in\mathbb{R}^2$ in the 1st quadrant, define the variables $\gamma=x+y$ and $m=y/x$ [if $x=0$, set $m=\infty$]. The coordinate $[m,\gamma]$ then recovers the original point by $(x,y)=(\frac1{1+m}\gamma,\frac{m}{1+m}\gamma)$. Furthermore, the map $f$ acts on the coordinates in the following way.
 
@@ -143,7 +143,7 @@ $$m_i=[0;a_{i+1},a_{i+2},\ldots]$$
 
 will be useful; even, the Birkhoff product will be bounded above by (in fact, equals to) $m_1\cdots m_j$ if $k\geq\sum_{i=0}^ja_i$. By the [theorem](#thm:main) at the top, we have $m_1\cdots m_j\leq 2^{-j/2}$ and hence we have $\min(x_k,y_k)\to 0$, for $(x_k,y_k)=f^k(x,y)$.
 
-# Proof of the [Theorem](#thm:main)
+# Proof of the Main [Theorem](#thm:main)
 
 Recall the irrational number $\alpha=[a_0;a_1,a_2,\ldots]>1$ and the remainder fractions $\alpha_i=[a_i;a_{i+1},a_{i+2},\ldots]$.
 
