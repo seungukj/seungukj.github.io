@@ -5,12 +5,11 @@ permalink: /publications/
 author_profile: false
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+## Preprints
 
-{% include base_path %}
+ 1. **Vieta Involutions on Tropical Markov Cubics.** preprint. [arXiv](https://arxiv.org/abs/2306.11357)
+ 1. **Kummer Rigidity for Hyperkähler Automorphisms.** preprint. [arXiv](https://arxiv.org/abs/2109.06722)
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+## Published
+
+ 1. (joint with *Junehyuk Jung*) **Quantum unique ergodicity and the number of nodal domains of eigenfunctions.** J. Amer. Math. Soc. **31** (2018), no.2, 303–318. [link](https://doi.org/10.1090/jams/883)
