@@ -1,7 +1,7 @@
 ---
 title: ‘Cone Model for Vieta Actions on Tropical Markov Cubics’
 date: 2023-07-30
-permalink: /posts/2023/07/cone-model-vieta-trop-markov
+permalink: /posts/2023/07/cone-model-vieta-trop-markov/
 author_profile: false
 tags:
   - English
