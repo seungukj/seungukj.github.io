@@ -158,10 +158,10 @@ is a unipotent matrix, as $[A,B]$ is so. By Jordan decomposition, there is a non
 Hence the matrix $AB-BA$ has determinant zero. Furthermore, it has trace zero, so by Cayley--Hamilton theorem, it is nilpotent.</p>
 
 <p>Denote $N=AB-BA$. Then there is a basis in which one can represent $N=[\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}]$. Observe further that
-
- * $BAB^{-1}-A=-NB^{-1}$ has trace 0, and
- * $ABA^{-1}-B=NA^{-1}$ has trace 0.
-
+<ul>
+ <li> $BAB^{-1}-A=-NB^{-1}$ has trace 0, and </li>
+ <li> $ABA^{-1}-B=NA^{-1}$ has trace 0. </li>
+</ul>
 Because of the representation of N, both conditions indicate that $A^{-1},B^{-1}$ are both upper triangular. Thus A, B are too. Furthermore, the only eigenvector of N is the common eigenvector of A, B as well. This proves the required. $\square$</p>
 </details>
 
