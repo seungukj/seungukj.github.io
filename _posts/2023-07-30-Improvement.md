@@ -93,7 +93,7 @@ For the parameter A=B=C=0 and D=4, the Markov cubic is called a *Cayley cubic* a
 
 <details>
 <summary>Proof</summary>
-(proof) It is a straightforward computation using the Cayley--Hamilton theorem. The Cayley--Hamilton theorem (and the determinant condition) gives us identities like $A^2=xA-I$ or $B^{-1}=y-B$, etc., and thus we expand
+<p>(proof) It is a straightforward computation using the Cayley--Hamilton theorem. The Cayley--Hamilton theorem (and the determinant condition) gives us identities like $A^2=xA-I$ or $B^{-1}=y-B$, etc., and thus we expand
 
 $$\begin{array}{rl}
 [A,B] &= AB(x-A)(y-B) \\
@@ -104,8 +104,7 @@ $$\begin{array}{rl}
 &= xA+y(ABA^{-1})+(z-xy)AB-I
 \end{array}$$
 
-and prove the demanded. $\square$
-<br>
+and prove the demanded. $\square$</p>
 </details>
 
 The so-called Fricke identity
@@ -130,7 +129,7 @@ The setup $\operatorname{tr}[A,B]=2$ gains attention by the following
 
 <details>
 <summary>Proof</summary>
-<p></p>(proof) Note that this is equivalent to the claim that A, B have a common eigenvector $\vec{x}_1$ (the first basis vector). If $\vec{x}_1$ is a common eigenvector of both A and B, taking any linearly independent vector $\vec{x}_2$, it is not hard to see that A, B takes the demanded upper triangular form.</p>
+<p>(proof) Note that this is equivalent to the claim that A, B have a common eigenvector $\vec{x}_1$ (the first basis vector). If $\vec{x}_1$ is a common eigenvector of both A and B, taking any linearly independent vector $\vec{x}_2$, it is not hard to see that A, B takes the demanded upper triangular form.</p>
 
 <p>By Jordan decomposition, one can see that $[A,B]$, a matrix with determinant 1 and trace 2, is either the identity matrix or a unipotent matrix (identity plus a nilpotent matrix).</p>
 
