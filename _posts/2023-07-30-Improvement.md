@@ -40,8 +40,8 @@ The main theorem of [(J. 2023)](https://arxiv.org/abs/2306.11357) is about how �
  >
  > admitting a tropical action $\Gamma=\langle s_1,s_2,s_3\rangle\curvearrowright Sk$ and its description, as follows.
  >
- > 1. If one of the parameters A, B, C, D has a negative valuation, then there is an open dense invariant subset U in the skeleton whose Γ-action is conjugate to the (∞,∞,∞)-triangle group action on the hyperbolic plane.
- > 1. If all of the parameters A, B, C, D have nonnegative valuations, then by spherically projecting the skeleton $$(Sk\setminus\{\mathbf{0}\})/\mathbb{R}_{>0}$$, the Γ-action is conjugate to the (∞,∞,∞)-triangle group action on the **boundary** of the hyperbolic plane.
+ > 1. (Meromorphic param.) If one of the parameters A, B, C, D has a negative valuation, then there is an open dense invariant subset U in the skeleton whose Γ-action is conjugate to the (∞,∞,∞)-triangle group action on the hyperbolic plane.
+ > 1. (Holomorphic param.) If all of the parameters A, B, C, D have nonnegative valuations, then by spherically projecting the skeleton $$(Sk\setminus\{\mathbf{0}\})/\mathbb{R}_{>0}$$, the Γ-action is conjugate to the (∞,∞,∞)-triangle group action on the **boundary** of the hyperbolic plane.
 
 When one of the parameters has a negative valuation (called *meromorphic parameters* in the paper), the picture goes like the one below. There, the claimed open subset U equals the entire orbit of the triangle in the middle.
 
@@ -63,9 +63,9 @@ One aspect that holomorphic parameters enjoy is that the skeleton, the key invar
 
  > <b id="prop1">Proposition 1.</b> If all parameters have nonnegative values, then the skeleton (see \eqref{eqn:skeleton}) is precisely the union of following planar cones:
  >
- > * $C_1=\{(x,y,z)\in\mathbb{R}^3 : x=y+z,\ x,y,z\leq 0\}$
- > * $C_2=\{(x,y,z)\in\mathbb{R}^3 : y=z+x,\ x,y,z\leq 0\}$
- > * $C_3=\{(x,y,z)\in\mathbb{R}^3 : z=x+y,\ x,y,z\leq 0\}$
+ > * $$C_1=\{(x,y,z)\in\mathbb{R}^3 : x=y+z,\ x,y,z\leq 0\}$$
+ > * $$C_2=\{(x,y,z)\in\mathbb{R}^3 : y=z+x,\ x,y,z\leq 0\}$$
+ > * $$C_3=\{(x,y,z)\in\mathbb{R}^3 : z=x+y,\ x,y,z\leq 0\}$$
  >
  > Furthermore, the Vieta involutions tropically act as follows:
  >
@@ -105,6 +105,7 @@ $$\begin{array}{rl}
 \end{array}$$
 
 and prove the demanded. $\square$
+<br>
 </details>
 
 The so-called Fricke identity
@@ -129,32 +130,40 @@ The setup $\operatorname{tr}[A,B]=2$ gains attention by the following
 
 <details>
 <summary>Proof</summary>
-(proof) Note that this is equivalent to the claim that A, B have a common eigenvector $\vec{x}_1$ (the first basis vector). If $\vec{x}_1$ is a common eigenvector of both A and B, taking any linearly independent vector $\vec{x}_2$, it is not hard to see that A, B takes the demanded upper triangular form.
+<p></p>(proof) Note that this is equivalent to the claim that A, B have a common eigenvector $\vec{x}_1$ (the first basis vector). If $\vec{x}_1$ is a common eigenvector of both A and B, taking any linearly independent vector $\vec{x}_2$, it is not hard to see that A, B takes the demanded upper triangular form.</p>
 
-By Jordan decomposition, one can see that $[A,B]$, a matrix with determinant 1 and trace 2, is either the identity matrix or a unipotent matrix (identity plus a nilpotent matrix).
+<p>By Jordan decomposition, one can see that $[A,B]$, a matrix with determinant 1 and trace 2, is either the identity matrix or a unipotent matrix (identity plus a nilpotent matrix).</p>
 
-For the former, this means that A, B are commutative. Take any eigenvector $\vec{x}_1$ of A (it exists by algebraic closedness), so that $A\vec{x}_1=u\cdot\vec{x}_1$. Then we have
+<p>For the former, this means that A, B are commutative. Take any eigenvector $\vec{x}_1$ of A (it exists by algebraic closedness), so that $A\vec{x}_1=u\cdot\vec{x}_1$. Then we have
 
 $$(A-uI)B\vec{x}_1=B(A-uI)\vec{x}_1(=\vec{0}),$$
 
-hence $B\vec{x}_1\in\ker(A-uI)$. If the kernel is 1-dimensional then $B\vec{x}_1$ must be proportional to $\vec{x}_1$ (i.e., an eigenvector of B). If the kernel is 2-dimensional then A is a nonzero scalar matrix (could be I, could be -I) and we switch to re-choose $\vec{x}_1$ to be an eigenvector of B.
+hence $B\vec{x}_1\in\ker(A-uI)$. If the kernel is 1-dimensional then $B\vec{x}_1$ must be proportional to $\vec{x}_1$ (i.e., an eigenvector of B). If the kernel is 2-dimensional then A is a nonzero scalar matrix (could be I, could be -I) and we switch to re-choose $\vec{x}_1$ to be an eigenvector of B.</p>
 
-For the latter, observe that
+<p>For the latter, observe that
 
- * $A^{-1}B^{-1}AB=(BA)^{-1}[A,B](BA)$
+ <ul>
+   <li>
+     $A^{-1}B^{-1}AB=(BA)^{-1}[A,B](BA)$
+   </li>
+ </ul>
 
 is a unipotent matrix, as $[A,B]$ is so. By Jordan decomposition, there is a nonzero vector $\vec{y}$ in which
 
- * $A^{-1}B^{-1}AB\vec{y}=\vec{y}$, i.e., $(AB-BA)\vec{y}=0$.
+<ul>
+  <li>
+    $A^{-1}B^{-1}AB\vec{y}=\vec{y}$, i.e., $(AB-BA)\vec{y}=0$.
+  </li>
+</ul>
  
-Hence the matrix $AB-BA$ has determinant zero. Furthermore, it has trace zero, so by Cayley--Hamilton theorem, it is nilpotent.
+Hence the matrix $AB-BA$ has determinant zero. Furthermore, it has trace zero, so by Cayley--Hamilton theorem, it is nilpotent.</p>
 
-Denote $N=AB-BA$. Then there is a basis in which one can represent $N=[\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}]$. Observe further that
+<p>Denote $N=AB-BA$. Then there is a basis in which one can represent $N=[\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}]$. Observe further that
 
  * $BAB^{-1}-A=-NB^{-1}$ has trace 0, and
  * $ABA^{-1}-B=NA^{-1}$ has trace 0.
 
-Because of the representation of N, both conditions indicate that $A^{-1},B^{-1}$ are both upper triangular. Thus A, B are too. Furthermore, the only eigenvector of N is the common eigenvector of A, B as well. This proves the required. $\square$
+Because of the representation of N, both conditions indicate that $A^{-1},B^{-1}$ are both upper triangular. Thus A, B are too. Furthermore, the only eigenvector of N is the common eigenvector of A, B as well. This proves the required. $\square$</p>
 </details>
 
 Because
@@ -200,7 +209,9 @@ s_2 &\mapsto \begin{bmatrix} -1 & 0 \\ 2 & 1 \end{bmatrix}, \\
 s_3 &\mapsto \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}.
 \end{array}\label{eqn:230730-5}$$
 
-(To be rigorous, this should be understood as an embedding of the 3-fold free product of the group of order 2, together with a separate theorem that says Γ is also such a free product. But I did not want to introduce additional notation for the free product.) Then the following comes from simple computations.
+ > To be rigorous, this should be understood as an embedding of the 3-fold free product of the group of order 2, together with a separate theorem that says Γ is also such a free product. But I did not want to introduce additional notation for the free product.
+
+Then the following comes from simple computations.
 
  > **Lemma.** The map Φ in \eqref{eqn:230730-4} respects the Γ-actions, where the Γ-action on $(K^\times)^2/\langle-I\rangle$ is the monimal action (provided that we view Γ as a subgroup of $\mathrm{PGL}_2(\mathbb{Z})$ according to the embedding \eqref{eqn:230730-5}).
 
@@ -219,13 +230,13 @@ $$\begin{array}{rl}
 (u,v) &\mapsto (\mathrm{val}(u),\mathrm{val}(v)).
 \end{array}$$
 
-This induces a map $(K^\times)^2/\langle -I\rangle \to \mathbb{R}^2/\{\pm 1\}$, and respects the monomial $\mathrm{PGL}_2(\mathbb{Z})$-action (to linear ones). Hence $\mathbb{R}^2/\{\pm 1\}$ has a linear Γ-action given by \eqref{eqn:230730-5}.
+This induces a map $(K^\times)^2/\langle -I\rangle \to \mathbb{R}^2/\pm 1$, and respects the monomial $\mathrm{PGL}_2(\mathbb{Z})$-action (to linear ones). Hence $\mathbb{R}^2/\pm 1$ has a linear Γ-action given by \eqref{eqn:230730-5}.
 
 This rough 'tropicalization' of the quotient connects to the tropicalization of the Cayley cubic $S_{0004}$ as follows. One has
 
 $$\mathrm{val}\left(u+\frac1u\right)$$
 
-equal to $-|\mathrm{val}(u)|$ if val(u) is nonzero, and a nonnegative number if val(u) is zero. If we consider a variant of ReLU function, $\mathrm{ReLU}(x)=\min(x,0)$, then we obtain a formula
+equal to $-\vert\mathrm{val}(u)\vert$ if val(u) is nonzero, and a nonnegative number if val(u) is zero. If we consider a variant of ReLU function, $\mathrm{ReLU}(x)=\min(x,0)$, then we obtain a formula
 
 $$\mathrm{ReLU}\left(\mathrm{val}\left(u+\frac1u\right)\right)=-|\mathrm{val}(u)|.\label{eqn:230730-6}$$
 
@@ -241,7 +252,7 @@ It is now natural to ask, how does the isomorphism $\Phi\colon(K^\times)^2/\lang
 
 The relation \eqref{eqn:230730-6} indicates which arrow should be drawn.
 
- > <b id="prop2">Proposition 2.</b> Let $\varphi\colon\mathbb{R}^2/\{\pm 1\}\to Sk$, $\varphi[(x,y)]=(-|x|,-|y|,-|x+y|)$. This φ fits in the above commutative diagram. Furthermore, φ is a homeomorphism that respects Γ-actions.
+ > <b id="prop2">Proposition 2.</b> Let $\varphi\colon\mathbb{R}^2/\pm 1\to Sk$, $\varphi[(x,y)]=(-\vert x\vert,-\vert y\vert,-\vert x+y\vert)$. This φ fits in the above commutative diagram. Furthermore, φ is a homeomorphism that respects Γ-actions.
 
 The hardest part of the above proposition is showing homeomorphicity, which requires describing how $\varphi^{-1}$ is defined on each subset $C_i\subset Sk$, i=1,2,3 (see [proposition 1](#prop1) for what these subsets are).
 
@@ -251,7 +262,7 @@ The hardest part of the above proposition is showing homeomorphicity, which requ
 
  > **Theorem.** Consider the skeleton of a Markov cubic defined over a non-archimedean field, with holomorphic parameters. Then the tropicalized Vieta action on the skeleton is conjugate to the following action on the antipodal quotient of the Euclidean plane:
  >
- > $$\left\langle s_1=\begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix},s_2=\begin{bmatrix} -1 & 0 \\ 2 & 1 \end{bmatrix},s_3=\begin{bmatrix} -1 & 0 \\ 0 & 1\end{bmatrix}\right\rangle\curvearrowright\mathbb{R}^2/\{\pm 1\}.$$
+ > $$\left\langle s_1=\begin{bmatrix} 1 & 2 \\ 0 & -1 \end{bmatrix},s_2=\begin{bmatrix} -1 & 0 \\ 2 & 1 \end{bmatrix},s_3=\begin{bmatrix} -1 & 0 \\ 0 & 1\end{bmatrix}\right\rangle\curvearrowright\mathbb{R}^2/\pm 1.$$
 
 
 ## Acknowledgement
