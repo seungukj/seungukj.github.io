@@ -158,7 +158,7 @@ The above cardinality data tells that the field $$\overline{\mathbb{F}}_\mathscr
 
  Now we are ready to prove the Ax--Grothendieck theorem.
 
- # Proof of Ax--Grothendieck Theorem
+# Proof of Ax--Grothendieck Theorem
 
  > **Theorem.** (Ax--Grothendieck) Suppose $F\colon\mathbb{C}^n\to\mathbb{C}^n$ is a polynomial map which is injective. Then it is also surjective.
 
