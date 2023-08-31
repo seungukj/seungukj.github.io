@@ -117,15 +117,15 @@ are well-defined (independent to the representative). Elements 0 and 1 in $\math
 
 (Proof) It is not hard to see that the structure forms a commutative ring with unity. It remains to see that (a) one can take reciprocals of nonzero elements and (b) the order < is total. (Below we are using the language $\mathscr{U}$-a.e. introduced [previously](#ultrafilter-almost-every).)
 
-To see (a), we first claim that if $[(a_n)]_\mathscr{U}\neq 0$, then $a_n\neq 0$ for $\mathscr{U}$-a.e. n, since $a_n=0$ does not hold $\mathscr{U}$-a.e.. Thus $1/a_n$ is well-defined for $\mathscr{U}$-a.e. n.
+To see (a), we first claim that if $$[(a_n)]_\mathscr{U}\neq 0$$, then $$a_n\neq 0$$ for $\mathscr{U}$-a.e. n, since $$a_n=0$$ does not hold $\mathscr{U}$-a.e.. Thus $$1/a_n$$ is well-defined for $\mathscr{U}$-a.e. n.
 
-Define $b_n:=1/a_n$ if $a_n\neq 0$, and $b_n=0$ otherwise. Then $a_n\cdot b_n=1$ for $\mathscr{U}$-a.e. n. This verifies that $[(a_n)]_\mathscr{U}\cdot[(b_n)]_\mathscr{U}=1$, hence proving that $1/[(a_n)]_\mathscr{U}=[(b_n)]_\mathscr{U}$.
+Define $$b_n:=1/a_n$$ if $$a_n\neq 0$$, and $$b_n=0$$ otherwise. Then $$a_n\cdot b_n=1$$ for $\mathscr{U}$-a.e. n. This verifies that $$[(a_n)]_\mathscr{U}\cdot[(b_n)]_\mathscr{U}=1$$, hence proving that $$1/[(a_n)]_\mathscr{U}=[(b_n)]_\mathscr{U}$$.
 
-To see (b), suppose $[(a_n)]_\mathscr{U}<[(b_n)]_\mathscr{U}$ and $[(a_n)]_{\mathscr{U}}=[(b_n)]_\mathscr{U}$ are *not* the case. Then both $a_n<b_n$ and $a_n=b_n$ does not hold $\mathscr{U}$-a.e. n. This means $a_n\geq b_n$ and $a_n\neq b_n$ holds for $\mathscr{U}$-a.e. n, thus we have $a_n>b_n$ for $\mathscr{U}$-a.e. n. That $[(a_n)]_\mathscr{U}>[(b_n)]_\mathscr{U}$ follows. $\square$
+To see (b), suppose $$[(a_n)]_\mathscr{U}<[(b_n)]_\mathscr{U}$$ and $$[(a_n)]_{\mathscr{U}}=[(b_n)]_\mathscr{U}$$ are *not* the case. Then both $$a_n<b_n$$ and $$a_n=b_n$$ does not hold $\mathscr{U}$-a.e. n. This means $$a_n\geq b_n$$ and $$a_n\neq b_n$$ holds for $\mathscr{U}$-a.e. n, thus we have $$a_n>b_n$$ for $\mathscr{U}$-a.e. n. That $$[(a_n)]_\mathscr{U}>[(b_n)]_\mathscr{U}$$ follows. $\square$
 
 Summarizing, we have
 
- * defined the structure $(\mathbb{R}^\mathbb{N}/\sim_\mathscr{U},0,1,+,\cdot,<)$ thanks to the filter structure that $\mathscr{U}$ has, and
+ * defined the structure $$(\mathbb{R}^\mathbb{N}/\sim_\mathscr{U},0,1,+,\cdot,<)$$ thanks to the filter structure that $\mathscr{U}$ has, and
  * proved that the structure descends properties of real numbers by that $\mathscr{U}$ is an ultrafilter on natural numbers.
 
 The structure constructed above has the name [nonstandard reals](https://en.wikipedia.org/wiki/Hyperreal_number).
@@ -144,7 +144,7 @@ where $\sim_\mathscr{U}$ is defined analogously to \eqref{eqn:ultrafilter-equiva
 
 (Proof) That the structure forms a field can be shown similar to the arguments for nonstandard reals.
 
-To see algebraic closedness, let $f(x)=\sum_{i=0}^d[(a_{i,p})_{p\in\mathcal{P}}]_\mathscr{U}x^i$ be any nonconstant polynomial defined over $$\overline{\mathbb{F}}_\mathscr{U}$$. Its components, $$f_p(x):=\sum_{i=0}^da_{i,p}x^i$$, is a nonconstant polynomial for $\mathscr{U}$-a.e. p. Let $x_p$ be a solution to $f_p(x)=0$, which is defined for $\mathscr{U}$-a.e. p. Then $$x=[(x_p)_{p\in\mathscr{P}}]_\mathscr{U}$$ solves $f(x)=0$, since $$f_p(x_p)=0$$ for $\mathscr{U}$-a.e. p..
+To see algebraic closedness, let $$f(x)=\sum_{i=0}^d[(a_{i,p})_{p\in\mathcal{P}}]_\mathscr{U}x^i$$ be any nonconstant polynomial defined over $$\overline{\mathbb{F}}_\mathscr{U}$$. Its components, $$f_p(x):=\sum_{i=0}^da_{i,p}x^i$$, is a nonconstant polynomial for $\mathscr{U}$-a.e. p. Let $$x_p$$ be a solution to $$f_p(x)=0$$, which is defined for $\mathscr{U}$-a.e. p. Then $$x=[(x_p)_{p\in\mathscr{P}}]_\mathscr{U}$$ solves $f(x)=0$, since $$f_p(x_p)=0$$ for $\mathscr{U}$-a.e. p..
 
 To see the characteristic, fix a positive prime q, and denote $$q\cdot 1:=\underbrace{1+\cdots+1}_q\in\overline{\mathbb F}_\mathscr{U}$$. But $q\cdot 1\neq 0$ on $$\overline{\mathbb{F}}_p$$ for all $p\neq q$, thus $\mathscr{U}$-a.e. p as well (this is where we use that $\mathscr{U}$ is nonprincipal). Hence $q\cdot 1\neq 0$ on $$\overline{\mathbb{F}}_\mathscr{U}$$ too. $\square$
 
