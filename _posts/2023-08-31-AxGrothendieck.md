@@ -22,7 +22,7 @@ The often spelled proof of this theorem uses some model theory, especially the m
 
 However, after we get through all these theories and proofs, get happy with it, one can raise the following question.
 
- > So if we know F is thus surjective, how do we find $\bar{x}\in\mathbb{C}^n$ with $F(\bar{x})=\mathbf{0}$?
+ > So if we know F is thus surjective, how do we find $\bar{x}\in\mathbb{C}^n$ with $F(\bar{x})=\bar{0}$?
 
 This post is aimed to justify the following claim.
 
@@ -134,25 +134,25 @@ The structure constructed above has the name [nonstandard reals](https://en.wiki
 
 In the construction of nonstandard reals above, we note that elements with different indices does not interact in the above definitions. Hence there is no reason to let $a_n\in\mathbb{R}$ for all n, but instead let $a_n\in k_n$ where $k_n$ is a field of our choice.
 
-Denote $\mathcal{P}\subset\mathbb{N}$ for the set of all prime numbers. For each prime p, denote $\overline{\mathbb{F}}_p$ for the algebraic closure of the order p field $\mathbb{F}_p=\mathbb{Z}/p\mathbb{Z}$. Fix a **nonprincipal** ultrafilter $\mathscr{U}$ on $\mathcal{P}$. Denote
+Denote $\mathcal{P}\subset\mathbb{N}$ for the set of all prime numbers. For each prime p, denote $$\overline{\mathbb{F}}_p$$ for the algebraic closure of the order p field $$\mathbb{F}_p=\mathbb{Z}/p\mathbb{Z}$$. Fix a **nonprincipal** ultrafilter $\mathscr{U}$ on $\mathcal{P}$. Denote
 
 $$\overline{\mathbb{F}}_\mathscr{U} := \left.\prod_{p\in\mathcal{P}}\overline{\mathbb{F}}_p\right/\sim_\mathscr{U},$$
 
-where $\sim_\mathscr{U}$ is defined analogously to \eqref{eqn:ultrafilter-equivalence}. From operations of the fields $\overline{\mathbb{F}}_p$, it is not hard to define 0, 1, addition, and multiplication of the field $\overline{\mathbb{F}}_\mathscr{U}$. These operations satisfy the following
+where $\sim_\mathscr{U}$ is defined analogously to \eqref{eqn:ultrafilter-equivalence}. From operations of the fields $$\overline{\mathbb{F}}_p$$, it is not hard to define 0, 1, addition, and multiplication of the field $$\overline{\mathbb{F}}_\mathscr{U}$$. These operations satisfy the following
 
  > **Lemma.** The structure $(\overline{\mathbb{F}}_\mathscr{U},0,1,+,\cdot)$ forms an algebraically closed field, of characteristic zero.
 
 (Proof) That the structure forms a field can be shown similar to the arguments for nonstandard reals.
 
-To see algebraic closedness, let $f(x)=\sum_{i=0}^d[(a_{i,p})_{p\in\mathcal{P}}]_\mathscr{U}x^i$ be any nonconstant polynomial defined over $\overline{\mathbb{F}}_\mathscr{U}$. Its components, $f_p(x):=\sum_{i=0}^da_{i,p}x^i$, is a nonconstant polynomial for $\mathscr{U}$-a.e. p. Let $x_p$ be a solution to $f_p(x)=0$, which is defined for $\mathscr{U}$-a.e. p. Then $x=[(x_p)_{p\in\mathscr{P}}]_\mathscr{U}$ solves $f(x)=0$, since $f_p(x_p)=0$ for $\mathscr{U}$-a.e. p..
+To see algebraic closedness, let $f(x)=\sum_{i=0}^d[(a_{i,p})_{p\in\mathcal{P}}]_\mathscr{U}x^i$ be any nonconstant polynomial defined over $$\overline{\mathbb{F}}_\mathscr{U}$$. Its components, $$f_p(x):=\sum_{i=0}^da_{i,p}x^i$$, is a nonconstant polynomial for $\mathscr{U}$-a.e. p. Let $x_p$ be a solution to $f_p(x)=0$, which is defined for $\mathscr{U}$-a.e. p. Then $$x=[(x_p)_{p\in\mathscr{P}}]_\mathscr{U}$$ solves $f(x)=0$, since $$f_p(x_p)=0$$ for $\mathscr{U}$-a.e. p..
 
-To see the characteristic, fix a positive prime q, and denote $q\cdot 1:=\underbrace{1+\cdots+1}_q\in\overline{\mathbb F}_\mathscr{U}$. But $q\cdot 1\neq 0$ on $\overline{\mathbb{F}}_p$ for all $p\neq q$, thus $\mathscr{U}$-a.e. p as well (this is where we use that $\mathscr{U}$ is nonprincipal). Hence $q\cdot 1\neq 0$ on $\overline{\mathbb{F}}_\mathscr{U}$ too. $\square$
+To see the characteristic, fix a positive prime q, and denote $$q\cdot 1:=\underbrace{1+\cdots+1}_q\in\overline{\mathbb F}_\mathscr{U}$$. But $q\cdot 1\neq 0$ on $$\overline{\mathbb{F}}_p$$ for all $p\neq q$, thus $\mathscr{U}$-a.e. p as well (this is where we use that $\mathscr{U}$ is nonprincipal). Hence $q\cdot 1\neq 0$ on $$\overline{\mathbb{F}}_\mathscr{U}$$ too. $\square$
 
-The field $\overline{\mathbb{F}}_\mathscr{U}$ has large cardinality, in the following sense. We omit the proof yet leave a [MathStackExchange post](https://math.stackexchange.com/questions/1417688/) that sketches a relevant fact.
+The field $$\overline{\mathbb{F}}_\mathscr{U}$$ has large cardinality, in the following sense. We omit the proof yet leave a [MathStackExchange post](https://math.stackexchange.com/questions/1417688/) that sketches a relevant fact.
 
- > **Proposition.** The field $\overline{\mathbb{F}}_\mathscr{U}$ has cardinality of the continuum, i.e., $\vert\overline{\mathbb{F}}_\mathscr{U}\vert=\vert\mathbb{C}\vert=2^{\aleph_0}$.
+ > **Proposition.** The field $$\overline{\mathbb{F}}_\mathscr{U}$$ has cardinality of the continuum, i.e., $$\vert\overline{\mathbb{F}}_\mathscr{U}\vert=\vert\mathbb{C}\vert=2^{\aleph_0}$$.
 
-The above cardinality data tells that the field $\overline{\mathbb{F}}_\mathscr{U}$ is an algebraically closed field that has transcendence degree $2^{\aleph_0}$ over its prime field, **Q**. In particular, it is field isomorphic to the algebraic closure of $\mathbb{Q}(x_t)_{t\in[0,1]}$, the field of rational functions in variables $x_t$'s, $t\in[0,1]$. Same argument applies for the field **C** of complex numbers, thus yielding the following
+The above cardinality data tells that the field $$\overline{\mathbb{F}}_\mathscr{U}$$ is an algebraically closed field that has transcendence degree $2^{\aleph_0}$ over its prime field, **Q**. In particular, it is field isomorphic to the algebraic closure of $$\mathbb{Q}(x_t)_{t\in[0,1]}$$, the field of rational functions in variables $$x_t$$'s, $t\in[0,1]$. Same argument applies for the field **C** of complex numbers, thus yielding the following
 
  > <b id="cor">Corollary.</b> There is a field isomorphism $\eta\colon\mathbb{C}\to\overline{\mathbb{F}}_\mathscr{U}$.
 
@@ -162,21 +162,21 @@ The above cardinality data tells that the field $\overline{\mathbb{F}}_\mathscr{
 
  > **Theorem.** (Ax--Grothendieck) Suppose $F\colon\mathbb{C}^n\to\mathbb{C}^n$ is a polynomial map which is injective. Then it is also surjective.
 
-(Proof) Since the map F is algebraically defined, via the field isomorphism $\eta\colon\mathbb{C}\to\overline{\mathbb{F}}_\mathscr{U}$ we may view F as a polynomial map $F^\eta\colon\overline{\mathbb{F}}_\mathscr{U}^n\to\overline{\mathbb{F}}_\mathscr{U}^n$. Denote the components $F^\eta=(F^\eta_1,\ldots,F^\eta_n)$, with each $F^\eta_i(X_1,\ldots,X_n)=\sum_{\alpha}[(c_{i,\alpha,p})_{p\in\mathcal{P}}]_\mathscr{U}X^\alpha$ denoted with multiindex notations.
+(Proof) Since the map F is algebraically defined, via the field isomorphism $$\eta\colon\mathbb{C}\to\overline{\mathbb{F}}_\mathscr{U}$$ we may view F as a polynomial map $$F^\eta\colon\overline{\mathbb{F}}_\mathscr{U}^n\to\overline{\mathbb{F}}_\mathscr{U}^n$$. Denote the components $$F^\eta=(F^\eta_1,\ldots,F^\eta_n)$$, with each $$F^\eta_i(X_1,\ldots,X_n)=\sum_{\alpha}[(c_{i,\alpha,p})_{p\in\mathcal{P}}]_\mathscr{U}X^\alpha$$ denoted with multiindex notations.
 
-Let $F^\eta_{i,p}=\sum_\alpha c_{i,\alpha,p}X^\alpha$ and $F^\eta\vert_p=(F^\eta_{1,p},\ldots,F^\eta_{n,p})$ (we use a special notation to avoid confusion with $F^\eta_p$, the p-th component of $F^\eta$). We show the following
+Let $$F^\eta_{i,p}=\sum_\alpha c_{i,\alpha,p}X^\alpha$$ and $F^\eta\vert_p=(F^\eta_{1,p},\ldots,F^\eta_{n,p})$ (we use a special notation to avoid confusion with $$F^\eta_p$$, the p-th component of $F^\eta$). We show the following
 
  > **Claim A.** The map $F^\eta\vert_p\colon\overline{\mathbb{F}}_p^n\to\overline{\mathbb{F}}_p^n$ is injective for $\mathscr{U}$-a.e. p.
 
-Suppose otherwise. Then for $\mathscr{U}$-a.e. p, we can find distinct $\bar{x}_p,\bar{y}_p\in\overline{\mathbb{F}}_p^n$ with $F^\eta\vert_p(\bar{x}_p)=F^\eta\vert_p(\bar{y}_p)$. The vectors $\bar{x}=[(\bar{x}_p)]_\mathscr{U}$ and $\bar{y}=[(\bar{y}_p)]_\mathscr{U}$ thus has $F^\eta(\bar{x})=F^\eta(\bar{y})$. Since $F^\eta$ is injective (as F was so), we have $\bar{x}=\bar{y}$, thus $\bar{x}_p=\bar{y}_p$ for $\mathscr{U}$-a.e. p. Contradiction.
+Suppose otherwise. Then for $\mathscr{U}$-a.e. p, we can find distinct $$\bar{x}_p,\bar{y}_p\in\overline{\mathbb{F}}_p^n$$ with $$F^\eta\vert_p(\bar{x}_p)=F^\eta\vert_p(\bar{y}_p)$$. The vectors $$\bar{x}=[(\bar{x}_p)]_\mathscr{U}$$ and $$\bar{y}=[(\bar{y}_p)]_\mathscr{U}$$ thus has $$F^\eta(\bar{x})=F^\eta(\bar{y})$$. Since $F^\eta$ is injective (as F was so), we have $\bar{x}=\bar{y}$, thus $$\bar{x}_p=\bar{y}_p$$ for $\mathscr{U}$-a.e. p. Contradiction.
 
  > **Claim B.** The map $F^\eta\vert_p\colon\overline{\mathbb{F}}_p^n\to\overline{\mathbb{F}}_p^n$ is surjective for $\mathscr{U}$-a.e. p.
 
-Fix p where $F^\eta\vert_p\colon\overline{\mathbb{F}}_p^n\to\overline{\mathbb{F}}_p^n$ is injective. Set $k$ large enough so that $F^\eta\vert_p$ has coefficients in $\mathbb{F}_{p^k}$ (the finite field of order $p^k$). For any $\mathbb{F}_{p^\ell}\supset\mathbb{F}_{p^k}$, the map $F^\eta\vert_p$ sends $\mathbb{F}_{p^\ell}^n$ into itself, in an injective manner. Thus the image of $F^\eta\vert_p$ contains all of $\mathbb{F}_{p^\ell}^n$. Since $\overline{\mathbb{F}}_p^n$ is the union of all such sets, we have our claim.
+Fix p where $$F^\eta\vert_p\colon\overline{\mathbb{F}}_p^n\to\overline{\mathbb{F}}_p^n$$ is injective. Set $k$ large enough so that $$F^\eta\vert_p$$ has coefficients in $$\mathbb{F}_{p^k}$$ (the finite field of order $p^k$). For any $$\mathbb{F}_{p^\ell}\supset\mathbb{F}_{p^k}$$, the map $$F^\eta\vert_p$$ sends $$\mathbb{F}_{p^\ell}^n$$ into itself, in an injective manner. Thus the image of $F^\eta\vert_p$ contains all of $$\mathbb{F}_{p^\ell}^n$$. Since $$\overline{\mathbb{F}}_p^n$$ is the union of all such sets, we have our claim.
 
 <p align="center">*</p>
 
-To see the surjectivity of F, it suffices to show that there is $\bar{x}\in\overline{\mathbb{F}}_\mathscr{U}^n$ with $F^\eta(\bar{x})=\bar{0}$. [The map $\bar{x}\mapsto F(\bar{x})-\bar{y}$ is injective if F is.] For $\mathscr{U}$-a.e. p, we have $\bar{x}_p\in\overline{\mathbb{F}}^n_p$ with $F^\eta\vert_p(\bar{x}_p)=\bar{0}$. So setting $\bar{x}=[(\bar{x}_p)]_\mathscr{U}$, we have the desired property. $\square$
+To see the surjectivity of F, it suffices to show that there is $$\bar{x}\in\overline{\mathbb{F}}_\mathscr{U}^n$$ with $F^\eta(\bar{x})=\bar{0}$. [The map $$\bar{x}\mapsto F(\bar{x})-\bar{y}$$ is injective if F is.] For $\mathscr{U}$-a.e. p, we have $$\bar{x}_p\in\overline{\mathbb{F}}^n_p$$ with $$F^\eta\vert_p(\bar{x}_p)=\bar{0}$$. So setting $$\bar{x}=[(\bar{x}_p)]_\mathscr{U}$$, we have the desired property. $\square$
 
 We finally remark that the above theorem is just an algebraic embedding of the classical logical proof. The punchline, that the theory of algebraically closed field of characteristic p "approximates" that of characteristic 0, is governed by the [Corollary](#cor) above, leaving all the details as some algebraic game.
 
