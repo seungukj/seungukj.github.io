@@ -10,23 +10,13 @@ redirect_from:
 
 <!-- [academicpages template](https://github.com/academicpages/academicpages.github.io) -->
 
-I am Seung uk Jang, a graduate student of Mathematics in the University of Chicago.
+I am Seung uk Jang, a post-doc in [IRMAR](https://irmar.univ-rennes.fr/en), Université de Rennes I.
 
-My advisors are [Alex Eskin](https://www.math.uchicago.edu/~eskin/) and [Simion Filip](https://math.uchicago.edu/~sfilip/).
 
 # Academic Interests
-My primary mathematical interest is about dynamical systems, especially those on the complex manifolds and their holomorphic automorphisms.
-
-To put it in more detail, I am interested in playing with compact Kähler manifolds $X$ that admits Ricci-flat metrics (by Yau, this is equivalent to: $c_1(X)=0$). The Ricci-flat metric and the natural Green current lets us to do some interesting analysis on these complex manifolds. My research interest stands on
-
- * dynamical consequences of such analysis on complex manifolds, and
- * study, by which extent, the study of complex manifolds generalize.
-
-[My research statement](/files/Jang_research-statement.pdf)
-
-I am also interested with some mathematical logic, especially in the aspect of using mathematics to study the logics.
+My primary mathematical interest is about dynamical systems, especially those on the complex manifolds and their holomorphic automorphisms. Focusing on the algebraic cases of such classes, I am spreading my interest to observing similar traits for non-archimedean setups as well.
 
 For my other miscellaneous math interests, check out [my blog](https://seungukj.github.io/blog/).
 
 # Contact
- * email: ｓｅｕｎｇｕｋｊ[at]ｕｃｈｉｃａｇｏ．ｅｄｕ (full-width letters; copy-pasting will generally not work)
+ * email: seungukj [at] uchicago.edu - currently updating this <!-- seung-uk.jang [at] univ-rennes1.fr -->
