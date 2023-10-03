@@ -10,7 +10,7 @@ redirect_from:
 
 <!-- [academicpages template](https://github.com/academicpages/academicpages.github.io) -->
 
-I am Seung uk Jang, a post-doc in [IRMAR](https://irmar.univ-rennes.fr/en), Université de Rennes I.
+I am Seung uk Jang, a post-doc in [IRMAR](https://irmar.univ-rennes.fr/en), Université de Rennes I. I am working as a member of [l'équipe de Théorie Ergodique](https://irmar.univ-rennes.fr/membres-du-pole-aleatoire#p-205).
 
 
 # Academic Interests
