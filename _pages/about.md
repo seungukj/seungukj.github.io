@@ -19,4 +19,4 @@ My primary mathematical interest is about dynamical systems, especially those on
 For my other miscellaneous math interests, check out [my blog](https://seungukj.github.io/blog/).
 
 # Contact
- * email: seungukj [at] uchicago.edu - currently updating this <!-- seung-uk.jang [at] univ-rennes1.fr -->
+ * email: seung-uk.jang [at] univ-rennes1.fr 
