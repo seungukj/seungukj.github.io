@@ -83,7 +83,7 @@ author:
   name             : "Seung uk Jang"
   avatar           : "profile.png"
   bio              : ""
-  location         : "Chicago, IL"
+  location         : #"Chicago, IL"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
