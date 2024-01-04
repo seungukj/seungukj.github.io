@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "home"
 title_separator          : "-"
 name                     : &name "Seung uk Jang"
-description              : &description # "Graduate Student, Math Dept., University of Chicago"
+description              : &description
 url                      : https://seungukj.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "seungukj/seungukj.github.io"
