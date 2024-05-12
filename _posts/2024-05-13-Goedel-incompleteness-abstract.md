@@ -1,12 +1,12 @@
-
 ---
-title: 'An Abstract Nonsense for Goedel's Incompleteness'
+title: 'An Abstract Nonsense for Gödel's Incompleteness'
 date: 2024-05-13
 permalink: /posts/2024/05/abstract-nonsense-goedel-incompleteness/
 author_profile: false
 tags:
   - English
   - Mathematical Logic
+  - Lindenbaum Algebra
 ---
 
 Although Gödel's proof of his incompleteness is reknown for the formal construction of the sentence "I cannot be proven," there are ways to illuminate this in a frame of abstract nonsense. In nLab point of view, this is a consequence of [Lawvere's fixed point theorem](https://ncatlab.org/nlab/show/Lawvere's+fixed+point+theorem), as noted in [Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677). But as I am not sure whether I understood the work right, I am presenting my own re-invention of the wheel below.
@@ -17,33 +17,33 @@ This concept is defined on the basis of the first-order logic. One can consult t
 
 Recall the first-order language consists of constants, functions, and relations. A *well-formed formula* on that language is recursively built from terms (constants or instances of functions), atomic formulae (instances of relations or equality), propositional connections (joining formulae by operations like AND, OR, NOT, etc.), and quantification of variables ($\forall x$ or $\exists x$, so to speak).
 
-As a local term, we say the *arity* of a well-formed formula as the number of free variables in it. We denote by $\mathrm{Wff}_n(\mathcal{L})$ for the set of n-ary well-formed formulae of the language $\mathcal{L}$, whose free variables are restricted to be one of $x_0,\ldots,x_{n-1}$. By a 0-ary well-formed formula we say it is a *sentence*. We view that $\mathrm{Wff}_n(\mathcal{L})\subset\mathrm{Wff}_{n+1}(\mathcal{L})$ for all n≥0.
+As a local term, we say the *arity* of a well-formed formula as the number of free variables in it. We denote by $$\mathrm{Wff}_n(\mathcal{L})$$ for the set of n-ary well-formed formulae of the language $\mathcal{L}$, whose free variables are restricted to be one of $$x_0,\ldots,x_{n-1}$$. By a 0-ary well-formed formula we say it is a *sentence*. We view that $$\mathrm{Wff}_n(\mathcal{L})\subset\mathrm{Wff}_{n+1}(\mathcal{L})$$ for all n≥0.
 
 Recall that the first-order logic has a notion of *formal proof from a set of axioms* and *models validating a sentence*, denoted by $\Gamma\vdash\varphi$ (the set Γ formally proves φ) and $M\vDash\varphi$ (the model M validates φ) respectively. By a *logical equivalence*, denoted by $\phi\Leftrightarrow\psi$, we mean that $\vdash\phi\leftrightarrow\psi$, i.e., the equivalence is proven without any additional axioms other than the logical ones.
 
- > **Definition.** (Lindenbaum ring) The set of (n-ary) **Lindenbaum classes** is the quotient $\mathrm{Lind}_n:=\mathrm{Wff}_n(\mathcal{L})/\Leftrightarrow$ of well-formed formulae modulo logical equivalence.
+ > **Definition.** (Lindenbaum ring) The set of (n-ary) **Lindenbaum classes** is the quotient $$\mathrm{Lind}_n:=\mathrm{Wff}_n(\mathcal{L})/\Leftrightarrow$$ of well-formed formulae modulo logical equivalence.
  > 
  > Depending on the algebra structure that the set carries, it has two different names:
  >
- > 1. The **null-false (n-ary) Lindenbaum algebra** $\overline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0,1,+,\cdot)$ is defined as
+ > 1. The **null-false (n-ary) Lindenbaum algebra** $$\overline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0,1,+,\cdot)$$ is defined as
  >
  > $$\begin{array}{rl}0 &:= \bot = \neg(x=x), \\ 1 &:= \top = (x=x), \\\phi+\psi & := \phi\ \mathrm{XOR}\ \psi=(\phi\wedge\neg\psi)\vee(\neg\phi\wedge\psi), \\ \phi\cdot\psi &:= \phi\ \mathrm{AND}\ \psi=\phi\wedge\psi. \end{array}$$
  >
- > 2. The **null-true (n-ary) Lindenbaum algebra** $\underline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0',1',+',\cdot')$ is defined as
+ > 2. The **null-true (n-ary) Lindenbaum algebra** $$\underline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0',1',+',\cdot')$$ is defined as
  >
  > $$\begin{array}{rl}0' &:= \top, \\ 1' &:= \bot, \\\phi+'\psi & := \phi\ \mathrm{XNOR}\ \psi=(\phi\wedge\psi)\vee(\neg\phi\wedge\neg\psi), \\ \phi\cdot'\psi &:= \phi\ \mathrm{OR}\ \psi=\phi\vee\psi. \end{array}$$
 
-By the above structures, we get Boolean algebras (commutative ring with 1 whose elements are all idempotent) that are isomorphic by the NOT map: i.e., $x\in\overline{\mathrm{Lind}}_n\mapsto 1+x\in\underline{\mathrm{Lind}}_n$ is a ring isomorphism. By this we see that null-false and null-true Lindenbaum rings are *Boolean duals*.
+By the above structures, we get Boolean algebras (commutative ring with 1 whose elements are all idempotent) that are isomorphic by the NOT map: i.e., $$x\in\overline{\mathrm{Lind}}_n\mapsto 1+x\in\underline{\mathrm{Lind}}_n$$ is a ring isomorphism. By this we see that null-false and null-true Lindenbaum rings are *Boolean duals*.
 
 These algebras have natural order structure given by $a\leq b$ iff $a\cdot b=b$ (or $a\leq'b$ iff $a\cdot'b=b$, which is equivalent to $a\geq b$). The sense of *filters* are defined by this order.
 
-The upper and lower lines are meant to indicate where the "True" is assigned. For $\overline{\mathrm{Lind}}_n$, the "True" is assigned to be 1, and for $\underline{\mathrm{Lind}}_n$, the "True" is assigned to be 0.
+The upper and lower lines are meant to indicate where the "True" is assigned. For $$\overline{\mathrm{Lind}}_n$$, the "True" is assigned to be 1, and for $$\underline{\mathrm{Lind}}_n$$, the "True" is assigned to be 0.
 
 ## Theories, Filters, and Ideals
 
 For a first-order language L, an L-*theory* is a consistent set of sentences closed under logical inferences. This is saturated under logical equivalences, and it surjects onto a filter of the null-false 0-ary Lindenbaum algebra (or an ideal of the null-true algebra).
 
-For an L-theory T, we define the *null-true Lindenbaum ring*, denoted by $\underline{\mathrm{Lind}}_0(T)$, as the ring $\underline{\mathrm{Lind}}_0/(T)$, where (T) on the right hand side is the ideal (of the null-true algebra) that corresponds to T. The *null-false Lindenbaum ring*, denoted by $\overline{\mathrm{Lind}}_0(T)$, is the Boolean dual of this ring. This ring is the same as $\overline{\mathrm{Lind}}_0/(1+(T))$.
+For an L-theory T, we define the *null-true Lindenbaum ring*, denoted by $$\underline{\mathrm{Lind}}_0(T)$$, as the ring $$\underline{\mathrm{Lind}}_0/(T)$$, where (T) on the right hand side is the ideal (of the null-true algebra) that corresponds to T. The *null-false Lindenbaum ring*, denoted by $$\overline{\mathrm{Lind}}_0(T)$$, is the Boolean dual of this ring. This ring is the same as $$\overline{\mathrm{Lind}}_0/(1+(T))$$.
 
 By a *complete theory* we mean a maximal theory, and by completeness of the first order logic it precisely corresponds to the *theory of a model* M, i.e., the set of all sentences φ such that $M\vDash\phi$.
 
@@ -62,9 +62,9 @@ Recall that two models N, M are *elementarily equivalent* if the theories of N a
 
 **(Proof)** Equivalence of 4, 5, and 6 is explained above. The equivalence of 2 and 4 is clear from the negation map. The equivalence of 1 and 2 follows from the fact that (a) any nonzero quotient of a Boolean algebra is also a Boolean algebra, and (b) the only Boolean algebra without zero divisors is the field of two elements. The equivalence of 2 and 3 is from the ring theory. $\square$
 
-So for any model M, it induces a ring map $M\colon\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}=:\mathbb{F}_2$. Likewise, one can assign an interpretation of maximal ideals of $\underline{\mathrm{Lind}}_n$: it corresponds to a pair of a model M and an n-tuple of elements in M, modulo "elementary equivalence" for the pair. (Say $(N,(b_0,\ldots,b_{n-1}))\equiv (M,(a_0,\ldots,a_{n-1}))$ if for all $\phi(x_0,\ldots,x_{n-1})\in\mathrm{Wff}_n(\mathcal{L})$ we have $N\vDash\phi(b_0,\ldots,b_{n-1})$ iff $M\vDash\phi(a_0,\ldots,a_{n-1})$.)
+So for any model M, it induces a ring map $$M\colon\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}$$. Likewise, one can assign an interpretation of maximal ideals of $$\underline{\mathrm{Lind}}_n$$: it corresponds to a pair of a model M and an n-tuple of elements in M, modulo "elementary equivalence" for the pair. (Say $$(N,(b_0,\ldots,b_{n-1}))\equiv (M,(a_0,\ldots,a_{n-1}))$$ if for all $$\phi(x_0,\ldots,x_{n-1})\in\mathrm{Wff}_n(\mathcal{L})$ we have $N\vDash\phi(b_0,\ldots,b_{n-1})$$ iff $$M\vDash\phi(a_0,\ldots,a_{n-1})$$.)
 
-I am not sure whether the latter interpretation yields us to identify the "space of n-types" to the prime spectrum of $\underline{\mathrm{Lind}}_n$.
+I am not sure whether the latter interpretation yields us to identify the "space of n-types" to the prime spectrum of $$\underline{\mathrm{Lind}}_n$$.
 
 # System Q
 
@@ -72,7 +72,7 @@ According to [Byunghan Kim's lecture note](https://drive.google.com/file/d/1_ooo
 
 ### System Q
 
-Let $\mathcal{L}_\mathbb{N}=(+,\cdot,S,<,0)$ be the language of natural numbers. Let Q be the $\mathcal{L}_\mathbb{N}$-theory generated by the following 9 sentences.
+Let $$\mathcal{L}_\mathbb{N}=(+,\cdot,S,<,0)$$ be the language of natural numbers. Let Q be the $$\mathcal{L}_\mathbb{N}$$-theory generated by the following 9 sentences.
 
  1. $(\forall x)(\neg(Sx=0))$.
  1. $(\forall x)(\forall y)((Sx=Sy)\to(x=y))$.
@@ -94,8 +94,8 @@ $$\chi_R(\bar{a}) = \begin{cases} 0 & \text{ if }R(\bar{a}), \\ 1 & \text{ if }\
 
 A function $\omega^m\to\omega$ is said to be *recursive* if it is obtained by finitely many applications of the constructions below:
 
-  1. (Primitives) The projections $I^n_i(x_0,\ldots,x_{n-1})=x_i$, addition $+\colon\omega^2\to\omega$, multiplication $\cdot\colon\omega^2\to\omega$, and comparison $\chi_<\colon\omega^2\to\omega$ are all recursive.
-  2. (Compositions) For recursive functions $G\colon\omega^k\to\omega$ and $H_1,\ldots,H_k\colon\omega^m\to\omega$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive.
+  1. (Primitives) The projections $$I^n_i(x_0,\ldots,x_{n-1})=x_i$$, addition $+\colon\omega^2\to\omega$, multiplication $\cdot\colon\omega^2\to\omega$, and comparison $$\chi_<\colon\omega^2\to\omega$$ are all recursive.
+  2. (Compositions) For recursive functions $G\colon\omega^k\to\omega$ and $$H_1,\ldots,H_k\colon\omega^m\to\omega$$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive.
 
   $$F(\bar{x})=G(H_1(\bar{x}),\cdots,H_k(\bar{x})).$$
 
@@ -113,14 +113,14 @@ Several "programming features" like equality (P5 in p. 2), constants (P3 in p. 2
 
 ### Representability
 
-Any natural number $n\in\omega$ is "representable" in $\mathcal{L}_{\mathbb{N}}$ by the term $\underline{n}=S\cdots S0$, where there are n many S's in the term. So for instance, $\underline{0}=0$, $\underline{1}=S0$, $\underline{2}=SS0$, $\underline{10}=SSSSSSSSSS0$, etc.
+Any natural number $n\in\omega$ is "representable" in $$\mathcal{L}_{\mathbb{N}}$$ by the term $\underline{n}=S\cdots S0$, where there are n many S's in the term. So for instance, $\underline{0}=0$, $\underline{1}=S0$, $\underline{2}=SS0$, $\underline{10}=SSSSSSSSSS0$, etc.
 
-We say a relation $R\subset\omega^m$ is *representable in Q* if there is an m-ary $\mathcal{L}_\mathbb{N}$-formula $\phi(x_0,\ldots,x_{m-1})$ such that, for all $(k_0,\ldots,k_{m-1})\in\omega^m$,
+We say a relation $R\subset\omega^m$ is *representable in Q* if there is an m-ary $$\mathcal{L}_\mathbb{N}$$-formula $$\phi(x_0,\ldots,x_{m-1})$$ such that, for all $$(k_0,\ldots,k_{m-1})\in\omega^m$$,
 
  * that $R(k_0,\ldots,k_{m-1})$ implies $Q\vdash\phi(\underline{k_0},\ldots,\underline{k_{m-1}})$, and
  * that $\neg R(k_0,\ldots,k_{m-1})$ implies $Q\vdash\neg\phi(\underline{k_0},\ldots,\underline{k_{m-1}})$.
 
-A function $f\colon\omega^m\to\omega$ is *representable in Q* if there exists an (m+1)-ary $\mathcal{L}_\mathbb{N}$-formula $\phi(x_0,\ldots,x_{m-1},y)$ such that, for all $(k_0,\ldots,k_{m-1})\in\omega^m$,
+A function $f\colon\omega^m\to\omega$ is *representable in Q* if there exists an (m+1)-ary $$\mathcal{L}_\mathbb{N}$$-formula $$\phi(x_0,\ldots,x_{m-1},y)$$ such that, for all $$(k_0,\ldots,k_{m-1})\in\omega^m$$,
 
 $$Q\vdash(\forall y)\left(\phi(\underline{k_0},\ldots,\underline{k_{m-1}},y)\leftrightarrow y=\underline{f(k_0,\ldots,k_{m-1})}\right).$$
 
@@ -135,7 +135,7 @@ I do not know whether the converse of the last implication is true.
 
 ### Gödel Numbering
 
-For a countable language $\mathcal{L}$ (potentially this is a language that extends $\mathcal{L}_\mathbb{N}$), suppose we let h to be an encoding of constants, functions, relations (including =), logical alphabets (￢, →, ∀, (, )), and variables (specified as $\langle x_i\rangle_{i<\omega}$), so that each encoded set is recursive (for instance, $$h(\{\text{constants}\})\subset\omega$$ is a recursive set).
+For a countable language $\mathcal{L}$ (potentially this is a language that extends $$\mathcal{L}_\mathbb{N}$$), suppose we let h to be an encoding of constants, functions, relations (including =), logical alphabets (￢, →, ∀, (, )), and variables (specified as $\langle x_i\rangle_{i<\omega}$), so that each encoded set is recursive (for instance, $$h(\{\text{constants}\})\subset\omega$$ is a recursive set).
 
 Together with an encoding of sequences (see the **sequence number** defined in p. 6 of Kim's note), one can use h to define the *Gödel numbering* of $\mathcal{L}$-terms and formulae, which is denoted by $\lceil\sigma\rceil$ if σ is a term or formula. There, this induces an *injective* map $\lceil{}\cdot{}\rceil\colon\mathrm{Wff}_n(\mathcal{L})\to\omega$, for each n=0,1,2,...
 
@@ -157,13 +157,13 @@ $$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\xrightarrow{\lceil{}\cdot{}\rceil}\omeg
 
 whose composition is denoted by $T_h\phi$ instead of more standard $\underline{\phi}\circ\lceil{}\cdot{}\rceil$. (This comes from my old misunderstanding that the Gödel numbering is not far from the encoding map h of the language, so that I intended to say $T_h\phi=\phi\circ h$ as the composition above.)
 
-Now we compare this composition $T_h\phi$ and the natural surjection $\mathsf{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0(Q)$. Then the reknown diagonalization step (for creating "I cannot be proven") can be stated as follows.
+Now we compare this composition $T_h\phi$ and the natural surjection $$\mathsf{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0(Q)$$. Then the reknown diagonalization step (for creating "I cannot be proven") can be stated as follows.
 
- > **Theorem.** (Gödel's Fixed Point Theorem) For any $\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$, there is $\sigma\in\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})$ such that $T_h\phi(\sigma)=[\sigma]_Q$.
+ > **Theorem.** (Gödel's Fixed Point Theorem) For any $$\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, there is $$\sigma\in\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})$$ such that $T_h\phi(\sigma)=[\sigma]_Q$.
 
 The proof requires some constructions, so I will refer to p. 19 of the note where it is stated and proven (in a standard way). Now a corollary of this "diagonalization" follows.
 
- > **Corollary.** Let M be a model of Q, in which we abuse the notation and denote by $M\colon\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}\subset\underline{\mathrm{Lind}}_0(Q)$ the corresponding ring map. Then for any $\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$, we have $T_h\phi\neq M$.
+ > **Corollary.** Let M be a model of Q, in which we abuse the notation and denote by $$M\colon\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}\subset\underline{\mathrm{Lind}}_0(Q)$$ the corresponding ring map. Then for any $$\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, we have $T_h\phi\neq M$.
 
 That is, no 1-ary formula can realize the model map.
 
