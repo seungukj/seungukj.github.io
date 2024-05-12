@@ -1,5 +1,5 @@
 ---
-title: 'An Abstract Nonsense for Gödel's Incompleteness'
+title: 'An Abstract Nonsense for Goedel's Incompleteness'
 date: 2024-05-13
 permalink: /posts/2024/05/abstract-nonsense-godel-incompleteness/
 author_profile: false
