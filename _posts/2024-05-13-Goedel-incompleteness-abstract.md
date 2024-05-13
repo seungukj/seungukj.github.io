@@ -133,6 +133,8 @@ I do not know whether the converse of the last implication is true.
 
  > **Representability Theorem.** (see p. 12 of Kim's note) Every recursive function or relation is representable in Q.
 
+The significance of the above cannot be underestimated. This implies that in Q, any programmable relation is expressed as a logical predicate. Furthermore, any recursively enumerable relation is also written as a logical predicate. So (even without induction!) Q is a system that is suitable for bringing "computers" into the study of logic. Together with the Gödel numbering below, it can even bring its provability clause as a 1-ary formula.
+
 ### Gödel Numbering
 
 For a countable language $\mathcal{L}$ (which may extend $$\mathcal{L}_\mathbb{N}$$), suppose we let h to be an encoding of constants, functions, relations (including =), logical alphabets (￢, →, ∀, (, )), and variables (specified as $\langle x_i\rangle_{i<\omega}$), such that each encoded set is recursive (for instance, $$h(\{\text{constants}\})\subset\omega$$ is a recursive set).
@@ -151,13 +153,13 @@ If φ represents an n-ary relation on ω, then the image of this map must have v
 
 If φ represents a recursive relation, it is even better: one can systematically reduce the sentence and decide whether it is 0 or 1 at the end. (This reminds me the β-reductions in λ-calculi.)
 
-Now let φ be an 1-ary formula. Then we have a composition
+Now let φ be a 1-ary formula. Then we have a composition
 
 $$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\xrightarrow{\lceil{}\cdot{}\rceil}\omega\xrightarrow{\underline{\varphi}}\underline{\mathrm{Lind}}_0(Q),$$
 
 whose composition is denoted by $T_h\varphi$ instead of more standard $\underline{\varphi}\circ\lceil{}\cdot{}\rceil$. (This comes from my old misunderstanding that the Gödel numbering is not far from the encoding map h of the language, so I intended to say $T_h\varphi=\varphi\circ h$ as the composition above.)
 
-Now we compare this composition $T_h\varphi$ and the natural surjection $$\mathsf{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0(Q)$$. Then the renowned diagonalization step (for creating "I cannot be proven") can be stated as follows.
+Now we compare this composition $T_h\varphi$ and the natural surjection $$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0(Q)$$. Then the renowned diagonalization step (for creating "I cannot be proven") can be stated as follows.
 
  > **Theorem.** (Gödel's Fixed Point Theorem) For any $$\varphi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, there is $$\sigma\in\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})$$ such that $T_h\varphi(\sigma)=[\sigma]_Q$.
 
@@ -175,9 +177,28 @@ If $[\sigma]_Q$ is 0 or 1, then $M(\sigma)=[\sigma]_Q=1+T_h\varphi(\sigma)$ impl
 
 If the theory of M (a model of Q) is decidable (in the sense of p. 18 of the note), then the subset $$\{\lceil\sigma\rceil : M\vDash\sigma\}\subset\omega$$ is recursive and hence represented by $\varphi(x_0)\in\mathrm{Wff}_1$ in Q. As this possibility was ruled out by the corollary above, we see that such theory cannot be decidable.
 
-### Reinventing Yanofsky's Wheel
+# Reinventing Yanofsky's Wheel
 
-Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively use the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]\}$$) which was omitted in the work. Nonetheless, the essential machinery, especially the steps introducing the fixed points, is not harmed.
+Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work. Unfortunately, although I attempted to state the bridge, I stumbled at the point to show that there is a function $H\colon\omega\to\omega$, representable in Q, such that $H(\lceil\sigma\rceil)=\lceil[\sigma]_Q\rceil$.
+
+If this representability in Q is clear, then we can recover Yanofsky's argument as follows. Suppose
+
+ * $$F\colon\mathrm{Wff}_1\times\mathrm{Wff}_1\to\mathrm{Lind}_0(Q)$$ is a map defined as $$F(\beta(x_0),\alpha(x_0))=[\beta(\underline{\lceil\alpha(x_0)\rceil})]_Q$$,
+ * $$\bar{T}_h\phi\colon\mathrm{Lind}_0(Q)\to\mathrm{Lind}_0(Q)$$ is a map defined as $$\bar{T}_h\phi([\sigma]_Q)=[\phi(\underline{\lceil[\sigma]_Q\rceil})]_Q$$, and
+ * $dg\colon\omega\to\omega$ is a recursive map such that $dg(\lceil\phi(x_0)\rceil)=\lceil\phi(\underline{\lceil\phi(x_0)\rceil})\rceil$. (See Lemma in p. 19 of Kim's note.)
+
+As the map $H\circ dg$ is recursive, it is represented by a formula $\psi(x_0,y)$ (i.e., $Q\vdash(\forall y)(\psi(\underline{n},y)\leftrightarrow y=\underline{H(dg(n))})$ for all $n\in\omega$). Let $\gamma(x_0):=(\exists y)(\psi(x_0,y)\wedge\varphi(y))$. 
+Then the map $g(\beta)=\bar{T}_h\phi(F(\beta,\beta))$ (i.e., the composition
+
+$$g\colon\mathrm{Wff}_1\xrightarrow{\mathrm{diag}}\mathrm{Wff}_1\times\mathrm{Wff}_1\xrightarrow{F}\mathrm{Lind}_0(Q)\xrightarrow{\bar{T}_h\phi}\mathrm{Lind}_0(Q)$$
+
+) is represented by F via the formula $\gamma(x_0)$, by the following computation:
+
+$$\begin{array}{rl} g(\beta) &= \bar{T}_h\phi(F(\beta,\beta)) \\ &= [\phi(\underline{\lceil[\beta(\underline{\lceil\beta\rceil})]_Q\rceil})]_Q \\ &= [\phi(\underline{H(\lceil\beta(\underline{\lceil\beta\rceil})\rceil)})]_Q \\ &= [\phi(\underline{H(dg(\lceil\beta\rceil))})]_Q \\ &= [\gamma(\underline{\lceil\beta\rceil})]_Q = F(\gamma,\beta). \end{array}$$
+
+Hence by the proof of the Lawvere fixed point theorem, we see that $g(\gamma)$ is the demanded fixed point; indeed, $g(\gamma)=\bar{T}_h\phi(F(\gamma,\gamma))=\bar{T}_h\phi(g(\gamma))$.
+
+<!-- Nonetheless, the essential machinery, especially the steps introducing the fixed points, should not be harmed. -->
 
 # Next?
 
