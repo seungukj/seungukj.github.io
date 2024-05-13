@@ -33,7 +33,7 @@ Recall that first-order logic has a notion of *formal proof from a set of axioms
  >
  > $$\begin{array}{rl}0' &:= \top, \\ 1' &:= \bot, \\\phi+'\psi & := \phi\ \mathrm{XNOR}\ \psi=(\phi\wedge\psi)\vee(\neg\phi\wedge\neg\psi), \\ \phi\cdot'\psi &:= \phi\ \mathrm{OR}\ \psi=\phi\vee\psi. \end{array}$$
 
-Through these structures structures, we get Boolean algebras (commutative rings with 1 whose elements are all idempotent) that are isomorphic by the NOT map: i.e., $$x\in\overline{\mathrm{Lind}}_n\mapsto 1+x\in\underline{\mathrm{Lind}}_n$$ is a ring isomorphism. Thus, we see that null-false and null-true Lindenbaum rings are *Boolean duals*.
+Through these structures, we get Boolean algebras (commutative rings with 1 whose elements are all idempotent) that are isomorphic by the NOT map: i.e., $$x\in\overline{\mathrm{Lind}}_n\mapsto 1+x\in\underline{\mathrm{Lind}}_n$$ is a ring isomorphism. Thus, we see that null-false and null-true Lindenbaum rings are *Boolean duals*.
 
 These algebras have a natural order structure given by $a\leq b$ iff $a\cdot b=b$ (or $a\leq'b$ iff $a\cdot'b=b$, which is equivalent to $a\geq b$). The concept of *filters* is defined based on this order.
 
