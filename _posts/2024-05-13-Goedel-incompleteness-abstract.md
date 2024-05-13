@@ -177,13 +177,13 @@ If the theory of M (a model of Q) is decidable (in the sense of p. 18 of the not
 
 ### Reinventing Yanofsky's Wheel
 
-Basically, Yanofsky's work (Yanofsky 2003, Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively use the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]\}$$) which was omitted in the work. Nonetheless, the essential machinery, especially the steps introducing the fixed points, is not harmed.
+Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively use the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]\}$$) which was omitted in the work. Nonetheless, the essential machinery, especially the steps introducing the fixed points, is not harmed.
 
 # Next?
 
 Having built all this, my next question is this:
 
- > Given that $T_h\varphi$ cannot realize the model ring map $M\colon\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$, to what extent can we approximate it?
+ > Given that $T_h\varphi$ cannot realize the model ring map $M\colon\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$, to what extent can $T_h\varphi$ approximate M?
 
 Here is a naïve idea. Suppose T is a subset of the theory of M which is axiomatizable (in the sense of p. 18 of the note). If $\varphi(x_0)=Pf_T(x_0)$ is the corresponding provability clause, then although this will only approximate the model map M (and leave many theory of M as "ambiguous"), as we increase T, the map $T_hPf_T$ will approximate M better and better. So the question will become *to suggest a measure of how this approximation improves.*
 
