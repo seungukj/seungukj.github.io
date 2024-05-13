@@ -179,7 +179,7 @@ If the theory of M (a model of Q) is decidable (in the sense of p. 18 of the not
 
 # Reinventing Yanofsky's Wheel
 
-Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work.
+It is known that Gödel's fixed point theorem can be abstractized using the Lawvere fixed point theorem, according to Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5). This work presents almost the same argument as I have stated above, with the difference being that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work.
 
 To get away from this subtlety, I am going to reformulate the "Lawvere box" as follows (note its 'heterogeneous' nature):
 
