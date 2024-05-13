@@ -9,7 +9,7 @@ tags:
   - Lindenbaum Algebra
 ---
 
-Although Gödel's proof of his incompleteness is reknown for the formal construction of the sentence "I cannot be proven," there are ways to illuminate this in a frame of abstract nonsense. In nLab point of view, this is a consequence of [Lawvere's fixed point theorem](https://ncatlab.org/nlab/show/Lawvere's+fixed+point+theorem), as noted in [Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677). But as I am not sure whether I understood the work right, I am presenting my own re-invention of the wheel below.
+Although Gödel's proof of his incompleteness is renowned for the formal construction of the sentence "I cannot be proven," there are ways to illuminate this in a frame of abstract nonsense. In nLab point of view, this is a consequence of [Lawvere's fixed point theorem](https://ncatlab.org/nlab/show/Lawvere's+fixed+point+theorem), as noted in [Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677). But as I am not sure whether I understood the work right, I am presenting my own re-invention of the wheel below.
 
 # Lindenbaum Ring
 
