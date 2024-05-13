@@ -62,7 +62,7 @@ Recall that two models N, M are *elementarily equivalent* if the theories of N a
 
 **(Proof)** Equivalence of 4, 5, and 6 is explained above. The equivalence of 2 and 4 is clear from the negation map. The equivalence of 1 and 2 follows from the fact that (a) any nonzero quotient of a Boolean algebra is also a Boolean algebra, and (b) the only Boolean algebra without zero divisors is the field of two elements. The equivalence of 2 and 3 is from the ring theory. $\square$
 
-So for any model M, it induces a ring map $$M\colon\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}$$. Likewise, one can assign an interpretation of maximal ideals of $$\underline{\mathrm{Lind}}_n$$: it corresponds to a pair of a model M and an n-tuple of elements in M, modulo "elementary equivalence" for the pair. (Say $$(N,(b_0,\ldots,b_{n-1}))\equiv (M,(a_0,\ldots,a_{n-1}))$$ if for all $$\phi(x_0,\ldots,x_{n-1})\in\mathrm{Wff}_n(\mathcal{L})$ we have $N\vDash\phi(b_0,\ldots,b_{n-1})$$ iff $$M\vDash\phi(a_0,\ldots,a_{n-1})$$.)
+So for any model M, it induces a ring map $$M\colon\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}$$. Likewise, one can assign an interpretation of maximal ideals of $$\underline{\mathrm{Lind}}_n$$: it corresponds to a pair of a model M and an n-tuple of elements in M, modulo "elementary equivalence" for the pair. (Say $$(N,(b_0,\ldots,b_{n-1}))\equiv (M,(a_0,\ldots,a_{n-1}))$$ if for all $$\phi(x_0,\ldots,x_{n-1})\in\mathrm{Wff}_n(\mathcal{L})$$ we have $$N\vDash\phi(b_0,\ldots,b_{n-1})$$ iff $$M\vDash\phi(a_0,\ldots,a_{n-1})$$.)
 
 I am not sure whether the latter interpretation yields us to identify the "space of n-types" to the prime spectrum of $$\underline{\mathrm{Lind}}_n$$.
 
