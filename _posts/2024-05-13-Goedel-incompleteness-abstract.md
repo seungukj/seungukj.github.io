@@ -25,11 +25,11 @@ Recall that first-order logic has a notion of *formal proof from a set of axioms
  > 
  > Depending on the algebra structure that the set carries, it has two different names:
  >
- > 1. The **null-false (n-ary) Lindenbaum algebra** $$\overline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0,1,+,\cdot)$$ is defined as
+ > * The **null-false (n-ary) Lindenbaum algebra** $$\overline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0,1,+,\cdot)$$ is defined as
  >
  > $$\begin{array}{rl}0 &:= \bot = \neg(x=x), \\ 1 &:= \top = (x=x), \\\phi+\psi & := \phi\ \mathrm{XOR}\ \psi=(\phi\wedge\neg\psi)\vee(\neg\phi\wedge\psi), \\ \phi\cdot\psi &:= \phi\ \mathrm{AND}\ \psi=\phi\wedge\psi. \end{array}$$
  >
- > 2. The **null-true (n-ary) Lindenbaum algebra** $$\underline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0',1',+',\cdot')$$ is defined as
+ > * The **null-true (n-ary) Lindenbaum algebra** $$\underline{\mathrm{Lind}}_n=(\mathrm{Lind}_n,0',1',+',\cdot')$$ is defined as
  >
  > $$\begin{array}{rl}0' &:= \top, \\ 1' &:= \bot, \\\phi+'\psi & := \phi\ \mathrm{XNOR}\ \psi=(\phi\wedge\psi)\vee(\neg\phi\wedge\neg\psi), \\ \phi\cdot'\psi &:= \phi\ \mathrm{OR}\ \psi=\phi\vee\psi. \end{array}$$
 
@@ -94,12 +94,12 @@ $$\chi_R(\bar{a}) = \begin{cases} 0 & \text{ if }R(\bar{a}), \\ 1 & \text{ if }\
 
 A function $\omega^m\to\omega$ is said to be *recursive* if it is obtained by finitely many applications of the constructions below:
 
-  1. (Primitives) The projections $$I^n_i(x_0,\ldots,x_{n-1})=x_i$$, addition $+\colon\omega^2\to\omega$, multiplication $\cdot\colon\omega^2\to\omega$, and comparison $$\chi_<\colon\omega^2\to\omega$$ are all recursive.
-  2. (Compositions) For recursive functions $G\colon\omega^k\to\omega$ and $$H_1,\ldots,H_k\colon\omega^m\to\omega$$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive:
+  * (Primitives) The projections $$I^n_i(x_0,\ldots,x_{n-1})=x_i$$, addition $+\colon\omega^2\to\omega$, multiplication $\cdot\colon\omega^2\to\omega$, and comparison $$\chi_<\colon\omega^2\to\omega$$ are all recursive.
+  * (Compositions) For recursive functions $G\colon\omega^k\to\omega$ and $$H_1,\ldots,H_k\colon\omega^m\to\omega$$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive:
 
   $$F(\bar{x})=G(H_1(\bar{x}),\cdots,H_k(\bar{x})).$$
 
-  3. (Minimization) For a recursive $G\colon\omega^{m+1}\to\omega$ such that for every $\bar{a}\in\omega^m$ we have $x\in\omega$ in which $G(\bar{a},x)=0$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive:
+  * (Minimization) For a recursive $G\colon\omega^{m+1}\to\omega$ such that for every $\bar{a}\in\omega^m$ we have $x\in\omega$ in which $G(\bar{a},x)=0$, the function $F\colon\omega^m\to\omega$ defined by the following is recursive:
 
   $$F(\bar{a}) = \mu x(G(\bar{a},x)=0).$$
 
