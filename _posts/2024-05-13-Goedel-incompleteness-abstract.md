@@ -179,24 +179,27 @@ If the theory of M (a model of Q) is decidable (in the sense of p. 18 of the not
 
 # Reinventing Yanofsky's Wheel
 
-Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work. Unfortunately, although I attempted to state the bridge, I stumbled at the point to show that there is a function $H\colon\omega\to\omega$, representable in Q, such that $H(\lceil\sigma\rceil)=\lceil[\sigma]_Q\rceil$.
+Basically, Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5) contains almost the same argument as I have stated above, except that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work.
 
-If this representability in Q is clear, then we can recover Yanofsky's argument as follows. Suppose
+To get away from this subtlety, I am going to reformulate the "Lawvere box" as follows (note its 'heterogeneous' nature):
 
- * $$F\colon\mathrm{Wff}_1\times\mathrm{Wff}_1\to\mathrm{Lind}_0(Q)$$ is a map defined as $$F(\beta(x_0),\alpha(x_0))=[\beta(\underline{\lceil\alpha(x_0)\rceil})]_Q$$,
- * $$\bar{T}_h\phi\colon\mathrm{Lind}_0(Q)\to\mathrm{Lind}_0(Q)$$ is a map defined as $$\bar{T}_h\phi([\sigma]_Q)=[\phi(\underline{\lceil[\sigma]_Q\rceil})]_Q$$, and
- * $dg\colon\omega\to\omega$ is a recursive map such that $dg(\lceil\phi(x_0)\rceil)=\lceil\phi(\underline{\lceil\phi(x_0)\rceil})\rceil$. (See Lemma in p. 19 of Kim's note.)
+$$\begin{array}{ccc} \mathrm{Wff}_1\times\mathrm{Wff}_1 & \xrightarrow{F} & \mathrm{Wff}_0 \\ {\scriptstyle \mathrm{diag}}\uparrow & & \downarrow {\scriptstyle T_h\phi} \\ \mathrm{Wff}_1 & \xrightarrow{g} & \underline{\mathrm{Lind}}_0(Q). \end{array}$$
 
-As the map $H\circ dg$ is recursive, it is represented by a formula $\psi(x_0,y)$ (i.e., $Q\vdash(\forall y)(\psi(\underline{n},y)\leftrightarrow y=\underline{H(dg(n))})$ for all $n\in\omega$). Let $\gamma(x_0):=(\exists y)(\psi(x_0,y)\wedge\varphi(y))$. 
-Then the map $g(\beta)=\bar{T}_h\phi(F(\beta,\beta))$ (i.e., the composition
+Here, each arrow is defined as follows.
 
-$$g\colon\mathrm{Wff}_1\xrightarrow{\mathrm{diag}}\mathrm{Wff}_1\times\mathrm{Wff}_1\xrightarrow{F}\mathrm{Lind}_0(Q)\xrightarrow{\bar{T}_h\phi}\mathrm{Lind}_0(Q)$$
+ * The map $$F\colon\mathrm{Wff}_1\times\mathrm{Wff}_1\to\mathrm{Wff}_0$$ is defined as $$F(\alpha(x_0),\beta(x_0))=\beta(\underline{\lceil\alpha(x_0)\rceil})$$.
+ * The map $$T_h\phi\colon\mathrm{Wff}_0\to\underline{\mathrm{Lind}}_0(Q)$$ is as usual, i.e., $$T_h\phi(\sigma)=[\phi(\underline{\lceil\sigma\rceil})]_Q$$.
 
-) is represented by F via the formula $\gamma(x_0)$, by the following computation:
+We furthermore introduce a recursive function
+  
+ * $dg\colon\omega\to\omega$, such that $dg(\lceil\phi(x_0)\rceil)=\lceil\phi(\underline{\lceil\phi(x_0)\rceil})\rceil$. (See Lemma in p. 19 of Kim's note.)
 
-$$\begin{array}{rl} g(\beta) &= \bar{T}_h\phi(F(\beta,\beta)) \\ &= [\phi(\underline{\lceil[\beta(\underline{\lceil\beta\rceil})]_Q\rceil})]_Q \\ &= [\phi(\underline{H(\lceil\beta(\underline{\lceil\beta\rceil})\rceil)})]_Q \\ &= [\phi(\underline{H(dg(\lceil\beta\rceil))})]_Q \\ &= [\gamma(\underline{\lceil\beta\rceil})]_Q = F(\gamma,\beta). \end{array}$$
+As the map $dg$ is recursive, it is represented by a formula $\psi(x_0,y)$ (i.e., $Q\vdash(\forall y)(\psi(\underline{n},y)\leftrightarrow y=\underline{H(dg(n))})$ for all $n\in\omega$). Let $\gamma(x_0):=(\exists y)(\psi(x_0,y)\wedge\varphi(y))$. 
+Then the map $g(\beta)=T_h\phi(F(\beta,\beta))$ in the box is represented by F via the formula $\gamma(x_0)$, by the following computation:
 
-Hence by the proof of the Lawvere fixed point theorem, we see that $g(\gamma)$ is the demanded fixed point; indeed, $g(\gamma)=\bar{T}_h\phi(F(\gamma,\gamma))=\bar{T}_h\phi(g(\gamma))$.
+$$\begin{array}{rl} g(\beta) &= T_h\phi(F(\beta,\beta)) \\ &= [\phi(\underline{\lceil\beta(\underline{\lceil\beta\rceil})\rceil})]_Q \\ &= [\phi(\underline{dg(\lceil\beta\rceil)})]_Q \\ &= [\gamma(\underline{\lceil\beta\rceil})]_Q = F(\beta,\gamma). \end{array}$$
+
+Hence by the proof of the Lawvere fixed point theorem, we see that $g(\gamma)$ is the demanded fixed point; indeed, $g(\gamma)=T_h\phi(F(\gamma,\gamma))=T_h\phi(g(\gamma))$.
 
 <!-- Nonetheless, the essential machinery, especially the steps introducing the fixed points, should not be harmed. -->
 
