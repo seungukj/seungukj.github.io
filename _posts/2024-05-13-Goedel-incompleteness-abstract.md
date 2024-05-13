@@ -194,7 +194,7 @@ We furthermore introduce a recursive function
   
  * $dg\colon\omega\to\omega$, such that $dg(\lceil\phi(x_0)\rceil)=\lceil\phi(\underline{\lceil\phi(x_0)\rceil})\rceil$. (See Lemma in p. 19 of Kim's note.)
 
-As the map $dg$ is recursive, it is represented by a formula $\psi(x_0,y)$ (i.e., $Q\vdash(\forall y)(\psi(\underline{n},y)\leftrightarrow y=\underline{H(dg(n))})$ for all $n\in\omega$). Let $\gamma(x_0):=(\exists y)(\psi(x_0,y)\wedge\varphi(y))$. 
+As the map $dg$ is recursive, it is represented by a formula $\psi(x_0,y)$ (i.e., $Q\vdash(\forall y)(\psi(\underline{n},y)\leftrightarrow y=\underline{dg(n)})$ for all $n\in\omega$). Let $\gamma(x_0):=(\exists y)(\psi(x_0,y)\wedge\varphi(y))$. 
 Then the map $g(\beta)=T_h\phi(F(\beta,\beta))$ in the box is represented by F via the formula $\gamma(x_0)$, by the following computation:
 
 $$\begin{array}{rl} g(\beta) &= T_h\phi(F(\beta,\beta)) \\ &= [\phi(\underline{\lceil\beta(\underline{\lceil\beta\rceil})\rceil})]_Q \\ &= [\phi(\underline{dg(\lceil\beta\rceil)})]_Q \\ &= [\gamma(\underline{\lceil\beta\rceil})]_Q = F(\beta,\gamma). \end{array}$$
