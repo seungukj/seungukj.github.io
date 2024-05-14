@@ -13,7 +13,7 @@ Although Gödel's proof of his incompleteness is renowned for the formal constru
 
 # Lindenbaum Ring
 
-This concept is defined based on first-order logic. One can consult to [Smullyan 2007](https://mathscinet.ams.org/mathscinet/relay-station?mr=2474164) Chapters II and IV; [Manin 2009](https://link.springer.com/book/10.1007/978-1-4419-0615-1) Chapter I; [Enderton 2001](https://mathscinet.ams.org/mathscinet/relay-station?mr=1801397) ([OpenLogic ed.](https://builds.openlogicproject.org/courses/enderton/open-logic-enderton.pdf) Part II; or [Cameron 1998](https://link.springer.com/book/10.1007/978-1-4471-0589-3) Chapter 4 for more information. What is presented below is a brief summary that I would like to provide.
+This concept is defined based on first-order logic. One can consult to [Smullyan 2007](https://mathscinet.ams.org/mathscinet/relay-station?mr=2474164) Chapters II and IV; [Manin 2009](https://link.springer.com/book/10.1007/978-1-4419-0615-1) Chapter I; [Enderton 2001](https://mathscinet.ams.org/mathscinet/relay-station?mr=1801397) ([OpenLogic ed.](https://builds.openlogicproject.org/courses/enderton/open-logic-enderton.pdf)) Part II; or [Cameron 1998](https://link.springer.com/book/10.1007/978-1-4471-0589-3) Chapter 4 for more information. What is presented below is a brief summary that I would like to provide.
 
 Recall that the first-order language consists of constants, functions, and relations. A *well-formed formula* in that language is recursively built from terms (constants, variables, or instances of functions), atomic formulae (instances of relations or equality), propositional connectors (joining formulae by operations like AND, OR, NOT, etc.), and quantification of variables (∀x or ∃x, so to speak).
 
