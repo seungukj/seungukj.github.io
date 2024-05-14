@@ -9,17 +9,19 @@ tags:
   - Lindenbaum Algebra
 ---
 
-Although Gödel's proof of his incompleteness is renowned for the formal construction of the sentence "I cannot be proven," there are ways to illuminate this within the framework of abstract nonsense. From the nLab point of view, this is a consequence of [Lawvere's fixed point theorem](https://ncatlab.org/nlab/show/Lawvere's+fixed+point+theorem), as noted in [Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677). However, since I am not entirely sure if I understood the work correctly, I will present my own re-invention of the wheel below.
+Although Gödel's proof of his incompleteness is renowned for the formal construction of the sentence "I cannot be proven," there are ways to illuminate this within the framework of abstract nonsense. From the nLab point of view, this is a consequence of [Lawvere's fixed point theorem](https://ncatlab.org/nlab/show/Lawvere's+fixed+point+theorem), as shown in [Lawvere 1969](http://tac.mta.ca/tac/reprints/articles/15/tr15abs.html) or [Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677). However, since I am not entirely sure if I understood the work correctly, I will present my own re-invention of the wheel below.
 
 # Lindenbaum Ring
 
-This concept is defined based on first-order logic. One can consult to [Smullyan 2007](https://books.google.fr/books/about/Logical_Labyrinths.html?id=8i-FeLk0tCcC&redir_esc=y) Chapters II and IV; [Manin 2009](https://link.springer.com/book/10.1007/978-1-4419-0615-1) Chapter I; or [Cameron 1998](https://link.springer.com/book/10.1007/978-1-4471-0589-3) Chapter 4 for more information. What is presented below is a brief summary that I would like to provide.
+This concept is defined based on first-order logic. One can consult to [Smullyan 2007](https://books.google.fr/books/about/Logical_Labyrinths.html?id=8i-FeLk0tCcC&redir_esc=y) Chapters II and IV; [Manin 2009](https://link.springer.com/book/10.1007/978-1-4419-0615-1) Chapter I; [Enderton 2001](https://mathscinet.ams.org/mathscinet/relay-station?mr=1801397) ([OpenLogic ed.](https://builds.openlogicproject.org/courses/enderton/open-logic-enderton.pdf) Part II; or [Cameron 1998](https://link.springer.com/book/10.1007/978-1-4471-0589-3) Chapter 4 for more information. What is presented below is a brief summary that I would like to provide.
 
 Recall that the first-order language consists of constants, functions, and relations. A *well-formed formula* in that language is recursively built from terms (constants, variables, or instances of functions), atomic formulae (instances of relations or equality), propositional connectors (joining formulae by operations like AND, OR, NOT, etc.), and quantification of variables (∀x or ∃x, so to speak).
 
 As a local convention, we define the *arity* of a well-formed formula as the number of free variables in it. We denote by $$\mathrm{Wff}_n(\mathcal{L})$$ the set of n-ary well-formed formulae of the language $\mathcal{L}$, where free variables are restricted to be one of $$x_0,\ldots,x_{n-1}$$. A 0-ary well-formed formula is called a *sentence*. We consider $$\mathrm{Wff}_n(\mathcal{L})$$ to be a subset of $$\mathrm{Wff}_{n+1}(\mathcal{L})$$ for all n≥0.
 
-Recall that first-order logic has a notion of *formal proof from a set of axioms* and *models validating a sentence*, denoted by $\Gamma\vdash\varphi$ (the set Γ formally proves φ) and $M\vDash\varphi$ (the model M validates φ) respectively. A *logical equivalence*, denoted by $\phi\Leftrightarrow\psi$, means that $\vdash\phi\leftrightarrow\psi$, indicating that the equivalence is proven without any additional axioms other than the logical ones.
+Recall that first-order logic has a notion of *formal proof from a set of axioms*. This means we have a sequence of formulae where each term is (a) one of the given axioms, (b) one of the logical axioms, or (c) a consequence of inference rules from the terms before it. If Γ is a set of formulae and there is a finite list of formulae $\phi_1,\ldots,\phi_n$ which is a formal proof from the set Γ, then we say that Γ formally proves $\phi_n$ and denote it by $\Gamma\vdash\phi_n$. A *logical equivalence*, denoted by $\phi\Leftrightarrow\psi$, means that $\vdash\phi\leftrightarrow\psi$, indicating that the equivalence is proven without any additional axioms other than the logical ones. A set of axioms is *inconsistent* if it can formally prove every sentence, and it is *consistent* when it is not inconsistent.
+
+Recall also that first-order logic has *models validating a sentence*. This means we have a set M with (a) various elements representing constants of the language, (b) various functions $M^k\to M$ representing functions of the language (respecting the arity), and (c) various relations $\subset M^k$ of the language. The additional structures depicted in (a)-(c) is called the *interpretation* of the language, and a set with an interpretation is called a *model*. For a sentence σ, we denote by M⊨σ if the interpretation of the model M views σ as a true sentence, and say that M validates σ, or M is a model of σ. A *theory* of a model M is the set of sentences σ such that M⊨σ.
 
  > **Definition.** (Lindenbaum algebra) The set of (n-ary) **Lindenbaum classes** is the quotient $$\mathrm{Lind}_n:=\mathrm{Wff}_n(\mathcal{L})/\Leftrightarrow$$ of well-formed formulae modulo logical equivalence.
  > 
@@ -41,11 +43,13 @@ The upper and lower lines indicate where the "True" value is assigned. For $$\ov
 
 ## Theories, Filters, and Ideals
 
-For a first-order language L, an L-*theory* is a consistent set of sentences closed under logical inferences. This set is saturated under logical equivalences and maps onto a filter of the null-false 0-ary Lindenbaum algebra (or an ideal of the null-true algebra).
+For a first-order language L, an L-*theory* is a consistent set of sentences closed under logical inferences. This set is the preimage of a filter of the null-false 0-ary Lindenbaum algebra (or an ideal of the null-true algebra), along the natural projection map $$\mathrm{Wff}_0\twoheadrightarrow\overline{\mathrm{Lind}}_0$$.
 
-For an L-theory T, we define the *null-true Lindenbaum ring*, denoted by $$\underline{\mathrm{Lind}}_0(T)$$, as the ring $$\underline{\mathrm{Lind}}_0/(T)$$, where (T) on the quotient is the ideal (of the null-true algebra) that corresponds to the theory T. The *null-false Lindenbaum ring*, denoted by $$\overline{\mathrm{Lind}}_0(T)$$, is the Boolean dual of this ring. This ring is equivalent to $$\overline{\mathrm{Lind}}_0/(1+(T))$$.
+For an L-theory T, we define the *null-true Lindenbaum algebra of T*, denoted by $$\underline{\mathrm{Lind}}_0(T)$$, as the ring $$\underline{\mathrm{Lind}}_0/(T)$$, where (T) on the quotient is the ideal (of the null-true algebra) that corresponds to the theory T. The *null-false Lindenbaum algebra of T*, denoted by $$\overline{\mathrm{Lind}}_0(T)$$, is the Boolean dual of this ring. This ring is equivalent to $$\overline{\mathrm{Lind}}_0/(1+(T))$$. These algebras are also known as [Lindenbaum-Tarski algebras](https://en.wikipedia.org/wiki/Lindenbaum%E2%80%93Tarski_algebra).
 
-A *complete theory* is a maximal theory, and according to the completeness of first order logic, it precisely corresponds to the *theory of a model* M, i.e., the set of all sentences φ such that $M\vDash\varphi$.
+For an n-ary formula $\phi$, denote by $$[\phi]_T\in\mathrm{Lind}_n(T)$$ the corresponding equivalence class. That is, $$[\phi]_T=\{\psi : T\vdash\phi\leftrightarrow\psi\}$$.
+
+A *complete theory* is a maximal theory, and according to the completeness of first order logic, it precisely corresponds to the *theory of a model* M, i.e., the set of all sentences $\phi$ such that $M\vDash\phi$.
 
 Therefore we have the following equivalence of data.
 
@@ -64,11 +68,11 @@ Recall that two models N, M are *elementarily equivalent* if the theories of N a
 
 Therefore, for any model M, it induces a ring map $$M\colon\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}$$. Likewise, one can assign an interpretation of maximal ideals of $$\underline{\mathrm{Lind}}_n$$: it corresponds to a pair of a model M and an n-tuple of elements in M, modulo "elementary equivalence" for the pair. (Say $$(N,(b_0,\ldots,b_{n-1}))\equiv (M,(a_0,\ldots,a_{n-1}))$$ if for all $$\phi(x_0,\ldots,x_{n-1})\in\mathrm{Wff}_n(\mathcal{L})$$ we have $$N\vDash\phi(b_0,\ldots,b_{n-1})$$ iff $$M\vDash\phi(a_0,\ldots,a_{n-1})$$.)
 
-I am uncertain whether the latter interpretation allows us to identify the "space of n-types" with the prime spectrum of $$\underline{\mathrm{Lind}}_n$$.
+I am uncertain whether the latter interpretation allows us to identify the "space of complete n-types" with the prime spectrum of $$\underline{\mathrm{Lind}}_n$$.
 
 # System Q
 
-According to [Byunghan Kim's lecture note](https://drive.google.com/file/d/1_oooqG0_bHPwSBA6kQzOxxIjjt4YHV9J/view) on Gödel's incompleteness, a first-order system suitable for introducing a sense of "computability" is introduced. For the purpose of proving incompleteness, a system slightly weaker than Peano Arithmetic is sufficiently. Below are the details and basic properties of the system, copied from the note quoted above.
+According to [Byunghan Kim's lecture note](https://drive.google.com/file/d/1_oooqG0_bHPwSBA6kQzOxxIjjt4YHV9J/view) on Gödel's incompleteness, a first-order system suitable for introducing a sense of "computability" is introduced. For the purpose of proving incompleteness, a system slightly weaker than Peano Arithmetic is sufficient. Below are the details and basic properties of the system, copied from the note quoted above.
 
 ### System Q
 
@@ -109,7 +113,7 @@ A relation $\subset\omega^m$ is *recursive* if its characteristic function is re
 
 Notice that the above definition omits the *primitive recursion operator* seen in other sources, e.g., [Wikipedia](https://en.wikipedia.org/wiki/General_recursive_function). This omission is because it is redundant; see P13 (p. 8) in Kim's note.
 
-Several "programming features" like equality (P5 in p. 2), constants (P3 in p. 2), logical connectives (P4 in p. 2), if-then branches (P9-10 in p. 4), bounded while loops (P6-7 in p. 3), and the list data type (pp. 5-7) are all implemented under this notion of recursiveness. Because of that, recursive functions can be understood as those functions that can be programmed (modulo an indefinite capacity of memory).
+Several "programming features" like equality (P5 in p. 2), constants (P3 in p. 2), logical connectives (P4 in p. 2), if-then branches (P9-10 in p. 4), bounded while loops (P6-7 in p. 3), and the list data type (pp. 5-7) are all implemented under this notion of recursiveness. Because of that, recursive functions can be understood as those functions that can be programmed (provided an indefinite capacity of memory).
 
 ### Representability
 
@@ -137,7 +141,7 @@ The significance of the above cannot be underestimated. This implies that in Q, 
 
 ### Gödel Numbering
 
-For a countable language $\mathcal{L}$ (which may extend $$\mathcal{L}_\mathbb{N}$$), suppose we let h to be an encoding of constants, functions, relations (including =), logical alphabets (￢, →, ∀, (, )), and variables (specified as $\langle x_i\rangle_{i<\omega}$), such that each encoded set is recursive (for instance, $$h(\{\text{constants}\})\subset\omega$$ is a recursive set).
+For a countable language $\mathcal{L}$ (which may extend $$\mathcal{L}_\mathbb{N}$$), suppose we let h to be an ω-valued encoding of constants, functions, relations (including =), logical alphabets (￢, →, ∀, (, )), and variables (specified as $\langle x_i\rangle_{i<\omega}$), such that each encoded set is recursive (for instance, $$h(\{\text{constants}\})\subset\omega$$ is a recursive set).
 
 Together with an encoding of sequences (see the **sequence number** defined on p. 6 of Kim's note), one can use h to define the *Gödel numbering* of $\mathcal{L}$-terms and formulae, denoted by $\lceil\sigma\rceil$ if σ is a term or formula. This induces an *injective* map $\lceil{}\cdot{}\rceil\colon\mathrm{Wff}_n(\mathcal{L})\to\omega$, for each n=0,1,2,...
 
@@ -145,41 +149,47 @@ The standard first-order logic proof system can be recursively encoded using thi
 
 ## Interpretation
 
-For each n-ary formula $\varphi(x_0,\ldots,x_{n-1})$, it defines a map
+For each n-ary formula $\phi(x_0,\ldots,x_{n-1})$, it defines a map
 
-$$\underline{\varphi}\colon \omega^n\to\underline{\mathrm{Lind}}_0(Q), \\ (k_0,\ldots,k_{n-1})\mapsto [\varphi(\underline{k_0},\ldots,\underline{k_{n-1}})]_Q.$$
+$$\underline{\phi}\colon \omega^n\to\underline{\mathrm{Lind}}_0(Q), \\ (k_0,\ldots,k_{n-1})\mapsto [\phi(\underline{k_0},\ldots,\underline{k_{n-1}})]_Q.$$
 
-If φ represents an n-ary relation on ω, then the image of this map must have values $0=[\top]$ or $1=[\bot]$. Conversely, if $\underline{\varphi}$ has values only in {0,1}, then φ must represent an n-ary relation on ω. (So otherwise, it falls into the "ambiguous zone" where the validity of $\underline{\varphi}(k_0,\ldots,k_{n-1})$ depends on the model of Q.)
+If $\phi$ represents an n-ary relation on ω, then the image of this map must have values $0=[\top]$ or $1=[\bot]$. Conversely, if $\underline{\phi}$ has values only in {0,1}, then $\phi$ must represent an n-ary relation on ω. (So otherwise, it falls into the "ambiguous zone" where the validity of $\underline{\phi}(k_0,\ldots,k_{n-1})$ depends on the model of Q.)
 
-If φ represents a recursive relation, it is even better: one can systematically reduce the sentence and decide whether it is 0 or 1 at the end. (This reminds me the β-reductions in λ-calculi.)
+If $\phi$ represents a recursive relation, it is even better: one can systematically reduce the sentence and decide whether it is 0 or 1 at the end. (This reminds me the β-reductions in λ-calculi.)
 
-Now let φ be a 1-ary formula. Then we have a composition
+Now let $\phi$ be a 1-ary formula. Then we have a composition
 
-$$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\xrightarrow{\lceil{}\cdot{}\rceil}\omega\xrightarrow{\underline{\varphi}}\underline{\mathrm{Lind}}_0(Q),$$
+$$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\xrightarrow{\lceil{}\cdot{}\rceil}\omega\xrightarrow{\underline{\phi}}\underline{\mathrm{Lind}}_0(Q),$$
 
-whose composition is denoted by $T_h\varphi$ instead of more standard $\underline{\varphi}\circ\lceil{}\cdot{}\rceil$. (This comes from my old misunderstanding that the Gödel numbering is not far from the encoding map h of the language, so I intended to say $T_h\varphi=\varphi\circ h$ as the composition above.)
+whose composition is denoted by $T_h\phi$ instead of more standard $\underline{\phi}\circ\lceil{}\cdot{}\rceil$. (This comes from my old misunderstanding that the Gödel numbering is not far from the encoding map h of the language, so I intended to say $T_h\phi=\phi\circ h$ as the composition above.) This map $T_h\phi$ leads us to view that $\phi(x_0)$ is a "function that takes sentences as its inputs," whose output is the Lindenbaum class of another sentence.
 
-Now we compare this composition $T_h\varphi$ and the natural surjection $$\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0(Q)$$. Then the renowned diagonalization step (for creating "I cannot be proven") can be stated as follows.
+The fixed point of this function $T_h\phi$ is fundamental to the renowned diagonalization step (for creating "I cannot be proven"). Its existence is stated as follows.
 
- > **Theorem.** (Gödel's Fixed Point Theorem) For any $$\varphi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, there is $$\sigma\in\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})$$ such that $T_h\varphi(\sigma)=[\sigma]_Q$.
+ > **Theorem.** (Gödel's Fixed Point Theorem) For any $$\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, there is $$\sigma\in\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})$$ such that $T_h\phi(\sigma)=[\sigma]_Q$.
 
-The proof requires some constructions, so I will refer to p. 19 of the note where it is stated and proven (in a standard way). Now a corollary of this diagonalization follows.
+The proof requires some constructions, so I will refer to p. 19 of the note where it is stated and proven (in a standard way), or a [section below](#reinventing-yanofsky-s-wheel) for the version using ideas of Lawvere fixed point theorem. Now a corollary of this diagonalization follows.
 
- > **Corollary.** Let M be a model of Q, in which we abuse the notation and denote by $$M\colon\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}\subset\underline{\mathrm{Lind}}_0(Q)$$ the corresponding ring map. Then for any $$\varphi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, we have $T_h\varphi\neq M$.
+ > **Corollary.** Let M be a model of Q, in which we abuse the notation and denote by $$M\colon\mathrm{Wff}_0(\mathcal{L}_\mathbb{N})\twoheadrightarrow\underline{\mathrm{Lind}}_0\to\mathbb{Z}/2\mathbb{Z}\subset\underline{\mathrm{Lind}}_0(Q)$$ the corresponding ring map. Then for any $$\phi(x_0)\in\mathrm{Wff}_1(\mathcal{L}_\mathbb{N})$$, we have $T_h\phi\neq M$.
 
 That is, no 1-ary formula can realize the model map.
 
-**(Proof)** Given $\varphi(x_0)\in\mathrm{Wff}_1$, find $\sigma\in\mathrm{Wff}_0$ such that $[\sigma]_Q=T_h(\neg\varphi)(\sigma)=1+T_h\varphi(\sigma)$. We claim that $T_h\varphi\neq M$ at σ.
+**(Proof)** Given $\phi(x_0)\in\mathrm{Wff}_1$, find $\sigma\in\mathrm{Wff}_0$ such that $[\sigma]_Q=T_h(\neg\phi)(\sigma)=1+T_h\phi(\sigma)$. We claim that $T_h\phi\neq M$ at σ.
 
-If $[\sigma]_Q$ is 0 or 1, then $M(\sigma)=[\sigma]_Q=1+T_h\varphi(\sigma)$ implies that $T_h\varphi\neq M$ at σ. If $[\sigma]_Q$ is neither 0 nor 1, then $T_h\varphi(\sigma)$ cannot be so either, hence it is different from M(σ) (which must be 0 or 1). $\square$
+If $[\sigma]_Q$ is 0 or 1, then $M(\sigma)=[\sigma]_Q=1+T_h\phi(\sigma)$ implies that $T_h\phi\neq M$ at σ. If $[\sigma]_Q$ is neither 0 nor 1, then $T_h\phi(\sigma)$ cannot be so either, hence it is different from M(σ) (which must be 0 or 1). $\square$
 
 ### Why this yields the incompleteness
 
-If the theory of M (a model of Q) is decidable (in the sense of p. 18 of the note), then the subset $$\{\lceil\sigma\rceil : M\vDash\sigma\}\subset\omega$$ is recursive and hence represented by $\varphi(x_0)\in\mathrm{Wff}_1$ in Q. As this possibility was ruled out by the corollary above, we see that such theory cannot be decidable.
+Suppose M is a model of Q whose theory is decidable (in the sense of p. 18 of the note). Then the subset $$\{\lceil\sigma\rceil : M\vDash\sigma\}\subset\omega$$ is recursive and hence is represented by $\phi(x_0)\in\mathrm{Wff}_1$ in Q. As this possibility was ruled out by the corollary above, we see that such theory cannot be decidable.
+
+Now, suppose T is a set of sentences whose Gödel numbers form a recursive set, and T entails Q. (Examples include Peano Arithmetic and Q itself.) If T generates a complete theory, then it is decidable (by the 2nd theorem in p. 18 of the note). However, on the other hand, T has only one model up to elementary equivalence. Hence, by the discussion on the previous paragraph, we arrive at a contradiction. Therefore, T cannot be complete; this is usually referred as "there is a sentence that is neither proven nor disproven" yet true (in a model of T; choose any maximal extension of T containig that not-proven-nor-disproven sentence). 
+
+Nonetheless, Gödel's fixed point theorem suggests a recursive way to extend T to be "more complete," i.e., we can add a sentence into T that was not proven nor disproven from T. However, such a construction at best yields a recursive set of axioms after a finite number of steps, so we still have an incomplete theory. I do not know if we continue this process indefinitely, we result in a complete theory.
+
+Finally, we note that [Shoenfield 1967](https://www.karlin.mff.cuni.cz/~krajicek/shoenfield.pdf), Problem 6.5.a), is about characterizing a theory generated by a recursive set of sentences. It is characterized by a provability clause that is recursively enumerable.
 
 # Reinventing Yanofsky's Wheel
 
-It is known that Gödel's fixed point theorem can be abstractized using the Lawvere fixed point theorem, according to Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5). This work presents almost the same argument as I have stated above, with the difference being that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work.
+It is known that Gödel's fixed point theorem can be abstractized using the Lawvere fixed point theorem. A recent account on this would be Yanofsky's work ([Yanofsky 2003](https://doi.org/10.2178/bsl/1058448677), Thm. 4 of Sec. 5). This work presents almost the same argument as I have stated above, with the difference being that they exclusively uses the Lindenbaum algebra throughout. This is a little subtle, in the sense that the Gödel numbering on the Lindenbaum algebra needs some words to well-define (for example, defining it as $$\lceil[\sigma]_Q\rceil = \inf\{\lceil\psi\rceil : \psi\in[\sigma]_Q\}$$), which was omitted in the work.
 
 To get away from this subtlety, I am going to reformulate the "Lawvere box" as follows (note its 'heterogeneous' nature):
 
@@ -207,11 +217,12 @@ Hence by the proof of the Lawvere fixed point theorem, we see that $g(\gamma)$ i
 
 Having built all this, my next question is this:
 
- > Given that $T_h\varphi$ cannot realize the model ring map $M\colon\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$, to what extent can $T_h\varphi$ approximate M?
+ > Given that $T_h\phi$ cannot realize the model ring map $M\colon\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$, to what extent can $T_h\phi$ approximate M?
 
-Here is a naïve idea. Suppose T is a subset of the theory of M which is axiomatizable (in the sense of p. 18 of the note). If $\varphi(x_0)=Pf_T(x_0)$ is the corresponding provability clause, then although this will only approximate the model map M (and leave many theory of M as "ambiguous"), as we increase T, the map $T_hPf_T$ will approximate M better and better. So the question will become *to suggest a measure of how this approximation improves.*
+Here is a naïve idea. Suppose T is a subset of the theory of M which is axiomatizable (in the sense of p. 18 of the note). If $\phi(x_0)=Pf_T(x_0)$ is the corresponding provability clause, then although this will only approximate the model map M (and leave many theory of M as "ambiguous"), as we increase T, the map $T_hPf_T$ will approximate M better and better. So the question will become *to suggest a measure of how this approximation improves.*
 
-<!-- There might be some nice geometric ideas that could come into play. For instance, since models (modulo elementary equivalence) form a totally disconnected space (by the prime spectrum of the ring $\underline{\mathrm{Lind}}_0(Q)$), we can imagine a geometric context to view this (say as ends of a tree). As the maps $T_h\varphi$ will define a map from $\mathrm{Wff}_0$ to $\underline{\mathrm{Lind}}_0(Q)$, by appropriate currying, we might extend this from the tree to the space of functions $\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$. Would that be useful? -->
+<!-- There might be some nice geometric ideas that could come into play. For instance, since models (modulo elementary equivalence) form a totally disconnected space (by the prime spectrum of the ring $\underline{\mathrm{Lind}}_0(Q)$), we can imagine a geometric context to view this (say as ends of a tree). As the maps $T_h\phi$ will define a map from $\mathrm{Wff}_0$ to $\underline{\mathrm{Lind}}_0(Q)$, by appropriate currying, we might extend this from the tree to the space of functions $\mathrm{Wff}_0\to\mathbb{Z}/2\mathbb{Z}$. Would that be useful? -->
 
 #### Update Log
  * <span style="font-size:12px">240513: Created</span>
+ * <span style="font-size:12px">240514: Added some remarks, suggested by [Junekey Jeon](https://jk-jeon.github.io/)</span>
