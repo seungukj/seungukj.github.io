@@ -26,11 +26,12 @@ This is a warehouse of variety of links that I feel like interesting and worthwh
 
 ## How to make a properly synced local repo from my Github repos
 
- 1. Start with an empty folder X.
+ 1. Start with a folder X.
  1. Run VS Code and open the folder X.
  1. At the initial *Welcome* tab, select Start > Clone Git Repository...
  1. If not logged into GitHub, then log in; if already done, select from my repos.
- 1. The system will clone the repo. Once done, open it on the new thread. (This will practically ignore all other "blank projects" in the folder X.)
+ 1. The system will clone the repo and store it into a new folder Y (often the name of the repo).
+ 1. Once done, open the repo on the new thread. (This will practically open folder Y.)
  1. Now enjoy committing and syncing this via remote repo.
 
  > Note: the above steps requires *disabling* Protected branch update. Go to
