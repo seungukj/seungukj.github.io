@@ -33,6 +33,12 @@ This is a warehouse of variety of links that I feel like interesting and worthwh
  1. The system will clone the repo. Once done, open it on the new thread. (This will practically ignore all other "blank projects" in the folder X.)
  1. Now enjoy committing and syncing this via remote repo.
 
+ > Note: the above steps requires *disabling* Protected branch update. Go to
+ >
+ > Settings > Branch protection rule > Require signed commits (uncheck)
+ >
+ > to (temporarily) free this requirement, before committing.
+
 #### Update Log
  * <span style="font-size:12px">211015: Created</span>
  * <span style="font-size:12px">220105: Appended some notes from WYM 2022</span>
