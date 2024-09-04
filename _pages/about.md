@@ -10,7 +10,7 @@ redirect_from:
 
 <!-- [academicpages template](https://github.com/academicpages/academicpages.github.io) -->
 
-I am Seung uk Jang, a post-doc in [IRMAR](https://irmar.univ-rennes.fr/en), Université de Rennes I. I am working as a member of [l'équipe de Théorie Ergodique](https://irmar.univ-rennes.fr/membres-du-pole-aleatoire#p-205), and my mentor is [Serge Cantat](https://perso.univ-rennes1.fr/serge.cantat/).
+I am Seung uk Jang, a post-doc in [IRMAR](https://irmar.univ-rennes.fr/en), Université de Rennes. I am working as a member of [l'équipe de Théorie Ergodique](https://irmar.univ-rennes.fr/membres-du-pole-aleatoire#p-205), and my mentor is [Serge Cantat](https://perso.univ-rennes1.fr/serge.cantat/).
 
 
 # Academic Interests
@@ -19,4 +19,4 @@ My primary mathematical interest is about dynamical systems, especially those on
 For my other miscellaneous math interests, check out [my blog](https://seungukj.github.io/blog/).
 
 # Contact
- * email: seung-uk.jang [at] univ-rennes1.fr 
+ * email: seung-uk.jang [at] univ-rennes.fr 
