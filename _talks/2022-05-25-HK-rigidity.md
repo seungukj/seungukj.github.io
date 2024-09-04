@@ -6,6 +6,7 @@ permalink: /talks/2022-05-25-HK-rigidity
 venue: "Third BiSTRO-mini-conference"
 date: 2022-05-25
 location: "Online"
+author_profile: false
 ---
 
 A talk in [Third BiSTRO-mini-conference](https://sites.google.com/view/bistro-seminar/).

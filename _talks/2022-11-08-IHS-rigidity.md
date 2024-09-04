@@ -6,6 +6,7 @@ permalink: /talks/2022-11-08-IHS-rigidity
 venue: "Online Seminar on Algebraic and Complex Dynamics, Beijing-Taipei"
 date: 2022-11-08
 location: "Online"
+author_profile: false
 ---
 
 A talk in [Online Seminar on Algebraic and Complex Dynamics](https://ywfan-math.github.io/ADCD.html).
