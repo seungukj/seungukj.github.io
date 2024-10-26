@@ -7,7 +7,7 @@ author_profile: false
 
 ## Preprints
 
- 1. (joint with *Serge Cantat*) **Orbits of automorphism groups of affine surfaces over $p$-adic fields.** preprint. [pdf](https://perso.univ-rennes1.fr/serge.cantat/Articles/padic.pdf)
+ 1. (joint with *Serge Cantat*) **Orbits of automorphism groups of affine surfaces over $p$-adic fields.** preprint. [arXiv](https://arxiv.org/abs/2410.08579)
  1. **Vieta Involutions on Tropical Markov Cubics.** preprint. [arXiv](https://arxiv.org/abs/2306.11357)
 
 ## Published
