@@ -7,7 +7,7 @@ author_profile: false
 
 ## Preprints
 
- 1. **Residual Transitivity implies Minimality for Markoff Surfaces over $p$-adic Integers, by Means of $p$-adic Flows.** preprint. [HAL](https://hal.science/hal-04966596)
+ 1. **Residual Transitivity implies Minimality for Markoff Surfaces over $p$-adic Integers, by Means of $p$-adic Flows.** preprint. [arXiv](https://arxiv.org/abs/2502.18976)
  1. (joint with *Serge Cantat*) **Orbits of automorphism groups of affine surfaces over $p$-adic fields.** preprint. [arXiv](https://arxiv.org/abs/2410.08579)
  1. **Vieta Involutions on Tropical Markov Cubics.** preprint. [arXiv](https://arxiv.org/abs/2306.11357)
 
