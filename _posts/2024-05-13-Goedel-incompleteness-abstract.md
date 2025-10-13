@@ -37,7 +37,7 @@ Recall also that first-order logic has *models validating a sentence*. This mean
 
 Through these structures, we get Boolean algebras (commutative rings with 1 whose elements are all idempotent) that are isomorphic by the NOT map: i.e., $$x\in\overline{\mathrm{Lind}}_n\mapsto 1+x\in\underline{\mathrm{Lind}}_n$$ is a ring isomorphism. Thus, we see that null-false and null-true Lindenbaum rings are *Boolean duals*.
 
-These algebras have a natural order structure given by $a\leq b$ iff $a\cdot b=b$ (or $a\leq'b$ iff $a\cdot'b=b$, which is equivalent to $a\geq b$). The concept of *filters* is defined based on this order.
+These algebras have a natural order structure given by $a\leq b$ iff $a\cdot b=a$ (or $a\leq'b$ iff $a\cdot'b=a$, which is equivalent to $a\geq b$). The concept of *filters* is defined based on this order.
 
 The upper and lower lines indicate where the "True" value is assigned. For $$\overline{\mathrm{Lind}}_n$$, the "True" is assigned to be 1, while in $$\underline{\mathrm{Lind}}_n$$, the "True" is assigned to be 0.
 
